@@ -1,0 +1,352 @@
+[
+  {
+    "id": 0,
+    "name": "Home",
+    "icon": "micon bi bi-house",
+    "children": [
+      {
+        "id": 0,
+        "name": "Dashboard",
+        "children": [],
+        "link": "admin/home/dashboard",
+        "roles": "everyone",
+        "icon": "",
+        "app_code": "ZA-001"
+      },
+      {
+        "id": 1,
+        "name": "Account",
+        "children": [],
+        "link": "admin/home/setting",
+        "roles": "everyone",
+        "icon": "",
+        "app_code": "ZA-001"
+      },
+      {
+        "id": 2,
+        "name": "Notification",
+        "children": [],
+        "link": "admin/home/notification",
+        "roles": "everyone",
+        "icon": "",
+        "app_code": "ZA-001"
+      }
+    ],
+    "link": "",
+    "roles": "everyone",
+    "app_code": "ZA-001"
+  },
+  {
+    "id": 201,
+    "name": "Home",
+    "icon": "micon bi bi-house",
+    "children": [
+      {
+        "id": 0,
+        "name": "Dashboard",
+        "children": [],
+        "link": "admin/home/dashboard",
+        "roles": "everyone",
+        "icon": "",
+        "app_code": "ZA-002"
+      },
+      {
+        "id": 1,
+        "name": "Account",
+        "children": [],
+        "link": "admin/home/setting",
+        "roles": "everyone",
+        "icon": "",
+        "app_code": "ZA-002"
+      },
+      {
+        "id": 2,
+        "name": "Notification",
+        "children": [],
+        "link": "admin/home/notification",
+        "roles": "everyone",
+        "icon": "",
+        "app_code": "ZA-002"
+      }
+    ],
+    "link": "",
+    "roles": "everyone",
+    "app_code": "ZA-002"
+  },
+  {
+    "id": 4,
+    "name": "Home",
+    "icon": "micon bi bi-house",
+    "children": [
+      {
+        "id": 0,
+        "name": "Dashboard",
+        "children": [],
+        "link": "admin/home/dashboard",
+        "roles": "everyone",
+        "icon": "",
+        "app_code": "ZA-001"
+      },
+      {
+        "id": 1,
+        "name": "Account",
+        "children": [],
+        "link": "admin/home/setting",
+        "roles": "everyone",
+        "icon": "",
+        "app_code": "ZA-001"
+      },
+      {
+        "id": 2,
+        "name": "Notification",
+        "children": [],
+        "link": "admin/home/notification",
+        "roles": "everyone",
+        "icon": "",
+        "app_code": "ZA-001"
+      }
+    ],
+    "link": "",
+    "roles": "everyone",
+    "app_code": "ZA-005"
+  },
+  {
+    "id": 18,
+    "name": "Messanger",
+    "icon": "micon bi bi-chat-fill",
+    "children": [],
+    "link": "admin/messanger",
+    "roles": "everyone",
+    "app_code": "ZA-001"
+  },
+  {
+    "id": 1802,
+    "name": "Performance",
+    "icon": "micon bi bi-diagram-3-fill",
+    "children": [],
+    "link": "admin/employee/department",
+    "roles": "everyone",
+    "app_code": "ZA-001"
+  },
+  {
+    "id": 10,
+    "name": "Recruitment",
+    "icon": "micon bi bi-door-open-fill",
+    "children": [
+      {
+        "id": 1,
+        "name": "Job Position",
+        "children": [],
+        "link": "admin/recruitment/job-position",
+        "roles": "everyone",
+        "app_code": "ZA-001",
+        "icon": ""
+      },
+      {
+        "id": 2,
+        "name": "Job Openings",
+        "children": [],
+        "link": "admin/recruitment/job-opening",
+        "roles": "everyone",
+        "app_code": "ZA-001",
+        "icon": ""
+      },
+      {
+        "id": 3,
+        "name": "Job Applications",
+        "children": [],
+        "link": "admin/recruitment/job-opening/applications",
+        "roles": "everyone",
+        "app_code": "ZA-001",
+        "icon": ""
+      }
+    ],
+    "link": "",
+    "roles": "everyone",
+    "app_code": "ZA-001"
+  },
+  {
+    "id": 1802232,
+    "name": "Employees",
+    "icon": "micon bi bi-file-earmark-person",
+    "children": [],
+    "link": "admin/employee/all",
+    "roles": "everyone",
+    "app_code": "ZA-001"
+  },
+  {
+    "id": 6,
+    "name": "Attendance & Schedule",
+    "icon": "micon bi bi-calendar2-week-fill",
+    "children": [],
+    "link": "admin/calendar",
+    "roles": "everyone",
+    "app_code": "ZA-001"
+  },
+  {
+    "id": 1,
+    "name": "User & Roles",
+    "icon": "micon bi bi-file-person-fill",
+    "children": [
+      {
+        "id": 0,
+        "name": "Records",
+        "children": [],
+        "link": "admin/user-role/records",
+        "roles": "everyone",
+        "icon": "",
+        "app_code": "ZA-001"
+      },
+      {
+        "id": 1,
+        "name": "All Roles",
+        "children": [],
+        "link": "admin/user-role/all-roles",
+        "roles": "everyone",
+        "icon": "",
+        "app_code": "ZA-001"
+      },
+      {
+        "id": 2,
+        "name": "All Users",
+        "children": [],
+        "link": "admin/user-role/all-users",
+        "roles": "everyone",
+        "app_code": "ZA-001",
+        "icon": ""
+      }
+    ],
+    "link": "",
+    "roles": "Master",
+    "app_code": "ZA-005"
+  },
+  {
+    "id": 1898,
+    "name": "User & Roles",
+    "icon": "micon bi bi-file-person-fill",
+    "children": [
+      {
+        "id": 0,
+        "name": "Records",
+        "children": [],
+        "link": "admin/user-role/records",
+        "roles": "everyone",
+        "icon": "",
+        "app_code": "ZA-001"
+      },
+      {
+        "id": 1,
+        "name": "All Roles",
+        "children": [],
+        "link": "admin/user-role/all-roles",
+        "roles": "everyone",
+        "icon": "",
+        "app_code": "ZA-001"
+      },
+      {
+        "id": 2,
+        "name": "All Users",
+        "children": [],
+        "link": "admin/user-role/all-users",
+        "roles": "everyone",
+        "app_code": "ZA-001",
+        "icon": ""
+      }
+    ],
+    "link": "",
+    "roles": "Master",
+    "app_code": "ZA-001"
+  },
+  {
+    "id": 3,
+    "name": "Events & Tasks",
+    "icon": "micon bi bi-calendar",
+    "children": [
+      {
+        "id": 0,
+        "name": "Create",
+        "children": [],
+        "link": "admin/event/records",
+        "roles": "everyone",
+        "icon": "",
+        "app_code": "ZA-001"
+      },
+      {
+        "id": 1,
+        "name": "All",
+        "children": [],
+        "link": "admin/event/all",
+        "icon": "",
+        "roles": "everyone",
+        "app_code": "ZA-001"
+      }
+    ],
+    "link": "",
+    "roles": "everyone",
+    "app_code": "ZA-001"
+  },
+  {
+    "id": 9,
+    "name": "File Manager",
+    "icon": "micon bi bi-file-earmark-text-fill",
+    "children": [],
+    "link": "admin/file-manager/home",
+    "roles": "everyone",
+    "app_code": "ZA-001"
+  },
+  {
+    "id": 7,
+    "name": "Leave & Holidays",
+    "icon": "micon bi bi-diagram-3",
+    "children": [],
+    "link": "admin/leave-and-holiday",
+    "roles": "everyone",
+    "app_code": "ZA-001"
+  },
+  {
+    "id": 8,
+    "name": "Report",
+    "icon": "micon bi bi-collection-fill",
+    "children": [],
+    "link": "admin/pricing",
+    "roles": "everyone",
+    "app_code": "ZA-001"
+  },
+  {
+    "id": 2,
+    "name": "Pricing",
+    "icon": "micon bi bi-cash",
+    "children": [],
+    "link": "admin/pricing",
+    "roles": "everyone",
+    "app_code": "ZA-005"
+  },
+  {
+    "id": 3,
+    "name": "Bookings",
+    "icon": "micon bi bi-calendar",
+    "children": [
+      {
+        "id": 0,
+        "name": "Create",
+        "children": [],
+        "link": "admin/booking/records",
+        "roles": "everyone",
+        "icon": "",
+        "app_code": "ZA-001"
+      },
+      {
+        "id": 1,
+        "name": "All Bookings",
+        "children": [],
+        "link": "admin/booking/all",
+        "icon": "",
+        "roles": "everyone",
+        "app_code": "ZA-001"
+      }
+    ],
+    "link": "",
+    "roles": "everyone",
+    "app_code": "ZA-005"
+  }
+]

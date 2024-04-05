@@ -37,6 +37,8 @@
     "simple-body-validator": "^1.2.13",
     "tinify": "^1.7.1",
     "socket.io": "^3.0.1",
+    "sjcl": "^1.0.8",
+    "node-json-db": "^2.3.0",
     "socket.io-client": "^4.7.2"
   },
   "devDependencies": {

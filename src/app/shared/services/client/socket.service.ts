@@ -20,6 +20,7 @@ export class SocketService {
     // this._socket.on("disconnect", this.disconnected);
   }
   connected(){
+    console.log(this.socket)
     if(this.socket){
       this.onConnectedUser({id:this.socket.id, status: 'connected'})
       this.engine.next(this.socket.io.engine);
@@ -30,7 +31,7 @@ export class SocketService {
     }
   }
   update(sock:any){
-    const now = Date.now()
+    const now = Date.now();
     return this.socket.emit('update-on-connect-'+sock.id,{
       ...this.deviceDetector.getDeviceInfo(),
       ...sock,
@@ -42,16 +43,15 @@ export class SocketService {
 
   // listen event
 	onConnectedUser(sock:any) {
-    this.update(sock);
-		return this.socket.on('update-on-success-'+sock.id,(...args)=>{
-      this.connectionBrowserCaptured(sock);
-      console.log(args);
-    });
+    this.connectionBrowserCaptured(sock);
 	}
 
   connectionBrowserCaptured(sock:any){
     const now = Date.now()
     const device = this.deviceDetector.getDeviceInfo();
+    console.log("now")
+    console.log(sock.id)
+    console.log(device)
     return this.socket.emit('notify-browser-captured-'+sock.id,{
       message: `Broadcasted Notification\n#${sock.id} User connected with ${device.browser} browser of version ${device.browser_version} running on ${device.os} Operating system of OS version ${device.os_version}. More Info are: \nOrientation scale ${device.orientation} \nDevice Type: ${device.deviceType}\nUser Agent: ${device.userAgent}`,
       ...sock,

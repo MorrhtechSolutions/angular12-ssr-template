@@ -1,0 +1,37 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <angular-editor [config]="config" id="{{id}}" [placeholder]="'Type nmessge...'"
+                [(ngModel)]="data"></angular-editor>
+        </div>
+        <div class="col-md-12 text-right pt-2">
+            <div class="container">
+                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                    <label class="btn btn-outline-primary active" style="background: transparent;" (change)="send()">
+                        <input type="checkbox" name="options" id="{{id}}option1" autocomplete="off" checked="">
+                        <a href="javascript:void(0)" class="mr-2"><i class="fa fa-paperclip"></i></a>
+                    </label>
+                    <label class="btn btn-primary" *ngIf="config.showToolbar" (change)="config.showToolbar = !config.showToolbar">
+                        <input type="checkbox" name="options" id="{{id}}option2" autocomplete="off">
+                        <i class="icon-copy bi bi-layer-forward"></i>
+                    </label>
+                    <label class="btn btn-primary" *ngIf="!config.showToolbar" (change)="config.showToolbar = !config.showToolbar">
+                        <input type="checkbox" name="options" id="{{id}}option4" autocomplete="off">
+                        <i class="icon-copy bi bi-keyboard"></i>
+                    </label>
+                    <label class="btn btn-success" (change)="send()">
+                        <input type="checkbox" name="options" id="{{id}}option3" autocomplete="off">
+                        <i class="icon-copy ion-paper-airplane"></i>
+                    </label>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="col-md-6 pt-2">
+            <div class="container">
+                <button class="btn btn-block btn-success" type="button" (click)="send()">
+                    <i class="icon-copy ion-paper-airplane"></i>
+                </button>
+            </div>
+        </div> -->
+    </div>
+</div>

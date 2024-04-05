@@ -3,15 +3,22 @@ import TelegramBot from "node-telegram-bot-api";
 import { IngredentService } from "./ingredent.service.mjs";
 import { MealService } from "./meal.service.mjs";
 import { EncryptionService } from "./encryption.service.mjs";
+import { csv2json, json2csv } from "json-2-csv";
+
 import http from "https";
 import fs from "fs";
 import path from "path";
+import stream from "stream";
+import { Readable } from 'stream'
+
 import fileDirName from "./../../file-dir-name.mjs";
 const { __dirname } = fileDirName(import.meta);
 
 dotenv.config();
 export class TgService {
   imagepath = "/../../db/public/image";
+  ingredentpath = "/../../db/ingredent.json";
+  mealpath = "/../../db/meal.json";
   ingredentService = new IngredentService();
   mealService = new MealService();
   encryptService = new EncryptionService();
@@ -98,27 +105,20 @@ export class TgService {
             await this._viewAllMeal(msg);
             break;
           case "/3":
-            await this._updateIngredent(msg);
-            break;
-          case "/4":
-            break;
-          case "/5":
             this._addIngredent(msg);
             break;
-          case "/6":
+          case "/4":
             this._addMeal(msg);
             break;
+          case "/5":
+            break;
+          case "/6":
+            break;
           case "/7":
+            await this._downloadIngredentRecord(msg);
             break;
           case "/8":
-            break;
-          case "/9":
-            break;
-          case "/10":
-            break;
-          case "/11":
-            break;
-          case "/12":
+            await this._downloadMealRecord(msg);
             break;
           case "/help":
             this.kitchenmenu(msg);
@@ -156,30 +156,36 @@ export class TgService {
   kitchenmenu(msg) {
     this.kitchen_AI.sendMessage(
       msg.chat.id,
-      `Welcome to Zinder Kitchen Our Chat ID is ${msg.chat.id}.\nEnter\n/1. View all ingredent\n/2. View all meal\n/3. Update an ingredent\n/4. Update a meal\n/5. Add new ingredent\n/6. Add new meal\n/7. Delete ingredent\n/8. Delete meal\n/9. Download ingredent record\n/10. Download meal record`
+      `Welcome to Zinder Kitchen Our Chat ID is ${msg.chat.id}.\nEnter\n/1. View all ingredent\n/2. View all meal\n/3. Add new ingredent\n/4. Add new meal\n/5. Delete ingredent\n/6. Delete meal\n/7. Download ingredent record\n/8. Download meal record`
     );
   }
   async _viewAllIngredent(msg) {
     await this.ingredentService.all((ingredients) => {
-      let message = ``;
+      let message = `FORMAT: ID - NAME -IMAGE - PRICE .\n\n`;
       ingredients.forEach((ingredient, index) => {
-        message += `${index + 1}. ${ingredient.name} - ${
-          ingredient.url
-        } - $${ingredient.price}\n`;
+        message += `${index + 1}. ${ingredient.name} - ${ingredient.url} - $${
+          ingredient.price
+        }\n`;
       });
-      this.kitchen_AI.sendMessage(msg.chat.id, message.length > 0 ? message : 'No data');
+      this.kitchen_AI.sendMessage(
+        msg.chat.id,
+        message.length > 0 ? message : "No data"
+      );
     });
   }
   async _viewAllMeal(msg) {
     await this.mealService.all((meals) => {
-      let message = `FORMAT: ID - NAME - QUANTITY - PRICE - INGREDENTS.\n\n`;
+      let message = `FORMAT: ID - NAME -IMAGE - PRICE .\n\n`;
       meals.forEach((meal, index) => {
         message += `${index + 1}. ${meal.name} - ${meal.url} - $${
           meal.price
         } - ingredents:`;
         message += `.\n`;
       });
-      this.kitchen_AI.sendMessage(msg.chat.id, message.length > 0 ? message : 'No data');
+      this.kitchen_AI.sendMessage(
+        msg.chat.id,
+        message.length > 0 ? message : "No data"
+      );
     });
   }
   async _updateIngredent(msg) {}
@@ -205,14 +211,18 @@ export class TgService {
         let message = "Enter ingredent price";
         this.kitchenAiChatState.set(msg.chat.id, message);
         this.kitchen_AI.sendMessage(msg.chat.id, message);
-      }else if (this.kitchenAiChatState.get(msg.chat.id) == "Enter name of meal") {
+      } else if (
+        this.kitchenAiChatState.get(msg.chat.id) == "Enter name of meal"
+      ) {
         this.ingredents.set(msg.chat.id, {
           name: msg.text,
         });
         let message = "Enter meal price";
         this.kitchenAiChatState.set(msg.chat.id, message);
         this.kitchen_AI.sendMessage(msg.chat.id, message);
-      }else if (this.kitchenAiChatState.get(msg.chat.id) == "Enter meal price") {
+      } else if (
+        this.kitchenAiChatState.get(msg.chat.id) == "Enter meal price"
+      ) {
         let ingredent = this.ingredents.get(msg.chat.id);
         this.ingredents.set(msg.chat.id, {
           ...ingredent,
@@ -222,7 +232,9 @@ export class TgService {
           "send image of meal(Please do not click the compress option)";
         this.kitchenAiChatState.set(msg.chat.id, message);
         this.kitchen_AI.sendMessage(msg.chat.id, message);
-      }else if (this.kitchenAiChatState.get(msg.chat.id) == "Enter ingredent price") {
+      } else if (
+        this.kitchenAiChatState.get(msg.chat.id) == "Enter ingredent price"
+      ) {
         let ingredent = this.ingredents.get(msg.chat.id);
         this.ingredents.set(msg.chat.id, {
           ...ingredent,
@@ -313,8 +325,39 @@ export class TgService {
         await this.mealService.save(data, () =>
           this.kitchen_AI.sendMessage(msg.chat.id, message)
         );
-        this.kitchen_AI.sendMessage(msg.chat.id, message);
       }
     }
+  }
+  async _downloadIngredentRecord(msg) {
+    await this.ingredentService.all(async (ingredents) => {
+      const csv = json2csv(ingredents);
+      let fileContents = Buffer.from(csv);
+      this.kitchen_AI.sendMessage(msg.chat.id, "Processing request");
+      await this.kitchen_AI.sendDocument(
+        msg.chat.id,
+        path.join(path.normalize(__dirname + `${this.ingredentpath}`))
+      );
+      // await this.kitchen_AI.sendDocument(
+      //   msg.chat.id,
+      //   fileContents.buffer
+      // );
+      this.kitchen_AI.sendMessage(msg.chat.id, "Completed");
+    });
+  }
+  async _downloadMealRecord(msg) {
+    await this.ingredentService.all(async (ingredents) => {
+      const csv = json2csv(ingredents);
+      let fileContents = Buffer.from(csv);
+      this.kitchen_AI.sendMessage(msg.chat.id, "Processing request");
+      await this.kitchen_AI.sendDocument(
+        msg.chat.id,
+        path.join(path.normalize(__dirname + `${this.mealpath}`))
+      );
+      // await this.kitchen_AI.sendDocument(
+      //   msg.chat.id,
+      //   fileContents.buffer
+      // );
+      this.kitchen_AI.sendMessage(msg.chat.id, "Completed");
+    });
   }
 }

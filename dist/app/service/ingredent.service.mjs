@@ -82,7 +82,7 @@ export class IngredentService {
    * @returns Object
    */
   async delete(indexOf, cb) {
-    await this.db.delete(`/ingredents[${indexOf}]`);
+    await this.db.delete(`/records[${indexOf}]`);
     return cb();
   }
   /**
@@ -94,7 +94,7 @@ export class IngredentService {
   async update(code, data, indexOf, cb) {
     const now = new Date(Date.now());
     data.updated_at = now;
-    await this.db.push(`/ingredents[${indexOf}]`, data, true);
+    await this.db.push(`/records[${indexOf}]`, data, true);
     return cb(data);
   }
     /**

@@ -82,7 +82,7 @@ export class MealService {
    * @returns Object
    */
   async delete(indexOf, cb) {
-    await this.db.delete(`/meals[${indexOf}]`);
+    await this.db.delete(`/records[${indexOf}]`);
     return cb();
   }
   /**
@@ -94,7 +94,7 @@ export class MealService {
   async update(code, data, indexOf, cb) {
     const now = new Date(Date.now());
     data.updated_at = now;
-    await this.db.push(`/meals[${indexOf}]`, data, true);
+    await this.db.push(`/records[${indexOf}]`, data, true);
     return cb(data);
   }
     /**

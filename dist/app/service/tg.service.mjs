@@ -9,7 +9,7 @@ import http from "https";
 import fs from "fs";
 import path from "path";
 import stream from "stream";
-import { Readable } from 'stream'
+import { Readable } from "stream";
 
 import fileDirName from "./../../file-dir-name.mjs";
 const { __dirname } = fileDirName(import.meta);
@@ -91,12 +91,15 @@ export class TgService {
     });
     this.kitchen_AI.on("message", async (msg, match) => {
       const chatId = msg.chat.id;
-      const text = msg.text;
-      // const resp = match[1];
+      let text = msg.text;
       if (!text || text.length < 1) {
-        console.log("received a file or vn");
-        // this.kitchen_AI.sendMessage(chatId, "Send /help to get help");
+        this.kitchen_AI.sendMessage(chatId, "Received");
       } else {
+        if (text.includes("/dme")) {
+          text = "/dme";
+        } else if (text.includes("/din")) {
+          text = "/din";
+        }
         switch (text) {
           case "/1":
             await this._viewAllIngredent(msg);
@@ -111,8 +114,10 @@ export class TgService {
             this._addMeal(msg);
             break;
           case "/5":
+            this._deleteIngredent(msg);
             break;
           case "/6":
+            this._deleteMeal(msg);
             break;
           case "/7":
             await this._downloadIngredentRecord(msg);
@@ -123,7 +128,12 @@ export class TgService {
           case "/help":
             this.kitchenmenu(msg);
             break;
-
+          case "/dme":
+            await this._proceed_deleteMeal(msg, match);
+            break;
+          case "/din":
+            await this._proceed_deleteIngredent(msg, match);
+            break;
           default:
             this._checknextmessage(msg);
             break;
@@ -163,9 +173,9 @@ export class TgService {
     await this.ingredentService.all((ingredients) => {
       let message = `FORMAT: ID - NAME -IMAGE - PRICE .\n\n`;
       ingredients.forEach((ingredient, index) => {
-        message += `${index + 1}. ${ingredient.name} - ${ingredient.url} - $${
-          ingredient.price
-        }\n`;
+        message += `${index + 1}. ID(${ingredient.id}) - ${ingredient.name} - ${
+          ingredient.url
+        } - $${ingredient.price}\n`;
       });
       this.kitchen_AI.sendMessage(
         msg.chat.id,
@@ -177,9 +187,9 @@ export class TgService {
     await this.mealService.all((meals) => {
       let message = `FORMAT: ID - NAME -IMAGE - PRICE .\n\n`;
       meals.forEach((meal, index) => {
-        message += `${index + 1}. ${meal.name} - ${meal.url} - $${
-          meal.price
-        } - ingredents:`;
+        message += `${index + 1}. ID(${meal.id}) - ${meal.name} - ${
+          meal.url
+        } - $${meal.price} - ingredents:`;
         message += `.\n`;
       });
       this.kitchen_AI.sendMessage(
@@ -248,7 +258,6 @@ export class TgService {
     }
   }
   async _handleFile(msg) {
-    console.log(msg);
     const file = await this.kitchen_AI.getFile(msg.photo[0].file_id);
     const fileink = await this.kitchen_AI.getFileLink(msg.photo[0].file_id);
     this.kitchen_AI.sendMessage(msg.chat.id, JSON.stringify(file));
@@ -256,7 +265,6 @@ export class TgService {
     this._downloadFile(fileink, msg.photo[0].file_name, msg);
   }
   async _handleDocument(msg) {
-    console.log(msg);
     const fileink = await this.kitchen_AI.getFileLink(msg.document.file_id);
     this.kitchen_AI.sendMessage(msg.chat.id, fileink);
     this._downloadFile(fileink, msg.document.file_name, msg);
@@ -270,7 +278,6 @@ export class TgService {
       response.pipe(file);
       file.on("finish", async () => {
         file.close();
-        console.log("Download Completed");
         await this._uploadPurpose(msg, `${this.imagepath}/${urlhash}`, fileurl);
         // this._checknextmessage(msg);
       });
@@ -358,6 +365,54 @@ export class TgService {
       //   fileContents.buffer
       // );
       this.kitchen_AI.sendMessage(msg.chat.id, "Completed");
+    });
+  }
+  _deleteIngredent(msg) {
+    const message =
+      "To delete a record of ingredent send /din {id of ingredent}.\nFor example: \n/din 18493";
+    this.kitchen_AI.sendMessage(msg.chat.id, message);
+  }
+  _deleteMeal(msg) {
+    const message =
+      "To delete a record of meal, send /dme {id of meal}.\nFor example: \n/dme 18493";
+    this.kitchen_AI.sendMessage(msg.chat.id, message);
+  }
+  async _proceed_deleteMeal(msg, match) {
+    const resp = match[1];
+    const id = String(msg.text).substring(5, String(msg.text).length);
+    if (!id) {
+      return this._deleteMeal(msg);
+    }
+    await this.mealService.getByIndex("id", id, async (index) => {
+      if (index < 0) {
+        this.kitchen_AI.sendMessage(
+          msg.chat.id,
+          "Unknown index.\nsend /2 to view all meals and their ID"
+        );
+      } else {
+        await this.mealService.delete(index, () => {
+          this.kitchen_AI.sendMessage(msg.chat.id, "Record deleted");
+        });
+      }
+    });
+  }
+  async _proceed_deleteIngredent(msg, match) {
+    const resp = match[1];
+    const id = String(msg.text).substring(5, String(msg.text).length);
+    if (!id) {
+      return this._deleteIngredent(msg);
+    }
+    await this.ingredentService.getByIndex("id", id, async (index) => {
+      if (index < 0) {
+        this.kitchen_AI.sendMessage(
+          msg.chat.id,
+          "Unknown index.\nsend /1 to view all ingredents and their ID"
+        );
+      } else {
+        await this.ingredentService.delete(index, () => {
+          this.kitchen_AI.sendMessage(msg.chat.id, "Record deleted");
+        });
+      }
     });
   }
 }

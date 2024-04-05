@@ -1,0 +1,157 @@
+<button
+  type="button"
+  class="btn"
+  data-toggle="modal"
+  [attr.data-target]="'#' + id"
+>
+  <small>{{ highlightedText }}</small>
+</button>
+
+<div class="modal fade bd-example-modal-lg" id="{{ id }}">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title text-white"><strong>Payment Method</strong></h5>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body p-0">
+        <div class="container">
+          <div class="row mt-3">
+            <div class="col-md-6">
+              <div class="alert alert-info" role="alert">
+                Paying: <strong>{{ ztcamount }} ZTC</strong><br />
+                <div class="form-group row">
+                  <!-- <label class="col-sm-12 col-md-12 col-form-label"
+                    >Change Currency</label
+                  > -->
+                  <div class="col-sm-12 col-md-12">
+                    <select
+                      class="custom-select col-12"
+                      name="currency"
+                      [(ngModel)]="exchanges.selected"
+                    >
+                      <!-- <option selected="">Choose...</option> -->
+                      <option value="dollar" selected>Dollar</option>
+                      <option value="pounds">Pounds</option>
+                      <option value="naira">Naira</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="alert alert-info" role="alert">
+                <span>
+                  Rate<br />
+                </span>
+                <div class="form-group row">
+                  <span class="col-md-12">
+                    1ZTC = <strong>${{ exchanges.dollar }}</strong
+                    ><br />
+                  </span>
+                  <span class="col-md-12">
+                    1ZTC = <strong>£{{ exchanges.pounds }}</strong
+                    ><br />
+                  </span>
+                  <span class="col-md-12">
+                    1ZTC = <strong>₦{{ exchanges.naira }}</strong>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <label for="radio-card-1" class="radio-card col-md-3">
+              <input type="radio" name="radio-card" id="radio-card-1" checked />
+              <div class="card-content-wrapper">
+                <span class="check-icon"></span>
+                <div class="card-content text-center">
+                  <img
+                    src="/assets/img/flutterwave-icon-1024x192-f69wbg8f.png"
+                    class="img-fluid"
+                  />
+                  <h4>FlutterWave</h4>
+                </div>
+              </div>
+            </label>
+            <label for="radio-card-2" class="radio-card col-md-3 disabled">
+              <input type="radio" name="radio-card" id="radio-card-2" />
+              <div class="card-content-wrapper">
+                <span class="check-icon"></span>
+                <div class="card-content text-center">
+                  <img
+                    src="/assets/img/paystack-logo-vector.png"
+                    class="img-fluid"
+                  />
+                  <h4>Paystack</h4>
+                </div>
+              </div>
+            </label>
+            <label for="radio-card-3" class="radio-card col-md-3 disabled">
+              <input type="radio" name="radio-card" id="radio-card-3" />
+              <div class="card-content-wrapper">
+                <span class="check-icon"></span>
+                <div class="card-content text-center">
+                  <img
+                    src="/assets/img/MetaMask-Logo-2016.png"
+                    class="img-fluid"
+                  />
+                  <h4>MetaMask</h4>
+                </div>
+              </div>
+            </label>
+            <label for="radio-card-5" class="radio-card col-md-3 disabled">
+              <input type="radio" name="radio-card" id="radio-card-5" />
+              <div class="card-content-wrapper">
+                <span class="check-icon"></span>
+                <div class="card-content text-center">
+                  <img
+                    src="https://cdn-icons-png.flaticon.com/512/2175/2175515.png"
+                    class="img-fluid"
+                  />
+                  <h4>Others</h4>
+                </div>
+              </div>
+            </label>
+          </div>
+          <!-- /.grid-wrapper -->
+        </div>
+      </div>
+      <div class="modal-footer justify-content-end p-0 mt-3">
+        <button
+          type="button"
+          class="btn-outline-light m-0"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          Cancel
+        </button>
+        <button
+          type="button"
+          class="btn-outline-primary m-0"
+          data-dismiss="modal"
+          aria-label="Close"
+          (click)="makePayment()"
+        >
+          Pay
+          {{
+            exchanges.selected == "dollar"
+              ? "$"
+              : exchanges.selected == "pounds"
+              ? "£"
+              : "₦"
+          }}{{ getpayment() }}
+        </button>
+      </div>
+    </div>
+    <!-- /.modal-content -->
+  </div>
+  <!-- /.modal-dialog -->
+</div>

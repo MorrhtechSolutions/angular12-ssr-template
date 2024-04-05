@@ -1,0 +1,85 @@
+<!-- welcome modal start -->
+<div class="welcome-modal" [ngClass]="{'hide': !shouldShow}">
+  <div class="row p-1">
+
+    <div class="col-3 pointer text-left">
+      <span class="weight-500 text-success pt-10 ntitle pointer" (click)="send()">
+        <mat-icon>signal_wifi_4_bar</mat-icon>
+        <!-- <mat-icon>signal_wifi_off</mat-icon> -->
+      </span>
+    </div>
+    <div class="col-3 pointer text-left">
+      <span class="weight-500 text-outline-danger pt-10 ntitle pointer" (click)="editorConfig.showToolbar = !editorConfig.showToolbar">
+      <small class="text-center pointer">
+        <span *ngIf="editorConfig.showToolbar">
+          <mat-icon>visibility_off</mat-icon>
+        </span>
+        <span *ngIf="!editorConfig.showToolbar">
+          <mat-icon>visibility</mat-icon>
+        </span>
+      </small>
+      </span>
+    </div>
+    <!-- <div class="col-3 pointer text-left">
+      <span class="weight-500 text-outline-success pt-10 ntitle pointer" (click)="close()">
+      <small class="text-center pointer" (click)="toggleSound()">
+        <span *ngIf="!autoPlay">
+          <mat-icon>volume_off</mat-icon>
+        </span>
+        <span *ngIf="autoPlay">
+          <mat-icon>volume_up</mat-icon>
+        </span>
+        <ngx-audio-player [ngClass]="{'hide': true}"
+
+  [playlist]="mssapPlaylist"
+  [autoPlay]="autoPlay"
+  [expanded]="false"
+  [repeat]="'all'"
+  [disablePositionSlider]="mssapDisablePositionSlider"
+  [displayRepeatControls]="mssapDisplayRepeatControls"
+  [displayVolumeControls]="mssapDisplayVolumeControls"
+  [displayVolumeSlider]="mssapDisplayVolumeSlider"
+
+  [displayTitle]="mssapDisplayTitle"
+
+  (trackEnded)="onEnded($event)">
+
+</ngx-audio-player>
+      </small>
+      </span>
+    </div> -->
+
+    <div class="col-3 pointer text-right">
+      <span class="weight-500 text-danger pt-10 ntitle pointer" (click)="startedConversation = false">
+        <mat-icon>close</mat-icon>
+      </span>
+    </div>
+    <div class="col-3 pointer text-right">
+      <span class="weight-500 text-danger pt-10 ntitle pointer" (click)="close()">
+        <mat-icon>minimize</mat-icon>
+      </span>
+    </div>
+  </div>
+  <div class="p-1 text-left">
+    <mat-divider></mat-divider>
+    <div class="min-height-300">
+      <div class="row">
+        <div class="col-md-12" *ngIf="startedConversation">
+          <app-chatbox [header]="false" [editorConfig]="editorConfig"></app-chatbox>
+        </div>
+        <div class="col-md-12 text-center" *ngIf="!startedConversation">
+
+<button class="btn btn-sm btn-primary mtb-40" (click)="startedConversation = true">
+  <i class="icon-copy bi bi-chat-square-quote-fill"></i> Start Chat
+</button>
+        </div>
+      </div>
+    </div>
+    <mat-divider></mat-divider>
+  </div>
+</div>
+
+<button class="welcome-modal-btn" (click)="shouldShow = !shouldShow"
+  [ngClass]="{'hide': shouldShow, 'active': !shouldShow}">
+  <i class="icon-copy bi bi-chat-dots-fill"></i> Chat
+</button>

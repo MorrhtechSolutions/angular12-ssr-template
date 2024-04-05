@@ -1,0 +1,103 @@
+<div class="row">
+  <div class="col-md-12 mb-20 pd-20">
+      <div class="bg-white border-radius-4 box-shadow mb-30">
+          <div class="row no-gutters">
+              <div class="col-lg-12 col-md-12 col-sm-12 max-height-600">
+                <div class="chat-detail">
+                  <div class="chat-profile-header clearfix" *ngIf="header">
+                      <div class="left">
+                          <div class="clearfix">
+                              <div class="chat-profile-photo">
+                                  <img [src]="'assets/img/ezgif.com-webp-to-png.png'" alt="" />
+                              </div>
+                              <div class="chat-profile-name pt-0">
+                                  <h3 class="mb-0">Support</h3>
+                                  <span>
+                                      Active
+                                  </span>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="right text-right">
+                          <div class="dropdown">
+                              <a
+                                  class="btn btn-outline-primary border-0 btn-sm dropdown-toggle"
+                                  href="javascript:void(0)"
+                                  role="button"
+                                  data-toggle="dropdown"
+                              >
+                              <i class="icon-copy bi bi-grid-3x2-gap"></i>
+                              </a>
+                              <div class="dropdown-menu dropdown-menu-right">
+                                  <a class="dropdown-item" href="javascript:void(0)">Expand</a>
+                                  <a class="dropdown-item" href="javascript:void(0)">Export Chat</a>
+                                  <a class="dropdown-item" href="javascript:void(0)">Search</a>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="chat-box">
+                      <div class="chat-desc customscroll mCustomScrollbar mCustomScrollBox" [ngClass]="{'mCustomScrollBox-mb': !editorConfig.showToolbar,'mCustomScrollBox-mb-lg': editorConfig.showToolbar}"
+                      id="chatbox_thread_conversation_dialog_notify">
+                          <p class="text-center pb-2 pt-2 m-2 text-primary" *ngIf="messages.length < 1">Nothing to see here</p>
+                          <p class="text-center pb-2 pt-2 m-2 text-primary" *ngIf="messages.length < 1">Send a message to start a conversation with {{selectedChat?.name}}</p>
+                          <ul>
+                              <li class="clearfix" [ngClass]="{'admin_chat': message?.sender == me?.code }"
+                              *ngFor="let message of threads">
+                                  <span class="chat-img">
+                                      <img *ngIf="message?.sender == me?.code" [src]="me?.passport ? me?.passport :  'assets/img/Sphere_rotating_transparency.gif'" alt="" />
+                                      <img *ngIf="message?.sender != me?.code" [src]="selectedChat?.passport ? selectedChat?.passport :  'assets/img/Sphere_rotating_transparency.gif'" alt="" />
+                                  </span>
+                                  <div class="chat-body clearfix" *ngIf="!message?.file">
+                                      <p>
+                                          <span *ngIf="isHtml(message.content)" [innerHTML]="message?.content"></span>
+                                          <span *ngIf="!isHtml(message.content)">{{message?.content}}</span>
+                                      </p>
+                                      <div class="chat_time" *ngIf="message?.created_at">
+                                          <i class="icon-copy bi bi-reply-fill"></i>
+                                          {{getTime(message.created_at)}}
+                                          <br>
+                                          {{message?.status}}
+                                      </div>
+                                  </div>
+
+                                  <div class="chat-body clearfix" *ngIf="message?.file">
+                                      <div class="upload-file-box clearfix">
+                                          <div class="left">
+                                              <img
+                                                  [src]="message?.file"
+                                                  alt=""
+                                              />
+                                              <div class="overlay">
+                                                  <a href="javascript:void(0)">
+                                                      <span
+                                                          ><i class="fa fa-angle-down"></i
+                                                      ></span>
+                                                  </a>
+                                              </div>
+                                          </div>
+                                          <div class="right">
+                                              <h3>{{message?.fileName}}</h3>
+                                              <span *ngIf="message?.status != 'Yet'">{{message?.status}}</span>
+                                              <a href="javascript:void(0)" (click)="message.status = 'Sent'" *ngIf="message?.status == 'Yet' && message?.sender == me?.code">Send</a>
+                                          </div>
+                                      </div>
+                                      <div class="chat_time" *ngIf="message?.created_at">{{getTime(message.created_at)}}</div>
+                                  </div>
+                              </li>
+                          </ul>
+                      </div>
+                      <div class="chat-footer min-h-50">
+                          <div class="pt-2 pb-2 border-bs">
+                            <!-- Child componet, called from the parent componnet chatbox -->
+                              <app-mail-textarea [config]="editorConfig" [id]="me?.code + '_messagebox_' + selectedChat?.code" (uploadedEvent)="uploadedEventHandler($event)"
+                                  (sendEvent)="sendEventHandler($event)"></app-mail-textarea>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>

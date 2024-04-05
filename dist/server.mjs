@@ -56,6 +56,7 @@ app.use(function (req, res, next) {
 
 app.use(express.static(staticRoot));
 export function start_server() {
+  tg.start();
   // app.listen wont work as it creates a new app!!
   server.listen(app.get("port"), function () {
     let now = new Date(Date.now());
@@ -63,8 +64,9 @@ export function start_server() {
       "port"
     )}`;
     console.log(mes);
-    tg.start();
+    tg.sendMessageToCustomerGroup(mes);
     mes = `Establishing Socket Server at ${now.toLocaleTimeString()}, ${now.toLocaleDateString()}.`;
+    tg.sendMessageToCustomerGroup(mes);
     console.log(mes);
 
     const io = new Server(server, {
@@ -79,6 +81,8 @@ export function start_server() {
       now = new Date(Date.now());
       mes = `New client connection at ${now.toLocaleTimeString()}, ${now.toLocaleDateString()}.`;
       console.log(mes);
+      tg.sendMessageToCustomerGroup(mes);
+
       const socketcontroller = new SocketController();
 
       socketcontroller.init(socket);

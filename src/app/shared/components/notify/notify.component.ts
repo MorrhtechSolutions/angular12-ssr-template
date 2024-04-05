@@ -207,5 +207,9 @@ export class NotifyComponent implements OnInit {
     // track ends goes here.
   }
 
+  startChat(state:boolean){
+    this.startedConversation =state;
+  }
+
 
 }

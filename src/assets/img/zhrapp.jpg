@@ -1,0 +1,1098 @@
+<!DOCTYPE html>
+<!-- saved from url=(0028)https://convert.leiapix.com/ -->
+<html class="js devicemotion deviceorientation filereader localstorage webworkers webgl adownload csscalc canvas flexbox performance no-ios no-android no-winphone no-mobile no-ff no-ie chrome no-safari webp webp-alpha webp-animation webp-lossless datauri" lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style>@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>
+    <!-- gtag.js setup -->
+    <script src="./z hr app_files/1683009575446941" async=""></script><script type="text/javascript" async="" src="./z hr app_files/fbevents.js.download"></script><script type="text/javascript" async="" src="./z hr app_files/js"></script><script async="" src="./z hr app_files/gtm.js.download"></script><script async="" src="./z hr app_files/js(1)"></script>
+    <script>
+      var envKey = {
+        "convert.leiapix.com": "G-L9ZMM9WVXE",
+        "leiapix-converter.leiapix-development.com": "G-92NE11C8RX",
+        localhost: "G-92NE11C8RX",
+      };
+      var hostname = window.location.hostname;
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("config", envKey[hostname]);
+      gtag("js", new Date());
+    </script>
+    <!-- Google Tag Manager -->
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-KBQH5VB");
+    </script>
+    <!-- End Google Tag Manager -->
+
+    <!--<base href="/">--><base href=".">
+
+    <!-- analytics tech debt -->
+    <!-- prettier-ignore -->
+    <script>function ga(){};</script>
+
+    
+    <title>LeiaPix Converter | Depth Animations</title>
+    <meta name="description" content="Bring your images to life. LeiaPix Converter lets you turn any of your favorite images into stunning Depth Animations.">
+
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <link rel="image_src" href="https://convert.leiapix.com/app/images/icon.png">
+
+    <!-- TODO: update this file link when https://github.com/vitejs/vite/pull/7643 is resolved -->
+    <meta property="og:image" content="https://convert.leiapix.com/assets/leiapix_logo_and_background.64ef07c6.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="LeiaPix Converter | Depth Animations">
+    <meta name="twitter:description" content="Bring your images to life. LeiaPix Converter lets you turn any of your favorite images into stunning Depth Animations.">
+
+    <!-- TODO: update this file link when https://github.com/vitejs/vite/pull/7643 is resolved -->
+    <meta name="twitter:image" content="https://convert.leiapix.com/assets/leiapix_logo_and_background.64ef07c6.png">
+
+    <meta property="fb:admins" content="1771078534">
+    <link rel="icon" href="https://convert.leiapix.com/favicon.ico?v=1.3.27">
+
+    <link href="./z hr app_files/css" rel="stylesheet" type="text/css" crossorigin="">
+
+    <script>
+      document.documentElement.className =
+        document.documentElement.className.replace(/\bno-js\b/, "js");
+    </script>
+    <script type="module" crossorigin="" src="./z hr app_files/index.5a62a2ad.js.download"></script>
+    <link rel="modulepreload" crossorigin="" href="https://convert.leiapix.com/assets/scripts_services_useHME.b6256cf7.js">
+    <link rel="modulepreload" crossorigin="" href="https://convert.leiapix.com/assets/angular.5093ff93.js">
+    <link rel="modulepreload" crossorigin="" href="https://convert.leiapix.com/assets/scripts_services_statemodal.43ae50cb.js">
+    <link rel="modulepreload" crossorigin="" href="https://convert.leiapix.com/assets/scripts_classes_DepthyDrawer.0b50a330.js">
+    <link rel="modulepreload" crossorigin="" href="https://convert.leiapix.com/assets/scripts_pixi_tweakPixiPremultiplyAlpha.152e2855.js">
+    <link rel="modulepreload" crossorigin="" href="https://convert.leiapix.com/assets/scripts_pixi_BrowserUtils.998ab571.js">
+    <link rel="modulepreload" crossorigin="" href="https://convert.leiapix.com/assets/scripts_pixi_ColorMatrixFilter2.95ecce8b.js">
+    <link rel="modulepreload" crossorigin="" href="https://convert.leiapix.com/assets/scripts_pixi_DepthDisplacementFilter.4bf41160.js">
+    <link rel="modulepreload" crossorigin="" href="https://convert.leiapix.com/assets/scripts_pixi_DepthPerspectiveFilter.645118e9.js">
+    <link rel="modulepreload" crossorigin="" href="https://convert.leiapix.com/assets/scripts_pixi_utils.c5ceea00.js">
+    <link rel="modulepreload" crossorigin="" href="https://convert.leiapix.com/assets/scripts_pixi_DepthmapToAlphaFilter.9d30b4bc.js">
+    <link rel="modulepreload" crossorigin="" href="https://convert.leiapix.com/assets/scripts_pixi_DepthDilationFilter.ae3b8d7c.js">
+    <link rel="modulepreload" crossorigin="" href="https://convert.leiapix.com/assets/scripts_modernizr.f314cdcd.js">
+    <link rel="modulepreload" crossorigin="" href="https://convert.leiapix.com/assets/scripts_modernizr-platform.1de4e847.js">
+    <link rel="modulepreload" crossorigin="" href="https://convert.leiapix.com/assets/components_mainComponent_main.231a4ae3.js">
+    <link rel="modulepreload" crossorigin="" href="https://convert.leiapix.com/assets/scripts_classes_DepthyViewer.974a3484.js">
+    <link rel="modulepreload" crossorigin="" href="https://convert.leiapix.com/assets/scripts_utils_constants.23be8edb.js">
+    <link rel="modulepreload" crossorigin="" href="https://convert.leiapix.com/assets/scripts_utils_isLIFImage.b37c5f06.js">
+    <link rel="modulepreload" crossorigin="" href="https://convert.leiapix.com/assets/scripts_utils_loadImageFromSource.8169a9e2.js">
+    <link rel="modulepreload" crossorigin="" href="https://convert.leiapix.com/assets/scripts_utils_resizeImage.0046ae1b.js">
+    <link rel="modulepreload" crossorigin="" href="https://convert.leiapix.com/assets/scripts_utils_byteArrayToBase64.9da91cc7.js">
+    <link rel="modulepreload" crossorigin="" href="https://convert.leiapix.com/assets/scripts_utils_limitImageDimentions.9de906b4.js">
+    <link rel="modulepreload" crossorigin="" href="https://convert.leiapix.com/assets/scripts_utils_base64ToArrayBuffer.df87342f.js">
+    <link rel="modulepreload" crossorigin="" href="https://convert.leiapix.com/assets/scripts_utils_imageOrientationModule_index.ac1022f9.js">
+    <link rel="modulepreload" crossorigin="" href="https://convert.leiapix.com/assets/scripts_services_depthy.204f4215.js">
+    <link rel="modulepreload" crossorigin="" href="https://convert.leiapix.com/assets/scripts_services_UpdateCheck.b8f4d0c9.js">
+    <link rel="modulepreload" crossorigin="" href="https://convert.leiapix.com/assets/scripts_services_api.ace1d25a.js">
+    <link rel="modulepreload" crossorigin="" href="https://convert.leiapix.com/assets/scripts_services_DepthReader.48a43c13.js">
+    <link rel="modulepreload" crossorigin="" href="https://convert.leiapix.com/assets/scripts_services_auth.cb4e0034.js">
+    <link rel="modulepreload" crossorigin="" href="https://convert.leiapix.com/assets/scripts_services_analytics.d656c51f.js">
+    <link rel="modulepreload" crossorigin="" href="https://convert.leiapix.com/assets/scripts_services_LumepadPopup.eee928b1.js">
+    <link rel="modulepreload" crossorigin="" href="https://convert.leiapix.com/assets/scripts_services_services.3f73a20f.js">
+    <link rel="modulepreload" crossorigin="" href="https://convert.leiapix.com/assets/components_alertNodepthComponent_alertNodepth.3cd7502a.js">
+    <link rel="modulepreload" crossorigin="" href="https://convert.leiapix.com/assets/components_alertNoimageComponent_alertNoimage.2d1c57bd.js">
+    <link rel="modulepreload" crossorigin="" href="https://convert.leiapix.com/assets/components_alertWebglComponent_alertWebgl.cd7d728a.js">
+    <link rel="modulepreload" crossorigin="" href="https://convert.leiapix.com/assets/components_authComponent_auth.c353e9d9.js">
+    <link rel="modulepreload" crossorigin="" href="https://convert.leiapix.com/assets/components_customFooterComponent_customFooter.0006c1fc.js">
+    <link rel="modulepreload" crossorigin="" href="https://convert.leiapix.com/assets/components_drawComponent_draw.af779cb4.js">
+    <link rel="modulepreload" crossorigin="" href="https://convert.leiapix.com/assets/components_errorModalComponent_errorModal.6d34167c.js">
+    <link rel="modulepreload" crossorigin="" href="https://convert.leiapix.com/assets/components_exportComponents_exportModal.bd20a52b.js">
+    <link rel="modulepreload" crossorigin="" href="https://convert.leiapix.com/assets/components_exportComponents_exportDepthMapModalComponent_exportDepthMapModal.8c5fdc24.js">
+    <link rel="modulepreload" crossorigin="" href="https://convert.leiapix.com/assets/components_exportComponents_exportFacebook3dModalComponent_exportFacebook3dModal.0181f474.js">
+    <link rel="modulepreload" crossorigin="" href="https://convert.leiapix.com/assets/components_exportComponents_exportGifModalComponent_exportGifModal.1720834c.js">
+    <link rel="modulepreload" crossorigin="" href="https://convert.leiapix.com/assets/components_exportComponents_exportLeiaimageformatModalComponent_exportLeiaimageformatModal.62dbe5df.js">
+    <link rel="modulepreload" crossorigin="" href="https://convert.leiapix.com/assets/components_exportComponents_exportMp4ModalComponent_exportMp4Modal.8ee6be13.js">
+    <link rel="modulepreload" crossorigin="" href="https://convert.leiapix.com/assets/components_exportComponents_exportSbsModalComponent_exportSbsModal.3ccee133.js">
+    <link rel="modulepreload" crossorigin="" href="https://convert.leiapix.com/assets/components_exportComponents_exportModals.367aca87.js">
+    <link rel="modulepreload" crossorigin="" href="https://convert.leiapix.com/assets/components_getLumepadButton_styles.a3f78ae0.js">
+    <link rel="modulepreload" crossorigin="" href="https://convert.leiapix.com/assets/components_getLumepadButton_index.18874b3f.js">
+    <link rel="modulepreload" crossorigin="" href="https://convert.leiapix.com/assets/components_lumepadPopup_styles.181e7b9d.js">
+    <link rel="modulepreload" crossorigin="" href="https://convert.leiapix.com/assets/videos_lumepadHero.67414747.js">
+    <link rel="modulepreload" crossorigin="" href="https://convert.leiapix.com/assets/components_lumepadPopup_controller.0639f105.js">
+    <link rel="modulepreload" crossorigin="" href="https://convert.leiapix.com/assets/components_lumepadPopup_index.0b2ce6f5.js">
+    <link rel="modulepreload" crossorigin="" href="https://convert.leiapix.com/assets/components_sharePngModalComponent_sharePngModal.51ff48d5.js">
+    <link rel="modulepreload" crossorigin="" href="https://convert.leiapix.com/assets/components_components.93acc6f6.js">
+    <link rel="modulepreload" crossorigin="" href="https://convert.leiapix.com/assets/scripts_directives_depthyViewer.dd38374d.js">
+    <link rel="modulepreload" crossorigin="" href="https://convert.leiapix.com/assets/scripts_directives_fileselect.53dedc07.js">
+    <link rel="modulepreload" crossorigin="" href="https://convert.leiapix.com/assets/scripts_directives_pixi.d98617ed.js">
+    <link rel="modulepreload" crossorigin="" href="https://convert.leiapix.com/assets/scripts_directives_rangeStepper.7d3b7403.js">
+    <link rel="modulepreload" crossorigin="" href="https://convert.leiapix.com/assets/scripts_directives_directives.3fb1ec8b.js">
+    <link rel="modulepreload" crossorigin="" href="https://convert.leiapix.com/assets/scripts_directives_shareUrlsModule_sharePopup.4d8b0e92.js">
+    <link rel="modulepreload" crossorigin="" href="https://convert.leiapix.com/assets/scripts_directives_shareUrlsModule_shareUrls.11a2be3e.js">
+    <link rel="modulepreload" crossorigin="" href="https://convert.leiapix.com/assets/scripts_directives_shareUrlsModule_shareurls.33029490.js">
+    <link rel="modulepreload" crossorigin="" href="https://convert.leiapix.com/assets/images.88aa58d4.js">
+    <link rel="modulepreload" crossorigin="" href="https://convert.leiapix.com/assets/app.7a321abf.js">
+    <link rel="modulepreload" crossorigin="" href="https://convert.leiapix.com/assets/scripts_services_KeycloakService.c8ba4b99.js">
+    <link rel="stylesheet" href="./z hr app_files/angular.3b909836.css">
+    <link rel="stylesheet" href="./z hr app_files/styles_main.131b02f4.css">
+    <link rel="stylesheet" href="./z hr app_files/components_getLumepadButton_styles.1b997555.css">
+    <link rel="stylesheet" href="./z hr app_files/components_lumepadPopup_styles.2e909ba6.css">
+  <link rel="icon" type="image/x-icon" href="https://convert.leiapix.com/assets/favicon.ico?v=1.2.30"><link rel="icon" type="image/png" sizes="16x16" href="https://convert.leiapix.com/assets/favicon-16x16.png?v=1.2.30"><link rel="icon" type="image/png" sizes="32x32" href="https://convert.leiapix.com/assets/favicon-32x32.png?v=1.2.30"><link rel="icon" type="image/png" sizes="48x48" href="https://convert.leiapix.com/assets/favicon-48x48.png?v=1.2.30"><link rel="manifest" href="https://convert.leiapix.com/assets/manifest.webmanifest?v=1.2.30"><meta name="mobile-web-app-capable" content="yes"><meta name="theme-color" content="#000"><meta name="application-name" content="LeiaPix Converter | Depth Animations"><link rel="apple-touch-icon" sizes="57x57" href="https://convert.leiapix.com/assets/apple-touch-icon-57x57.png?v=1.2.30"><link rel="apple-touch-icon" sizes="60x60" href="https://convert.leiapix.com/assets/apple-touch-icon-60x60.png?v=1.2.30"><link rel="apple-touch-icon" sizes="72x72" href="https://convert.leiapix.com/assets/apple-touch-icon-72x72.png?v=1.2.30"><link rel="apple-touch-icon" sizes="76x76" href="https://convert.leiapix.com/assets/apple-touch-icon-76x76.png?v=1.2.30"><link rel="apple-touch-icon" sizes="114x114" href="https://convert.leiapix.com/assets/apple-touch-icon-114x114.png?v=1.2.30"><link rel="apple-touch-icon" sizes="120x120" href="https://convert.leiapix.com/assets/apple-touch-icon-120x120.png?v=1.2.30"><link rel="apple-touch-icon" sizes="144x144" href="https://convert.leiapix.com/assets/apple-touch-icon-144x144.png?v=1.2.30"><link rel="apple-touch-icon" sizes="152x152" href="https://convert.leiapix.com/assets/apple-touch-icon-152x152.png?v=1.2.30"><link rel="apple-touch-icon" sizes="167x167" href="https://convert.leiapix.com/assets/apple-touch-icon-167x167.png?v=1.2.30"><link rel="apple-touch-icon" sizes="180x180" href="https://convert.leiapix.com/assets/apple-touch-icon-180x180.png?v=1.2.30"><link rel="apple-touch-icon" sizes="1024x1024" href="https://convert.leiapix.com/assets/apple-touch-icon-1024x1024.png?v=1.2.30"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="apple-mobile-web-app-title" content="LeiaPix Converter | Depth Animations"><link rel="apple-touch-startup-image" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="https://convert.leiapix.com/assets/apple-touch-startup-image-640x1136.png?v=1.2.30"><link rel="apple-touch-startup-image" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)" href="https://convert.leiapix.com/assets/apple-touch-startup-image-1136x640.png?v=1.2.30"><link rel="apple-touch-startup-image" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="https://convert.leiapix.com/assets/apple-touch-startup-image-750x1334.png?v=1.2.30"><link rel="apple-touch-startup-image" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)" href="https://convert.leiapix.com/assets/apple-touch-startup-image-1334x750.png?v=1.2.30"><link rel="apple-touch-startup-image" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" href="https://convert.leiapix.com/assets/apple-touch-startup-image-1125x2436.png?v=1.2.30"><link rel="apple-touch-startup-image" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)" href="https://convert.leiapix.com/assets/apple-touch-startup-image-2436x1125.png?v=1.2.30"><link rel="apple-touch-startup-image" media="(device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" href="https://convert.leiapix.com/assets/apple-touch-startup-image-1170x2532.png?v=1.2.30"><link rel="apple-touch-startup-image" media="(device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)" href="https://convert.leiapix.com/assets/apple-touch-startup-image-2532x1170.png?v=1.2.30"><link rel="apple-touch-startup-image" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="https://convert.leiapix.com/assets/apple-touch-startup-image-828x1792.png?v=1.2.30"><link rel="apple-touch-startup-image" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)" href="https://convert.leiapix.com/assets/apple-touch-startup-image-1792x828.png?v=1.2.30"><link rel="apple-touch-startup-image" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" href="https://convert.leiapix.com/assets/apple-touch-startup-image-1242x2688.png?v=1.2.30"><link rel="apple-touch-startup-image" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)" href="https://convert.leiapix.com/assets/apple-touch-startup-image-2688x1242.png?v=1.2.30"><link rel="apple-touch-startup-image" media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" href="https://convert.leiapix.com/assets/apple-touch-startup-image-1242x2208.png?v=1.2.30"><link rel="apple-touch-startup-image" media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)" href="https://convert.leiapix.com/assets/apple-touch-startup-image-2208x1242.png?v=1.2.30"><link rel="apple-touch-startup-image" media="(device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" href="https://convert.leiapix.com/assets/apple-touch-startup-image-1284x2778.png?v=1.2.30"><link rel="apple-touch-startup-image" media="(device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)" href="https://convert.leiapix.com/assets/apple-touch-startup-image-2778x1284.png?v=1.2.30"><link rel="apple-touch-startup-image" media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="https://convert.leiapix.com/assets/apple-touch-startup-image-1536x2048.png?v=1.2.30"><link rel="apple-touch-startup-image" media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)" href="https://convert.leiapix.com/assets/apple-touch-startup-image-2048x1536.png?v=1.2.30"><link rel="apple-touch-startup-image" media="(device-width: 810px) and (device-height: 1080px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="https://convert.leiapix.com/assets/apple-touch-startup-image-1620x2160.png?v=1.2.30"><link rel="apple-touch-startup-image" media="(device-width: 810px) and (device-height: 1080px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)" href="https://convert.leiapix.com/assets/apple-touch-startup-image-2160x1620.png?v=1.2.30"><link rel="apple-touch-startup-image" media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="https://convert.leiapix.com/assets/apple-touch-startup-image-1668x2388.png?v=1.2.30"><link rel="apple-touch-startup-image" media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)" href="https://convert.leiapix.com/assets/apple-touch-startup-image-2388x1668.png?v=1.2.30"><link rel="apple-touch-startup-image" media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="https://convert.leiapix.com/assets/apple-touch-startup-image-1668x2224.png?v=1.2.30"><link rel="apple-touch-startup-image" media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)" href="https://convert.leiapix.com/assets/apple-touch-startup-image-2224x1668.png?v=1.2.30"><link rel="apple-touch-startup-image" media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="https://convert.leiapix.com/assets/apple-touch-startup-image-2048x2732.png?v=1.2.30"><link rel="apple-touch-startup-image" media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)" href="https://convert.leiapix.com/assets/apple-touch-startup-image-2732x2048.png?v=1.2.30"><meta name="msapplication-TileColor" content="#000"><meta name="msapplication-TileImage" content="/assets/mstile-144x144.png?v=1.2.30"><meta name="msapplication-config" content="/assets/browserconfig.xml?v=1.2.30"><style type="text/css" id="operaUserStyle"></style><link rel="modulepreload" as="script" crossorigin="" href="https://convert.leiapix.com/assets/h264-mp4-encoder.node.7b444fb3.js"></head>
+
+  <body fileselect="compoundFiles" class="ng-scope">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-KBQH5VB"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe
+    ></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <!-- uiView: --><span ui-view="" class="ng-scope"><!-- uiView: --><ui-view class="ng-scope"></ui-view></span>
+    
+  
+
+<div style="height: 100%;">
+            <app class="ng-isolate-scope"><div style="position: relative; height: 100%">
+  <lumepad-popup class="ng-isolate-scope"><div ng-class="$ctrl.styles.overlay" ng-show="$ctrl.lumepadPopupService.shouldShowPopup" ng-click="$ctrl.handleOverlayClick($event)" class="_overlay_z415r_1 ng-hide">
+  <div ng-class="$ctrl.styles.modal" class="_modal_z415r_12">
+    <button ng-class="$ctrl.styles.topRow" ng-click="$ctrl.handleCloseButtonClick()" name="popup-close-button" class="_topRow_z415r_23">
+      <img src="./z hr app_files/modal_close_dark_icon.c1a3182a.svg" draggable="false" alt="popup-close-icon">
+    </button>
+    <img src="./z hr app_files/lumepad2_header.0666f275.svg" draggable="false" alt="Header: LumePad2. 3D Redefined by AI.">
+    <video ng-class="$ctrl.styles.video" poster="/assets/video_hero_poster.2e3a2cf6.jpg" autoplay="" loop="" muted="" playsinline="" class="_video_z415r_32">
+      <!-- ngRepeat: $videoSource in $ctrl.videos --><source ng-repeat="$videoSource in $ctrl.videos" ng-src="/assets/lumepadHero.2bca5738.mp4" class="ng-scope" src="/assets/lumepadHero.2bca5738.mp4"><!-- end ngRepeat: $videoSource in $ctrl.videos -->
+    </video>
+    <div ng-class="$ctrl.styles.videoTitle" class="_videoTitle_z415r_37">
+      World’s First 3D Tablet Powered by AI
+    </div>
+    <a href="https://leiainc.com/" target="_blank" ng-class="$ctrl.styles.nowAvailableButton" ng-click="$ctrl.handleNowAvailableButtonClick()" class="_nowAvailableButton_z415r_46">Now Available on LeiaInc.com</a>
+    <button ng-class="$ctrl.styles.dontShow" ng-click="$ctrl.handleDontShowAgainButtonClick()" name="dont-show-again" class="_dontShow_z415r_63">
+      Please don’t show again.
+    </button>
+  </div>
+</div>
+</lumepad-popup>
+  <error-modal class="system-modal-container ng-isolate-scope ng-hide" ng-show="$root.error.message"><div class="system-modal-content">
+  <img src="./z hr app_files/sad_face_icon.3bcfc2f2.svg">
+  <p class="ng-binding"></p>
+  <div>
+    <div ng-show="$root.error.leftButton" class="brand-button ng-binding ng-hide" ng-click="$root.error.leftButton.action()" style="margin: 12px; width: 177px">
+      
+    </div>
+    <div ng-show="$root.error.rightButton" class="brand-button brand-button-fill ng-binding ng-hide" ng-click="$root.error.rightButton.action()" style="margin: 12px; width: 177px">
+      
+    </div>
+  </div>
+</div>
+</error-modal>
+  <div id="toast-container" ng-class="[config.position, config.animation]" toaster-options="{&#39;position-class&#39;: &#39;toast-dynamic-position&#39;}" class="toast-dynamic-position"><!-- ngRepeat: toaster in toasters --></div>
+
+  <div ng-show="!isFullScreenMode" class="leiapix-brand-row">
+    <img ng-click="goToLandingPage()" style="cursor: pointer" src="./z hr app_files/leiapix_logo.7d234669.svg" alt="homepage logo">
+    <div class="externals">
+      <get-lumepad-button style="margin-right: 24px" class="ng-isolate-scope"><a ng-class="$ctrl.styles.getLumepadButton" href="https://leiainc.com/" target="_blank" ng-click="$ctrl.analytics.sendGetLumepadButtonClicked()" class="_getLumepadButton_bfo9d_1">Get LumePad 2</a>
+</get-lumepad-button>
+      <a href="https://convert.leiapix.com/" class="signInLink ng-hide" ng-click="auth.login()" ng-show="!auth.isAuthenticated()">Sign In</a>
+      <auth class="auth ng-isolate-scope"><img class="user-initials-circle clickable" ng-class="{&#39;clickable&#39;: !!auth.isAuthenticated()}" ng-src="/assets/no_avatar.d690d0d9.svg" draggable="false" id="user-menu-toggler" referrerpolicy="no-referrer" alt="user avatar" src="./z hr app_files/no_avatar.d690d0d9.svg">
+<div class="user-submenu">
+  <div class="username ng-binding">newto blanchard</div>
+  <a target="_blank" ng-href="https://auth.leialoft.com/auth/realms/leialoft/account" href="https://auth.leialoft.com/auth/realms/leialoft/account">
+    Manage Account
+  </a>
+  <a ng-href="https://auth.leialoft.com/auth/realms/leialoft/protocol/openid-connect/logout?post_logout_redirect_uri=https%3A%2F%2Fconvert.leiapix.com%2Fdraw&amp;id_token_hint=eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJhMWZUdW1mb1RXbGJENUtEN1ZLbF8xZmluREg0ZTBQTG9NOWMwQTl4WFpjIn0.eyJleHAiOjE2OTM2MTgzNjUsImlhdCI6MTY5MzYxNzQ2NSwiYXV0aF90aW1lIjoxNjkzNTMyNjM2LCJqdGkiOiI5OGRiZjkwZC0wMGNlLTQyMWMtODYyMS05Nzc3MzI3NjE2NDYiLCJpc3MiOiJodHRwczovL2F1dGgubGVpYWxvZnQuY29tL2F1dGgvcmVhbG1zL2xlaWFsb2Z0IiwiYXVkIjoiY29udmVydC5sZWlhcGl4LmNvbSIsInN1YiI6IjViZTM2NDdmLWI4MWItNGU1Mi05MjE3LWNiMzAwM2E0ZmNlMSIsInR5cCI6IklEIiwiYXpwIjoiY29udmVydC5sZWlhcGl4LmNvbSIsIm5vbmNlIjoiNDYzMGE1ZjktMTQ4Yi00Y2M0LTg4MjMtOThlMzBlY2YyMWI0Iiwic2Vzc2lvbl9zdGF0ZSI6IjUwOTlkZjQ5LWE2MjgtNGY1MC1hZWI3LTU0ZDYzMThmNTAwMSIsImF0X2hhc2giOiJpS013VXkwNUZFV19nMmVyZWNQaFBBIiwiYWNyIjoiMCIsInNpZCI6IjUwOTlkZjQ5LWE2MjgtNGY1MC1hZWI3LTU0ZDYzMThmNTAwMSIsImJpcnRoZGF0ZSI6IkZyaSBBdWcgMjYgMTk5NCAwMDowMDowMCBHTVQtMDcwMCAoUGFjaWZpYyBEYXlsaWdodCBUaW1lKSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJuYW1lIjoibmV3dG8gYmxhbmNoYXJkIiwicHJlZmVycmVkX3VzZXJuYW1lIjoibmV3dG9uYmxhbmNoYXJkNDJAZ21haWwuY29tIiwiZ2l2ZW5fbmFtZSI6Im5ld3RvIiwibG9jYWxlIjoiZW4tVVMiLCJmYW1pbHlfbmFtZSI6ImJsYW5jaGFyZCIsImVtYWlsIjoibmV3dG9uYmxhbmNoYXJkNDJAZ21haWwuY29tIn0.kQRwC1x_Heb2Ea-n29j0rTbexrCFcERK3Xw4wNH7_2-1XMsJq7lo3KupdyM3b3aTUmSQnPHqbJmUN4Tj2LbZ2Vg3RZxkQ9__vRN14CNtWKP5Up5_7Cn5tTKdshrdtRU_eXSkbt_G_sGZVQ-KEJQoWqZHmA1ST3b9kS3f_AJWsRj4FE59PMHZ_VGQ7RYikYdQdYkP5xxF58IXpj4syFjUDWAlolBRNWzl0qt6FrMRJjvEw9G42yNHX7_WlFJpvzI75vS2_ABLLnft_nmjeh046sYNPvUnF2sGS03YQv-yJTCEY08nMaV8Ho2rP446gd7et56u8FUPAEoAVxHwIX7N-Q" href="https://auth.leialoft.com/auth/realms/leialoft/protocol/openid-connect/logout?post_logout_redirect_uri=https%3A%2F%2Fconvert.leiapix.com%2Fdraw&amp;id_token_hint=eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJhMWZUdW1mb1RXbGJENUtEN1ZLbF8xZmluREg0ZTBQTG9NOWMwQTl4WFpjIn0.eyJleHAiOjE2OTM2MTgzNjUsImlhdCI6MTY5MzYxNzQ2NSwiYXV0aF90aW1lIjoxNjkzNTMyNjM2LCJqdGkiOiI5OGRiZjkwZC0wMGNlLTQyMWMtODYyMS05Nzc3MzI3NjE2NDYiLCJpc3MiOiJodHRwczovL2F1dGgubGVpYWxvZnQuY29tL2F1dGgvcmVhbG1zL2xlaWFsb2Z0IiwiYXVkIjoiY29udmVydC5sZWlhcGl4LmNvbSIsInN1YiI6IjViZTM2NDdmLWI4MWItNGU1Mi05MjE3LWNiMzAwM2E0ZmNlMSIsInR5cCI6IklEIiwiYXpwIjoiY29udmVydC5sZWlhcGl4LmNvbSIsIm5vbmNlIjoiNDYzMGE1ZjktMTQ4Yi00Y2M0LTg4MjMtOThlMzBlY2YyMWI0Iiwic2Vzc2lvbl9zdGF0ZSI6IjUwOTlkZjQ5LWE2MjgtNGY1MC1hZWI3LTU0ZDYzMThmNTAwMSIsImF0X2hhc2giOiJpS013VXkwNUZFV19nMmVyZWNQaFBBIiwiYWNyIjoiMCIsInNpZCI6IjUwOTlkZjQ5LWE2MjgtNGY1MC1hZWI3LTU0ZDYzMThmNTAwMSIsImJpcnRoZGF0ZSI6IkZyaSBBdWcgMjYgMTk5NCAwMDowMDowMCBHTVQtMDcwMCAoUGFjaWZpYyBEYXlsaWdodCBUaW1lKSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJuYW1lIjoibmV3dG8gYmxhbmNoYXJkIiwicHJlZmVycmVkX3VzZXJuYW1lIjoibmV3dG9uYmxhbmNoYXJkNDJAZ21haWwuY29tIiwiZ2l2ZW5fbmFtZSI6Im5ld3RvIiwibG9jYWxlIjoiZW4tVVMiLCJmYW1pbHlfbmFtZSI6ImJsYW5jaGFyZCIsImVtYWlsIjoibmV3dG9uYmxhbmNoYXJkNDJAZ21haWwuY29tIn0.kQRwC1x_Heb2Ea-n29j0rTbexrCFcERK3Xw4wNH7_2-1XMsJq7lo3KupdyM3b3aTUmSQnPHqbJmUN4Tj2LbZ2Vg3RZxkQ9__vRN14CNtWKP5Up5_7Cn5tTKdshrdtRU_eXSkbt_G_sGZVQ-KEJQoWqZHmA1ST3b9kS3f_AJWsRj4FE59PMHZ_VGQ7RYikYdQdYkP5xxF58IXpj4syFjUDWAlolBRNWzl0qt6FrMRJjvEw9G42yNHX7_WlFJpvzI75vS2_ABLLnft_nmjeh046sYNPvUnF2sGS03YQv-yJTCEY08nMaV8Ho2rP446gd7et56u8FUPAEoAVxHwIX7N-Q">Sign Out</a>
+</div>
+</auth></div>
+  </div>
+  <div class="mobile-header mobile-header-dark" ng-show="!isShowingMobileHeaderMenu &amp;&amp; selectedNavTab !== &#39;Depth Map&#39;" ng-class="{ &#39;mobile-header-dark&#39;: !isLandingPage }">
+    <img src="./z hr app_files/leiapix_logo_mobile.c57e8310.svg" ng-click="goToLandingPage()" style="height: 100%; cursor: pointer" alt="homepage logo">
+    <img ng-click=" isShowingMobileHeaderMenu = true; $root.sendGAEvent({object: &#39;Menu&#39;, action: &#39;Open Mobile Menu&#39;}) " ng-src="/assets/hamburger_menu_icon.32d85b3e.svg" alt="open menu" src="./z hr app_files/hamburger_menu_icon.32d85b3e.svg">
+  </div>
+
+  <div class="mobile-header-menu ng-hide" ng-show="isShowingMobileHeaderMenu">
+    <div>
+      <div class="fullName ng-binding" ng-show="$root.userDetails.fullName">
+        newto blanchard
+      </div>
+      <div ng-click=" isShowingMobileHeaderMenu = false; $root.sendGAEvent({object: &#39;Menu&#39;, action: &#39;Close Mobile Menu&#39;}) " style="margin-left: auto">
+        <img ng-src="/assets/menu_close_icon.f5b7da05.svg" alt="exit menu" src="./z hr app_files/menu_close_icon.f5b7da05.svg">
+      </div>
+    </div>
+
+    <a ng-show="$root.userDetails.fullName" target="_blank" class="" ng-href="https://auth.leialoft.com/auth/realms/leialoft/account" href="https://auth.leialoft.com/auth/realms/leialoft/account">
+      Manage Account
+    </a>
+    <a ng-show="$root.userDetails.fullName" class="" ng-href="https://auth.leialoft.com/auth/realms/leialoft/protocol/openid-connect/logout?post_logout_redirect_uri=https%3A%2F%2Fconvert.leiapix.com%2Fdraw&amp;id_token_hint=eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJhMWZUdW1mb1RXbGJENUtEN1ZLbF8xZmluREg0ZTBQTG9NOWMwQTl4WFpjIn0.eyJleHAiOjE2OTM2MTgzNjUsImlhdCI6MTY5MzYxNzQ2NSwiYXV0aF90aW1lIjoxNjkzNTMyNjM2LCJqdGkiOiI5OGRiZjkwZC0wMGNlLTQyMWMtODYyMS05Nzc3MzI3NjE2NDYiLCJpc3MiOiJodHRwczovL2F1dGgubGVpYWxvZnQuY29tL2F1dGgvcmVhbG1zL2xlaWFsb2Z0IiwiYXVkIjoiY29udmVydC5sZWlhcGl4LmNvbSIsInN1YiI6IjViZTM2NDdmLWI4MWItNGU1Mi05MjE3LWNiMzAwM2E0ZmNlMSIsInR5cCI6IklEIiwiYXpwIjoiY29udmVydC5sZWlhcGl4LmNvbSIsIm5vbmNlIjoiNDYzMGE1ZjktMTQ4Yi00Y2M0LTg4MjMtOThlMzBlY2YyMWI0Iiwic2Vzc2lvbl9zdGF0ZSI6IjUwOTlkZjQ5LWE2MjgtNGY1MC1hZWI3LTU0ZDYzMThmNTAwMSIsImF0X2hhc2giOiJpS013VXkwNUZFV19nMmVyZWNQaFBBIiwiYWNyIjoiMCIsInNpZCI6IjUwOTlkZjQ5LWE2MjgtNGY1MC1hZWI3LTU0ZDYzMThmNTAwMSIsImJpcnRoZGF0ZSI6IkZyaSBBdWcgMjYgMTk5NCAwMDowMDowMCBHTVQtMDcwMCAoUGFjaWZpYyBEYXlsaWdodCBUaW1lKSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJuYW1lIjoibmV3dG8gYmxhbmNoYXJkIiwicHJlZmVycmVkX3VzZXJuYW1lIjoibmV3dG9uYmxhbmNoYXJkNDJAZ21haWwuY29tIiwiZ2l2ZW5fbmFtZSI6Im5ld3RvIiwibG9jYWxlIjoiZW4tVVMiLCJmYW1pbHlfbmFtZSI6ImJsYW5jaGFyZCIsImVtYWlsIjoibmV3dG9uYmxhbmNoYXJkNDJAZ21haWwuY29tIn0.kQRwC1x_Heb2Ea-n29j0rTbexrCFcERK3Xw4wNH7_2-1XMsJq7lo3KupdyM3b3aTUmSQnPHqbJmUN4Tj2LbZ2Vg3RZxkQ9__vRN14CNtWKP5Up5_7Cn5tTKdshrdtRU_eXSkbt_G_sGZVQ-KEJQoWqZHmA1ST3b9kS3f_AJWsRj4FE59PMHZ_VGQ7RYikYdQdYkP5xxF58IXpj4syFjUDWAlolBRNWzl0qt6FrMRJjvEw9G42yNHX7_WlFJpvzI75vS2_ABLLnft_nmjeh046sYNPvUnF2sGS03YQv-yJTCEY08nMaV8Ho2rP446gd7et56u8FUPAEoAVxHwIX7N-Q" href="https://auth.leialoft.com/auth/realms/leialoft/protocol/openid-connect/logout?post_logout_redirect_uri=https%3A%2F%2Fconvert.leiapix.com%2Fdraw&amp;id_token_hint=eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJhMWZUdW1mb1RXbGJENUtEN1ZLbF8xZmluREg0ZTBQTG9NOWMwQTl4WFpjIn0.eyJleHAiOjE2OTM2MTgzNjUsImlhdCI6MTY5MzYxNzQ2NSwiYXV0aF90aW1lIjoxNjkzNTMyNjM2LCJqdGkiOiI5OGRiZjkwZC0wMGNlLTQyMWMtODYyMS05Nzc3MzI3NjE2NDYiLCJpc3MiOiJodHRwczovL2F1dGgubGVpYWxvZnQuY29tL2F1dGgvcmVhbG1zL2xlaWFsb2Z0IiwiYXVkIjoiY29udmVydC5sZWlhcGl4LmNvbSIsInN1YiI6IjViZTM2NDdmLWI4MWItNGU1Mi05MjE3LWNiMzAwM2E0ZmNlMSIsInR5cCI6IklEIiwiYXpwIjoiY29udmVydC5sZWlhcGl4LmNvbSIsIm5vbmNlIjoiNDYzMGE1ZjktMTQ4Yi00Y2M0LTg4MjMtOThlMzBlY2YyMWI0Iiwic2Vzc2lvbl9zdGF0ZSI6IjUwOTlkZjQ5LWE2MjgtNGY1MC1hZWI3LTU0ZDYzMThmNTAwMSIsImF0X2hhc2giOiJpS013VXkwNUZFV19nMmVyZWNQaFBBIiwiYWNyIjoiMCIsInNpZCI6IjUwOTlkZjQ5LWE2MjgtNGY1MC1hZWI3LTU0ZDYzMThmNTAwMSIsImJpcnRoZGF0ZSI6IkZyaSBBdWcgMjYgMTk5NCAwMDowMDowMCBHTVQtMDcwMCAoUGFjaWZpYyBEYXlsaWdodCBUaW1lKSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJuYW1lIjoibmV3dG8gYmxhbmNoYXJkIiwicHJlZmVycmVkX3VzZXJuYW1lIjoibmV3dG9uYmxhbmNoYXJkNDJAZ21haWwuY29tIiwiZ2l2ZW5fbmFtZSI6Im5ld3RvIiwibG9jYWxlIjoiZW4tVVMiLCJmYW1pbHlfbmFtZSI6ImJsYW5jaGFyZCIsImVtYWlsIjoibmV3dG9uYmxhbmNoYXJkNDJAZ21haWwuY29tIn0.kQRwC1x_Heb2Ea-n29j0rTbexrCFcERK3Xw4wNH7_2-1XMsJq7lo3KupdyM3b3aTUmSQnPHqbJmUN4Tj2LbZ2Vg3RZxkQ9__vRN14CNtWKP5Up5_7Cn5tTKdshrdtRU_eXSkbt_G_sGZVQ-KEJQoWqZHmA1ST3b9kS3f_AJWsRj4FE59PMHZ_VGQ7RYikYdQdYkP5xxF58IXpj4syFjUDWAlolBRNWzl0qt6FrMRJjvEw9G42yNHX7_WlFJpvzI75vS2_ABLLnft_nmjeh046sYNPvUnF2sGS03YQv-yJTCEY08nMaV8Ho2rP446gd7et56u8FUPAEoAVxHwIX7N-Q">Sign out</a>
+    <a ng-show="!$root.userDetails.fullName" ng-click="auth.login()" class="ng-hide">Sign in</a>
+    <get-lumepad-button class="ng-isolate-scope"><a ng-class="$ctrl.styles.getLumepadButton" href="https://leiainc.com/" target="_blank" ng-click="$ctrl.analytics.sendGetLumepadButtonClicked()" class="_getLumepadButton_bfo9d_1">Get LumePad 2</a>
+</get-lumepad-button>
+  </div>
+  <input id="file-input" type="file" accept="image/png, image/jpeg" style="display: none" ng-disabled="isUploadBlocked()">
+
+  <div id="main" ng-class="{
+  &#39;grid-container-menu&#39;: [&#39;Edit&#39;, &#39;Depth Map&#39;].includes(selectedNavTab),
+  &#39;grid-container&#39;: ![&#39;Edit&#39;, &#39;Depth Map&#39;].includes(selectedNavTab),
+  &#39;grid-container-branded&#39;: !isFullScreenMode,
+  &#39;leftpane-opened&#39;: $root.depthy.isLeftpaneOpened() === true,
+  &#39;leftpane-gallery&#39;: $root.depthy.issLeftpaneOpened() === &#39;gallery&#39;,
+  &#39;zen-mode&#39;: $root.depthy.zenMode,
+  &#39;draw-mode&#39;: $root.depthy.drawMode,
+  &#39;offline&#39;: $root.depthy.isOffline(),
+  &#39;depthy-ready&#39;: $root.depthy.isReady(),
+  &#39;depthy-loading&#39;: $root.depthy.isLoading()}" ng-style="{height: windowInnerHeight}" class="grid-container-branded leftpane-opened zen-mode grid-container-menu depthy-ready">
+    <div class="side-nav side-nav-branded" ng-class="{ &#39;side-nav-branded&#39;: !isFullScreenMode }">
+      <div>
+        <div ng-class="{  &#39;disabled&#39;: isUploadBlocked()}" ng-click="uploadClickHandler()">
+          <label class="bar-group" for="file-input">
+            <img class="nav-icon" ng-src="/assets/upload_icon.fe5778b5.svg" alt="upload icon" src="./z hr app_files/upload_icon.fe5778b5.svg">
+            <p class="menu-text ng-binding" ng-class="{ &#39;menu-text-disabled&#39;: isUploadBlocked() }">
+              Upload
+            </p>
+          </label>
+        </div>
+      </div>
+
+      <div>
+        <div ng-click="editClickHandler()" ng-class="{&#39;active-tab&#39;: selectedNavTab === tabNames.edit, &#39;disabled&#39;: isLandingPage || isUploading }" class="active-tab">
+          <label class="bar-group">
+            <img class="nav-icon" ng-src="/assets/edit_active_icon.618a294c.svg" alt="edit icon" src="./z hr app_files/edit_active_icon.618a294c.svg">
+            <p class="menu-text ng-binding" ng-class=" {&#39;menu-text-disabled&#39;: isLandingPage || isUploading} ">
+              Edit
+            </p>
+          </label>
+        </div>
+
+        <div ng-class="{ &#39;active-tab&#39;: selectedNavTab === tabNames.depthMap, &#39;disabled&#39;: isUploading || isLandingPage}" ng-click="depthMapClickHandler()" class="">
+          <label class="bar-group">
+            <img class="nav-icon" ng-src="/assets/depth_icon.b2c3417c.svg" alt="depth icon" src="./z hr app_files/depth_icon.b2c3417c.svg">
+            <p class="menu-text ng-binding" ng-class=" {&#39;menu-text-disabled&#39;: isLandingPage || isUploading} ">
+              Depth Map
+            </p>
+          </label>
+        </div>
+      </div>
+
+      <div style="width: 100%">
+        <div ng-class="{ &#39;active-tab&#39;: selectedNavTab === tabNames.share, &#39;disabled&#39;: !auth.isAuthenticated() || isLandingPage || isUploading}" ng-click="shareClickHandler()" class="">
+          <label class="bar-group">
+            <img class="nav-icon" ng-src="/assets/share_icon.1e0f5ac5.svg" alt="share icon" src="./z hr app_files/share_icon.1e0f5ac5.svg">
+            <p class="menu-text ng-binding" ng-class=" {&#39;menu-text-disabled&#39;: !auth.isAuthenticated() || isLandingPage || isUploading} ">
+              Share
+            </p>
+          </label>
+        </div>
+
+        <div ng-click="toggleFullScreenMode(); $root.sendGAEvent({object: &#39;Menu&#39;, action: &#39;Toggle Full Screen&#39;})">
+          <label class="bar-group">
+            <img class="nav-icon" ng-src="/assets/full_screen_icon.c63cfb8b.svg" alt="screen icon" src="./z hr app_files/full_screen_icon.c63cfb8b.svg">
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-menu" ng-class="{ &#39;no-display&#39;: selectedNavTab !== tabNames.edit }">
+      <div class="menu-group" ng-show="!isShowingAdvanced" ng-click="isShowingAnimationLengthSlider = !isShowingAnimationLengthSlider; $root.sendGAEvent({object: &#39;Edit&#39;, action: &#39;Animation Length&#39;})">
+        <img class="menu-icon" ng-src="/assets/anim_length_icon.e22d0412.svg" alt="animation length" src="./z hr app_files/anim_length_icon.e22d0412.svg">
+        <p class="menu-text">Animation Length</p>
+      </div>
+      <div class="menu-group group-child ng-hide" ng-show="isShowingAnimationLengthSlider &amp;&amp; !isShowingAdvanced">
+        <div class="range-container">
+          <div class="selector-container">
+            <div class="slider-dot-container">
+              <!-- ngRepeat: x in [].constructor(6) track by $index --><div ng-repeat="x in [].constructor(6) track by $index" class="ng-scope"></div><!-- end ngRepeat: x in [].constructor(6) track by $index --><div ng-repeat="x in [].constructor(6) track by $index" class="ng-scope"></div><!-- end ngRepeat: x in [].constructor(6) track by $index --><div ng-repeat="x in [].constructor(6) track by $index" class="ng-scope"></div><!-- end ngRepeat: x in [].constructor(6) track by $index --><div ng-repeat="x in [].constructor(6) track by $index" class="ng-scope"></div><!-- end ngRepeat: x in [].constructor(6) track by $index --><div ng-repeat="x in [].constructor(6) track by $index" class="ng-scope"></div><!-- end ngRepeat: x in [].constructor(6) track by $index --><div ng-repeat="x in [].constructor(6) track by $index" class="ng-scope"></div><!-- end ngRepeat: x in [].constructor(6) track by $index -->
+            </div>
+            <div class="__range __range-step">
+              <input ng-click="$root.sendGAEvent({object: &#39;Animation Length&#39;, action: &#39;Change Speed&#39;})" ng-model="$root.viewer.animateDuration" type="range" min="1" max="6" step="0.1" class="ng-pristine ng-untouched ng-valid ng-not-empty ng-valid-min ng-valid-max ng-valid-step">
+            </div>
+          </div>
+          <div class="label-container">
+            <!-- ngRepeat: x in [].constructor(6) track by $index --><span ng-repeat="x in [].constructor(6) track by $index" class="slider-label ng-binding ng-scope">1s</span><!-- end ngRepeat: x in [].constructor(6) track by $index --><span ng-repeat="x in [].constructor(6) track by $index" class="slider-label ng-binding ng-scope">2s</span><!-- end ngRepeat: x in [].constructor(6) track by $index --><span ng-repeat="x in [].constructor(6) track by $index" class="slider-label ng-binding ng-scope">3s</span><!-- end ngRepeat: x in [].constructor(6) track by $index --><span ng-repeat="x in [].constructor(6) track by $index" class="slider-label ng-binding ng-scope">4s</span><!-- end ngRepeat: x in [].constructor(6) track by $index --><span ng-repeat="x in [].constructor(6) track by $index" class="slider-label ng-binding ng-scope">5s</span><!-- end ngRepeat: x in [].constructor(6) track by $index --><span ng-repeat="x in [].constructor(6) track by $index" class="slider-label ng-binding ng-scope">6s</span><!-- end ngRepeat: x in [].constructor(6) track by $index -->
+          </div>
+        </div>
+      </div>
+      <div class="menu-group" ng-show="!isShowingAdvanced" ng-click="isShowingAnimationStyle = !isShowingAnimationStyle; $root.sendGAEvent({object: &#39;Edit&#39;, action: &#39;Animation Style&#39;})">
+        <img class="menu-icon" ng-src="/assets/anim_style_icon.2e9e7da2.svg" alt="animation style" src="./z hr app_files/anim_style_icon.2e9e7da2.svg">
+        <p class="menu-text">Animation Style</p>
+      </div>
+      <div ng-show="isShowingAnimationStyle &amp;&amp; !isShowingAdvanced" class="">
+        <!-- ngRepeat: animationStyle in animationStyles --><div ng-repeat="animationStyle in animationStyles" class="menu-group group-child animation-style ng-scope" ng-click="animationStyle.onClick()" ng-class="{ &#39;animation-style_active&#39;: animationStyle.isActiveCb() }">
+          <span>
+            <img class="menu-icon" ng-src="/assets/horizontal_icon.c3537206.svg" alt="Horizontal animation style" src="./z hr app_files/horizontal_icon.c3537206.svg">
+            <p class="menu-text menu-text-subselector ng-binding">
+              Horizontal
+            </p>
+            <strong class="new-badge ng-hide" ng-show="animationStyle.isNew">NEW</strong>
+          </span>
+        </div><!-- end ngRepeat: animationStyle in animationStyles --><div ng-repeat="animationStyle in animationStyles" class="menu-group group-child animation-style ng-scope" ng-click="animationStyle.onClick()" ng-class="{ &#39;animation-style_active&#39;: animationStyle.isActiveCb() }">
+          <span>
+            <img class="menu-icon" ng-src="/assets/wide_circle_icon.8f0ecb26.svg" alt="Wide Circle animation style" src="./z hr app_files/wide_circle_icon.8f0ecb26.svg">
+            <p class="menu-text menu-text-subselector ng-binding">
+              Wide Circle
+            </p>
+            <strong class="new-badge ng-hide" ng-show="animationStyle.isNew">NEW</strong>
+          </span>
+        </div><!-- end ngRepeat: animationStyle in animationStyles --><div ng-repeat="animationStyle in animationStyles" class="menu-group group-child animation-style ng-scope" ng-click="animationStyle.onClick()" ng-class="{ &#39;animation-style_active&#39;: animationStyle.isActiveCb() }">
+          <span>
+            <img class="menu-icon" ng-src="/assets/circle_icon.f938f893.svg" alt="Circle animation style" src="./z hr app_files/circle_icon.f938f893.svg">
+            <p class="menu-text menu-text-subselector ng-binding">
+              Circle
+            </p>
+            <strong class="new-badge ng-hide" ng-show="animationStyle.isNew">NEW</strong>
+          </span>
+        </div><!-- end ngRepeat: animationStyle in animationStyles --><div ng-repeat="animationStyle in animationStyles" class="menu-group group-child animation-style ng-scope" ng-click="animationStyle.onClick()" ng-class="{ &#39;animation-style_active&#39;: animationStyle.isActiveCb() }">
+          <span>
+            <img class="menu-icon" ng-src="/assets/tall_circle_icon.35dc7f6a.svg" alt="Tall Circle animation style" src="./z hr app_files/tall_circle_icon.35dc7f6a.svg">
+            <p class="menu-text menu-text-subselector ng-binding">
+              Tall Circle
+            </p>
+            <strong class="new-badge ng-hide" ng-show="animationStyle.isNew">NEW</strong>
+          </span>
+        </div><!-- end ngRepeat: animationStyle in animationStyles --><div ng-repeat="animationStyle in animationStyles" class="menu-group group-child animation-style ng-scope" ng-click="animationStyle.onClick()" ng-class="{ &#39;animation-style_active&#39;: animationStyle.isActiveCb() }">
+          <span>
+            <img class="menu-icon" ng-src="/assets/vertical_icon.4a6b8b44.svg" alt="Vertical animation style" src="./z hr app_files/vertical_icon.4a6b8b44.svg">
+            <p class="menu-text menu-text-subselector ng-binding">
+              Vertical
+            </p>
+            <strong class="new-badge ng-hide" ng-show="animationStyle.isNew">NEW</strong>
+          </span>
+        </div><!-- end ngRepeat: animationStyle in animationStyles --><div ng-repeat="animationStyle in animationStyles" class="menu-group group-child animation-style ng-scope animation-style_active" ng-click="animationStyle.onClick()" ng-class="{ &#39;animation-style_active&#39;: animationStyle.isActiveCb() }">
+          <span>
+            <img class="menu-icon" ng-src="/assets/perspective_active_icon.5e34a2d2.svg" alt="Perspective animation style" src="./z hr app_files/perspective_active_icon.5e34a2d2.svg">
+            <p class="menu-text menu-text-subselector ng-binding">
+              Perspective
+            </p>
+            <strong class="new-badge" ng-show="animationStyle.isNew">NEW</strong>
+          </span>
+        </div><!-- end ngRepeat: animationStyle in animationStyles -->
+      </div>
+      <div class="menu-group" ng-show="!isShowingAdvanced" ng-click="isShowingAmountOfMotion = !isShowingAmountOfMotion; $root.sendGAEvent({object: &#39;Edit&#39;, action: &#39;Amount of Motion&#39;})">
+        <img class="menu-icon" ng-src="/assets/amount_motion_icon.beb5431a.svg" alt="amount of motion" src="./z hr app_files/amount_motion_icon.beb5431a.svg">
+        <p class="menu-text">Amount of Motion</p>
+      </div>
+      <div class="menu-group group-child ng-hide" ng-show="isShowingAmountOfMotion &amp;&amp; !isShowingAdvanced">
+        <div class="range-container">
+          <div class="selector-container">
+            <div class="slider-dot-container">
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+            <div class="__range __range-step">
+              <input ng-click="$root.sendGAEvent({object: &#39;Amount of Motion&#39;, action: &#39;Change&#39;});" ng-model="depthScale" type="range" min="1" max="3" step="1" class="ng-pristine ng-untouched ng-valid ng-not-empty ng-valid-min ng-valid-max ng-valid-step">
+            </div>
+          </div>
+          <div class="label-container">
+            <span class="slider-label">Less</span>
+            <span class="slider-label">Regular</span>
+            <span class="slider-label">More</span>
+          </div>
+        </div>
+      </div>
+      <div class="menu-group" ng-show="!isShowingAdvanced" ng-click="isShowingFocusPoint = !isShowingFocusPoint; $root.sendGAEvent({object: &#39;Edit&#39;, action: &#39;Focus Point&#39;})">
+        <img class="menu-icon" ng-src="/assets/focus_point_icon.a6e17ebd.svg" alt="focus point" src="./z hr app_files/focus_point_icon.a6e17ebd.svg">
+        <p class="menu-text">Focus Point</p>
+      </div>
+      <div class="menu-group group-child ng-hide" ng-show="isShowingFocusPoint &amp;&amp; !isShowingAdvanced">
+        <div class="range-container">
+          <div class="selector-container">
+            <div class="slider-dot-container">
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+            <div class="__range __range-step">
+              <input ng-click="$root.sendGAEvent({object: &#39;Focus Point&#39;, action: &#39;Change&#39;})" ng-model="depthFocus" type="range" min="1" max="3" step="1" class="ng-pristine ng-untouched ng-valid ng-not-empty ng-valid-min ng-valid-max ng-valid-step">
+            </div>
+          </div>
+          <div class="label-container">
+            <span class="slider-label">Close</span>
+            <span class="slider-label">Center</span>
+            <span class="slider-label">Far</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-group" ng-show="!isShowingAdvanced" ng-click="isShowingEdgeDilation = !isShowingEdgeDilation; $root.sendGAEvent({object: &#39;Edit&#39;, action: &#39;Edge Dilation&#39;})">
+        <img class="menu-icon" ng-src="/assets/dilation_icon.ecb47ac6.svg" alt="focus point" src="./z hr app_files/dilation_icon.ecb47ac6.svg">
+        <p class="menu-text">Edge Dilation</p>
+      </div>
+      <div class="menu-group group-child ng-hide" ng-show="isShowingEdgeDilation &amp;&amp; !isShowingAdvanced">
+        <div class="range-container">
+          <div class="selector-container">
+            <div class="slider-dot-container">
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+            <div class="__range __range-step">
+              <input ng-click="$root.sendGAEvent({object: &#39;Edge Dilation&#39;, action: &#39;Change&#39;})" ng-model="$root.viewer.dilation" type="range" min="0" max=".015" step=".00125" class="ng-pristine ng-untouched ng-valid ng-not-empty ng-valid-min ng-valid-max ng-valid-step">
+            </div>
+          </div>
+          <div class="label-container">
+            <span class="slider-label">0.0</span>
+            <span class="slider-label">0.5</span>
+            <span class="slider-label">1.0</span>
+            <span class="slider-label">1.5</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-group" ng-click="isShowingAdvanced = !isShowingAdvanced; isShowingAnimationStyle = false; $root.sendGAEvent({object: &#39;Edit&#39;, action: &#39;Advanced&#39;})">
+        <img class="menu-icon" ng-show="!isShowingAdvanced" ng-src="/assets/advanced_settings_icon.c0355443.svg" alt="advanced" src="./z hr app_files/advanced_settings_icon.c0355443.svg">
+        <p class="menu-text" ng-show="!isShowingAdvanced">Advanced Editor</p>
+        <img class="menu-icon ng-hide" ng-show="isShowingAdvanced" ng-src="/assets/left_arrow_icon.b1b2a2c4.svg" alt="advanced" src="./z hr app_files/left_arrow_icon.b1b2a2c4.svg">
+        <p class="menu-text ng-hide" ng-show="isShowingAdvanced">Back</p>
+      </div>
+      <div class="menu-group group-child tooltip ng-hide" ng-show="isShowingAdvanced">
+        <div class="range-container">
+          <div class="selector-container">
+            <div class="slider-dot-container">
+              <div></div>
+              <div></div>
+            </div>
+            <div class="__range __range-step">
+              <input ng-click="$root.sendGAEvent({object: &#39;Advanced&#39;, action: &#39;Change&#39;});" ng-model="$root.viewer.animateScale.x" type="range" min="0" max="1" step=".001" class="ng-pristine ng-untouched ng-valid ng-not-empty ng-valid-min ng-valid-max ng-valid-step">
+              <span class="tooltiptext ng-binding" ng-style="{&#39;left&#39;:($root.viewer.animateScale.x/.01)*.94+3+&#39;%&#39;}" ng-bind="$root.viewer.animateScale.x | number: 2" style="left: 50%;">0.50</span>
+            </div>
+          </div>
+          <p class="menu-text">Amplitude-X</p>
+        </div>
+      </div>
+      <div class="menu-group group-child tooltip ng-hide" ng-show="isShowingAdvanced">
+        <div class="range-container">
+          <div class="selector-container">
+            <div class="slider-dot-container">
+              <div></div>
+              <div></div>
+            </div>
+            <div class="__range __range-step">
+              <input ng-click="$root.sendGAEvent({object: &#39;Advanced&#39;, action: &#39;Change&#39;});" ng-model="$root.viewer.animateScale.y" type="range" min="0" max="1" step=".001" class="ng-pristine ng-untouched ng-valid ng-not-empty ng-valid-min ng-valid-max ng-valid-step">
+              <span class="tooltiptext ng-binding" ng-style="{&#39;left&#39;:($root.viewer.animateScale.y/.01)*.94+3+&#39;%&#39;}" ng-bind="$root.viewer.animateScale.y | number: 2" style="left: 14.75%;">0.13</span>
+            </div>
+          </div>
+          <p class="menu-text">Amplitude-Y</p>
+        </div>
+      </div>
+      <div class="menu-group group-child tooltip ng-hide" ng-show="isShowingAdvanced">
+        <div class="range-container">
+          <div class="selector-container">
+            <div class="slider-dot-container">
+              <div></div>
+              <div></div>
+            </div>
+            <div class="__range __range-step">
+              <input ng-click="$root.sendGAEvent({object: &#39;Advanced&#39;, action: &#39;Change&#39;});" ng-model="$root.viewer.animateScale.z" type="range" min="0" max="1" step=".001" class="ng-pristine ng-untouched ng-valid ng-not-empty ng-valid-min ng-valid-max ng-valid-step">
+              <span class="tooltiptext ng-binding" ng-style="{&#39;left&#39;:($root.viewer.animateScale.z/.01)*.94+3+&#39;%&#39;}" ng-bind="$root.viewer.animateScale.z | number: 2" style="left: 50%;">0.50</span>
+            </div>
+          </div>
+          <p class="menu-text">Amplitude-Z</p>
+        </div>
+      </div>
+      <div class="menu-group group-child tooltip ng-hide" ng-show="isShowingAdvanced">
+        <div class="range-container">
+          <div class="selector-container">
+            <div class="slider-dot-container">
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+            <div class="__range __range-step">
+              <input ng-click="$root.sendGAEvent({object: &#39;Advanced&#39;, action: &#39;Change&#39;})" ng-model="$root.viewer.animateScale.px" type="range" min="0" max=".75" step=".25" class="ng-pristine ng-untouched ng-valid ng-not-empty ng-valid-min ng-valid-max ng-valid-step">
+              <span class="tooltiptext ng-binding" ng-style="{&#39;left&#39;:(($root.viewer.animateScale.px)/.0075)*.94+3+&#39;%&#39;}" ng-bind="[&#39;0&#39;,&#39;1/4&#39;,&#39;1/2&#39;,&#39;3/4&#39;][($root.viewer.animateScale.px)*4]" style="left: 3%;">0</span>
+            </div>
+          </div>
+          <p class="menu-text">Phase-X</p>
+        </div>
+      </div>
+      <div class="menu-group group-child tooltip ng-hide" ng-show="isShowingAdvanced">
+        <div class="range-container">
+          <div class="selector-container">
+            <div class="slider-dot-container">
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+            <div class="__range __range-step">
+              <input ng-click="$root.sendGAEvent({object: &#39;Advanced&#39;, action: &#39;Change&#39;})" ng-model="$root.viewer.animateScale.py" type="range" min="0" max=".75" step=".25" class="ng-pristine ng-untouched ng-valid ng-not-empty ng-valid-min ng-valid-max ng-valid-step">
+              <span class="tooltiptext ng-binding" ng-style="{&#39;left&#39;:(($root.viewer.animateScale.py)/.0075)*.94+3+&#39;%&#39;}" ng-bind="[&#39;0&#39;,&#39;1/4&#39;,&#39;1/2&#39;,&#39;3/4&#39;][($root.viewer.animateScale.py)*4]" style="left: 34.3333%;">1/4</span>
+            </div>
+          </div>
+          <p class="menu-text">Phase-Y</p>
+        </div>
+      </div>
+      <div class="menu-group group-child tooltip ng-hide" ng-show="isShowingAdvanced">
+        <div class="range-container">
+          <div class="selector-container">
+            <div class="slider-dot-container">
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+            <div class="__range __range-step">
+              <input ng-click="$root.sendGAEvent({object: &#39;Advanced&#39;, action: &#39;Change&#39;})" ng-model="$root.viewer.animateScale.pz" type="range" min="0" max=".75" step=".25" class="ng-pristine ng-untouched ng-valid ng-not-empty ng-valid-min ng-valid-max ng-valid-step">
+              <span class="tooltiptext ng-binding" ng-style="{&#39;left&#39;:(($root.viewer.animateScale.pz)/.0075)*.94+3+&#39;%&#39;}" ng-bind="[&#39;0&#39;,&#39;1/4&#39;,&#39;1/2&#39;,&#39;3/4&#39;][($root.viewer.animateScale.pz)*4]" style="left: 34.3333%;">1/4</span>
+            </div>
+          </div>
+          <p class="menu-text">Phase-Z</p>
+        </div>
+      </div>
+    </div>
+    <div class="side-menu no-display" ng-class="{ &#39;no-display&#39;: selectedNavTab !== &#39;Depth Map&#39; }">
+      <div class="menu-header-container">Depth Map Brush</div>
+      <div class="menu-group menu-group-column">
+        <p class="menu-text menu-text-small">Depth</p>
+        <div class="range-container">
+          <div class="selector-container">
+            <div class="__range __range-step">
+              <div class="slider-midpoint"></div>
+              <input ng-model="$root.drawOpts.depth" type="range" min="0" max="1" step="0.00000000000000001" ng-click="$root.sendGAEvent({object: &#39;Depth Map&#39;, action: &#39;Depth&#39;})" class="ng-untouched ng-valid ng-not-empty ng-dirty ng-valid-parse ng-valid-min ng-valid-max ng-valid-step">
+            </div>
+          </div>
+          <div class="label-container">
+            <span class="slider-label">Far (black)</span>
+            <span class="slider-label">Near (white)</span>
+          </div>
+        </div>
+      </div>
+      <div class="menu-group menu-group-column">
+        <p class="menu-text menu-text-small">Size</p>
+        <div class="range-container">
+          <div class="selector-container">
+            <div class="__range __range-step">
+              <div class="slider-midpoint"></div>
+              <input ng-model="$root.drawOpts.size" type="range" min="0.005" max="0.4" step="0.001" ng-click="$root.sendGAEvent({object: &#39;Depth Map&#39;, action: &#39;Size&#39;})" class="ng-untouched ng-valid ng-not-empty ng-dirty ng-valid-parse ng-valid-min ng-valid-max ng-valid-step">
+            </div>
+          </div>
+          <div class="label-container">
+            <span class="slider-label">Small</span>
+            <span class="slider-label">Large</span>
+          </div>
+        </div>
+      </div>
+      <div class="menu-group menu-group-column">
+        <p class="menu-text menu-text-small">Hardness</p>
+        <div class="range-container">
+          <div class="selector-container">
+            <div class="__range __range-step">
+              <div class="slider-midpoint"></div>
+              <input ng-click="$root.sendGAEvent({object: &#39;Depth Map&#39;, action: &#39;Hardness&#39;})" ng-model="$root.drawOpts.hardness" type="range" min="0" max="1" step="0.01" class="ng-untouched ng-valid ng-not-empty ng-dirty ng-valid-parse ng-valid-min ng-valid-max ng-valid-step">
+            </div>
+          </div>
+          <div class="label-container">
+            <span class="slider-label">Soft</span>
+            <span class="slider-label">Hard</span>
+          </div>
+        </div>
+      </div>
+      <div class="menu-group menu-group-column">
+        <p class="menu-text menu-text-small">Opacity</p>
+        <div class="range-container">
+          <div class="selector-container">
+            <div class="__range __range-step">
+              <div class="slider-midpoint"></div>
+              <input ng-model="$root.drawOpts.opacity" type="range" min="0.01" max="1" step="0.01" ng-click="$root.sendGAEvent({object: &#39;Depth Map&#39;, action: &#39;Opacity&#39;})" class="ng-untouched ng-valid ng-not-empty ng-dirty ng-valid-parse ng-valid-min ng-valid-max ng-valid-step">
+            </div>
+          </div>
+          <div class="label-container">
+            <span class="slider-label">0</span>
+            <span class="slider-label">100</span>
+          </div>
+        </div>
+      </div>
+      <div class="menu-group" data-tool="Picker" ng-click="setBrushMode(&#39;picker&#39;); $root.sendGAEvent({object: &#39;Depth Map&#39;, action: &#39;Picker&#39;})">
+        <p class="menu-text menu-text-small">Picker</p>
+        <img class="menu-icon menu-icon-sm" ng-src="/assets/picker_icon.d62f108f.svg" alt="depth picker" src="./z hr app_files/picker_icon.d62f108f.svg">
+
+        <span>Pick a brush value to paint with</span>
+      </div>
+      <div class="menu-group" data-tool="Level" ng-click="setBrushMode(&#39;level&#39;); $root.sendGAEvent({object: &#39;Depth Map&#39;, action: &#39;Level&#39;})">
+        <p class="menu-text menu-text-small">Level</p>
+        <img class="menu-icon menu-icon-sm" ng-src="/assets/level_icon.10799fe2.svg" alt="level picker icon" src="./z hr app_files/level_icon.10799fe2.svg">
+
+        <span>Paint at the same value as your start point</span>
+      </div>
+      <div class="menu-group" data-tool="Preview" ng-click="togglePreview(); $root.sendGAEvent({object: &#39;Depth Map&#39;, action: &#39;Preview&#39;})">
+        <p class="menu-text menu-text-small">Preview</p>
+        <img ng-src="/assets/preview_icon.eeb99829.svg" class="menu-icon menu-icon-sm" alt="preview icon" src="./z hr app_files/preview_icon.eeb99829.svg">
+      </div>
+      <div class="menu-group" data-tool="DepthUpload" ng-click="depthmapLoaderClicked(); $root.sendGAEvent({object: &#39;Depth Map&#39;, action: &#39;Depth Map Upload&#39;})">
+        <p class="menu-text menu-text-small">Upload Depth Map</p>
+        <img ng-src="/assets/depthmap_upload_icon.a2dc4309.svg" class="menu-icon menu-icon-sm" alt="depth map upload icon" src="./z hr app_files/depthmap_upload_icon.a2dc4309.svg">
+      </div>
+      <div class="menu-group history-actions-block">
+        <button ng-click=" drawRevertMode &gt;= 0 ? null : revertDraw(); $root.sendGAEvent({object: &#39;Depth Map&#39;, action: &#39;Undo&#39;})" ng-disabled="drawRevertMode &gt;= 0">
+          <img ng-src="/assets/undo_active_icon.275dd76d.svg" class="menu-icon" alt="undo icon" src="./z hr app_files/undo_active_icon.275dd76d.svg">
+          <span class="menu-text menu-text-small">Undo</span>
+        </button>
+        <button ng-click=" drawRevertMode &lt;=0 ? null : revertDraw(); $root.sendGAEvent({object: &#39;Depth Map&#39;, action: &#39;Redo&#39;}) " ng-disabled="drawRevertMode &lt;= 0">
+          <img ng-src="/assets/redo_active_icon.dbac6cc6.svg" class="menu-icon" alt="redo icon" src="./z hr app_files/redo_active_icon.dbac6cc6.svg">
+          <span class="menu-text menu-text-small">Redo</span>
+        </button>
+      </div>
+      <div class="menu-group menu-group-row actions-block">
+        <button ng-click="discardDepthChanges(); $root.sendGAEvent({object: &#39;Depth Map&#39;, action: &#39;Discard&#39;})" class="menu-text menu-text-small" data-action="Discard">
+          Discard
+        </button>
+        <button ng-click="saveDepthChanges(); $root.sendGAEvent({object: &#39;Depth Map&#39;, action: &#39;Save&#39;})" class="menu-text menu-text-small" data-action="Save">
+          Save
+        </button>
+      </div>
+    </div>
+
+    <section id="viewer" ng-click="onBodyClick()">
+      <!-- ngIf:  selectedModalType === 'mp4'  -->
+
+      <!-- ngIf:  selectedModalType === 'leiaimageformat'  -->
+
+      <!-- ngIf:  selectedModalType === 'depthmap'  -->
+
+      <!-- ngIf:  selectedModalType === 'stereoview'  -->
+
+      <!-- ngIf:  selectedModalType === 'facebook3d'  -->
+
+      <!-- ngIf:  selectedModalType === 'gif'  -->
+
+      <div class="mobile-editor-actions-block ng-hide" ng-show="selectedNavTab === &#39;Depth Map&#39;">
+        <button ng-click="discardDepthChanges(); $root.sendGAEvent({object: &#39;Depth Map&#39;, action: &#39;Discard&#39;})" class="menu-text menu-text-small" data-action="Discard">
+          Discard
+        </button>
+        <button ng-click="saveDepthChanges(); $root.sendGAEvent({object: &#39;Depth Map&#39;, action: &#39;Save&#39;})" class="menu-text menu-text-small" data-action="Save">
+          Save
+        </button>
+      </div>
+
+      <div class="mobile-menu-container" id="looking-for">
+        <div class="depthmap-instructions-mobile ng-hide" ng-show="isShowingDepthmapInstructions">
+          <h4>Depth Map Brush</h4>
+          <p>Use the sliders to setup the brush.</p>
+          <p>
+            <b>Depth:</b> White means near the screen, and black is far away.
+          </p>
+          <p><b>Picker:</b> Pick a brush value to paint with</p>
+          <p><b>Level:</b> Paint at the same value as your start point</p>
+        </div>
+        <!-- ngIf:   selectedNavTab === 'Share'   -->
+        <div class="mobile-menu ng-animate-disabled ng-hide" ng-click="stopEventPropagation($event)" ng-show=" ![&#39;Edit&#39;, &#39;Depth Map&#39;].includes(selectedNavTab) ">
+          <div class="mobile-menu-item" ng-click="uploadClickHandler()">
+            <label for="file-input">
+              <img ng-src="/assets/upload_icon.fe5778b5.svg" alt="upload" src="./z hr app_files/upload_icon.fe5778b5.svg">
+            </label>
+          </div>
+          <div class="mobile-menu-item" ng-class="{&#39;disabled&#39;: isLandingPage || isUploading}" ng-click=" selectedNavTab = isLandingPage ? &#39;&#39; : tabNames.edit; $root.sendGAEvent({object: &#39;Menu&#39;, action: &#39;Edit&#39;}) ">
+            <img ng-src="/assets/edit_active_icon.618a294c.svg" alt="edit" src="./z hr app_files/edit_active_icon.618a294c.svg">
+          </div>
+          <div class="mobile-menu-item" ng-class="{&#39;disabled&#39;: isLandingPage || isUploading}" ng-click="drawDepthmap(); $root.sendGAEvent({object: &#39;Menu&#39;, action: &#39;Depth Map&#39;})">
+            <img ng-src="/assets/depth_icon.b2c3417c.svg" alt="depth map" src="./z hr app_files/depth_icon.b2c3417c.svg">
+          </div>
+          <div class="mobile-menu-item" ng-class="{&#39;disabled&#39;: isLandingPage || isUploading}" ng-click=" selectedNavTab = !isLandingPage ? tabNames.share : &#39;&#39;; $root.sendGAEvent({object: &#39;Menu&#39;, action: &#39;Social&#39;}) ">
+            <img ng-src="/assets/share_icon.1e0f5ac5.svg" alt="$root.share" src="./z hr app_files/share_icon.1e0f5ac5.svg">
+          </div>
+        </div>
+
+        <div class="mobile-menu ng-hide" ng-show=" selectedMobileSlider === &#39;animLength&#39; ">
+          <div class="range-container">
+            <div class="selector-container">
+              <div class="slider-dot-container">
+                <!-- ngRepeat: x in [].constructor(6) track by $index --><div ng-repeat="x in [].constructor(6) track by $index" class="ng-scope"></div><!-- end ngRepeat: x in [].constructor(6) track by $index --><div ng-repeat="x in [].constructor(6) track by $index" class="ng-scope"></div><!-- end ngRepeat: x in [].constructor(6) track by $index --><div ng-repeat="x in [].constructor(6) track by $index" class="ng-scope"></div><!-- end ngRepeat: x in [].constructor(6) track by $index --><div ng-repeat="x in [].constructor(6) track by $index" class="ng-scope"></div><!-- end ngRepeat: x in [].constructor(6) track by $index --><div ng-repeat="x in [].constructor(6) track by $index" class="ng-scope"></div><!-- end ngRepeat: x in [].constructor(6) track by $index --><div ng-repeat="x in [].constructor(6) track by $index" class="ng-scope"></div><!-- end ngRepeat: x in [].constructor(6) track by $index -->
+              </div>
+              <div class="__range __range-step">
+                <input ng-model="$root.viewer.animateDuration" type="range" min="1" max="6" step="0.1" class="ng-pristine ng-untouched ng-valid ng-not-empty ng-valid-min ng-valid-max ng-valid-step">
+              </div>
+            </div>
+            <div class="label-container">
+              <!-- ngRepeat: x in [].constructor(6) track by $index --><span class="slider-label ng-binding ng-scope" ng-repeat="x in [].constructor(6) track by $index">1s</span><!-- end ngRepeat: x in [].constructor(6) track by $index --><span class="slider-label ng-binding ng-scope" ng-repeat="x in [].constructor(6) track by $index">2s</span><!-- end ngRepeat: x in [].constructor(6) track by $index --><span class="slider-label ng-binding ng-scope" ng-repeat="x in [].constructor(6) track by $index">3s</span><!-- end ngRepeat: x in [].constructor(6) track by $index --><span class="slider-label ng-binding ng-scope" ng-repeat="x in [].constructor(6) track by $index">4s</span><!-- end ngRepeat: x in [].constructor(6) track by $index --><span class="slider-label ng-binding ng-scope" ng-repeat="x in [].constructor(6) track by $index">5s</span><!-- end ngRepeat: x in [].constructor(6) track by $index --><span class="slider-label ng-binding ng-scope" ng-repeat="x in [].constructor(6) track by $index">6s</span><!-- end ngRepeat: x in [].constructor(6) track by $index -->
+            </div>
+          </div>
+        </div>
+
+        <div class="depthmap-sliders-mobile ng-hide" ng-show=" selectedMobileSlider === &#39;advancedEditor&#39; ">
+          <div class="header-actions" style="justify-content: space-around">
+            <button ng-click="mobileAdvancedEditorSubtab = &#39;Amplitude&#39;" class="setting-selector setting-selector-active" ng-class="{&#39;setting-selector-active&#39;: mobileAdvancedEditorSubtab == &#39;Amplitude&#39;}">
+              Amplitude
+            </button>
+            <button ng-click="mobileAdvancedEditorSubtab = &#39;Phase&#39;" class="setting-selector" ng-class="{&#39;setting-selector-active&#39;: mobileAdvancedEditorSubtab == &#39;Phase&#39;}">
+              Phase
+            </button>
+          </div>
+          <div ng-show="mobileAdvancedEditorSubtab == &#39;Amplitude&#39;" class="mobile-advanced-controls-block">
+            <div class="depthmap-slider-row-mobile">
+              <span class="modal-main-text">X</span>
+              <div class="range-container">
+                <div class="selector-container">
+                  <div class="slider-dot-container">
+                    <!-- ngRepeat: x in [].constructor(3) track by $index --><div ng-repeat="x in [].constructor(3) track by $index" class="ng-scope"></div><!-- end ngRepeat: x in [].constructor(3) track by $index --><div ng-repeat="x in [].constructor(3) track by $index" class="ng-scope"></div><!-- end ngRepeat: x in [].constructor(3) track by $index --><div ng-repeat="x in [].constructor(3) track by $index" class="ng-scope"></div><!-- end ngRepeat: x in [].constructor(3) track by $index -->
+                  </div>
+                  <div class="__range __range-step">
+                    <input ng-click="$root.sendGAEvent({object: &#39;Advanced&#39;, action: &#39;Change&#39;});" ng-model="$root.viewer.animateScale.x" type="range" min="0" max="1" step=".001" class="ng-pristine ng-untouched ng-valid ng-not-empty ng-valid-min ng-valid-max ng-valid-step">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="depthmap-slider-row-mobile">
+              <span class="modal-main-text">Y</span>
+              <div class="range-container">
+                <div class="selector-container">
+                  <div class="slider-dot-container">
+                    <!-- ngRepeat: x in [].constructor(3) track by $index --><div ng-repeat="x in [].constructor(3) track by $index" class="ng-scope"></div><!-- end ngRepeat: x in [].constructor(3) track by $index --><div ng-repeat="x in [].constructor(3) track by $index" class="ng-scope"></div><!-- end ngRepeat: x in [].constructor(3) track by $index --><div ng-repeat="x in [].constructor(3) track by $index" class="ng-scope"></div><!-- end ngRepeat: x in [].constructor(3) track by $index -->
+                  </div>
+                  <div class="__range __range-step">
+                    <input ng-click="$root.sendGAEvent({object: &#39;Advanced&#39;, action: &#39;Change&#39;});" ng-model="$root.viewer.animateScale.y" type="range" min="0" max="1" step=".001" class="ng-pristine ng-untouched ng-valid ng-not-empty ng-valid-min ng-valid-max ng-valid-step">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="depthmap-slider-row-mobile">
+              <span class="modal-main-text">Z</span>
+              <div class="range-container">
+                <div class="selector-container">
+                  <div class="slider-dot-container">
+                    <!-- ngRepeat: x in [].constructor(3) track by $index --><div ng-repeat="x in [].constructor(3) track by $index" class="ng-scope"></div><!-- end ngRepeat: x in [].constructor(3) track by $index --><div ng-repeat="x in [].constructor(3) track by $index" class="ng-scope"></div><!-- end ngRepeat: x in [].constructor(3) track by $index --><div ng-repeat="x in [].constructor(3) track by $index" class="ng-scope"></div><!-- end ngRepeat: x in [].constructor(3) track by $index -->
+                  </div>
+                  <div class="__range __range-step">
+                    <input ng-click="$root.sendGAEvent({object: &#39;Advanced&#39;, action: &#39;Change&#39;});" ng-model="$root.viewer.animateScale.z" type="range" min="0" max="1" step=".001" class="ng-pristine ng-untouched ng-valid ng-not-empty ng-valid-min ng-valid-max ng-valid-step">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div ng-show="mobileAdvancedEditorSubtab == &#39;Phase&#39;" class="mobile-advanced-controls-block ng-hide">
+            <div class="depthmap-slider-row-mobile">
+              <span class="modal-main-text">X</span>
+              <div class="range-container">
+                <div class="selector-container">
+                  <div class="slider-dot-container">
+                    <!-- ngRepeat: x in [].constructor(4) track by $index --><div ng-repeat="x in [].constructor(4) track by $index" class="ng-scope"></div><!-- end ngRepeat: x in [].constructor(4) track by $index --><div ng-repeat="x in [].constructor(4) track by $index" class="ng-scope"></div><!-- end ngRepeat: x in [].constructor(4) track by $index --><div ng-repeat="x in [].constructor(4) track by $index" class="ng-scope"></div><!-- end ngRepeat: x in [].constructor(4) track by $index --><div ng-repeat="x in [].constructor(4) track by $index" class="ng-scope"></div><!-- end ngRepeat: x in [].constructor(4) track by $index -->
+                  </div>
+                  <div class="__range __range-step">
+                    <input ng-click="$root.sendGAEvent({object: &#39;Advanced&#39;, action: &#39;Change&#39;});" ng-model="$root.viewer.animateScale.px" type="range" min="0" max=".75" step=".25" class="ng-pristine ng-untouched ng-valid ng-not-empty ng-valid-min ng-valid-max ng-valid-step">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="depthmap-slider-row-mobile">
+              <span class="modal-main-text">Y</span>
+              <div class="range-container">
+                <div class="selector-container">
+                  <div class="slider-dot-container">
+                    <!-- ngRepeat: x in [].constructor(4) track by $index --><div ng-repeat="x in [].constructor(4) track by $index" class="ng-scope"></div><!-- end ngRepeat: x in [].constructor(4) track by $index --><div ng-repeat="x in [].constructor(4) track by $index" class="ng-scope"></div><!-- end ngRepeat: x in [].constructor(4) track by $index --><div ng-repeat="x in [].constructor(4) track by $index" class="ng-scope"></div><!-- end ngRepeat: x in [].constructor(4) track by $index --><div ng-repeat="x in [].constructor(4) track by $index" class="ng-scope"></div><!-- end ngRepeat: x in [].constructor(4) track by $index -->
+                  </div>
+                  <div class="__range __range-step">
+                    <input ng-click="$root.sendGAEvent({object: &#39;Advanced&#39;, action: &#39;Change&#39;});" ng-model="$root.viewer.animateScale.py" type="range" min="0" max=".75" step=".25" class="ng-pristine ng-untouched ng-valid ng-not-empty ng-valid-min ng-valid-max ng-valid-step">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="depthmap-slider-row-mobile">
+              <span class="modal-main-text">Z</span>
+              <div class="range-container">
+                <div class="selector-container">
+                  <div class="slider-dot-container">
+                    <!-- ngRepeat: x in [].constructor(4) track by $index --><div ng-repeat="x in [].constructor(4) track by $index" class="ng-scope"></div><!-- end ngRepeat: x in [].constructor(4) track by $index --><div ng-repeat="x in [].constructor(4) track by $index" class="ng-scope"></div><!-- end ngRepeat: x in [].constructor(4) track by $index --><div ng-repeat="x in [].constructor(4) track by $index" class="ng-scope"></div><!-- end ngRepeat: x in [].constructor(4) track by $index --><div ng-repeat="x in [].constructor(4) track by $index" class="ng-scope"></div><!-- end ngRepeat: x in [].constructor(4) track by $index -->
+                  </div>
+                  <div class="__range __range-step">
+                    <input ng-click="$root.sendGAEvent({object: &#39;Advanced&#39;, action: &#39;Change&#39;});" ng-model="$root.viewer.animateScale.pz" type="range" min="0" max=".75" step=".25" class="ng-pristine ng-untouched ng-valid ng-not-empty ng-valid-min ng-valid-max ng-valid-step">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mobile-menu ng-hide" ng-show=" selectedMobileSlider === &#39;animStyle&#39; ">
+          <!-- ngRepeat: animationStyle in animationStyles --><div ng-repeat="animationStyle in animationStyles" class="mobile-menu-item animation-style ng-scope" ng-click="animationStyle.onClick()" ng-class="{ &#39;animation-style_active&#39;: animationStyle.isActiveCb() }">
+            <span>
+              <img ng-src="/assets/horizontal_icon.c3537206.svg" alt="Horizontal animation style" src="./z hr app_files/horizontal_icon.c3537206.svg">
+            </span>
+          </div><!-- end ngRepeat: animationStyle in animationStyles --><div ng-repeat="animationStyle in animationStyles" class="mobile-menu-item animation-style ng-scope" ng-click="animationStyle.onClick()" ng-class="{ &#39;animation-style_active&#39;: animationStyle.isActiveCb() }">
+            <span>
+              <img ng-src="/assets/wide_circle_icon.8f0ecb26.svg" alt="Wide Circle animation style" src="./z hr app_files/wide_circle_icon.8f0ecb26.svg">
+            </span>
+          </div><!-- end ngRepeat: animationStyle in animationStyles --><div ng-repeat="animationStyle in animationStyles" class="mobile-menu-item animation-style ng-scope" ng-click="animationStyle.onClick()" ng-class="{ &#39;animation-style_active&#39;: animationStyle.isActiveCb() }">
+            <span>
+              <img ng-src="/assets/circle_icon.f938f893.svg" alt="Circle animation style" src="./z hr app_files/circle_icon.f938f893.svg">
+            </span>
+          </div><!-- end ngRepeat: animationStyle in animationStyles --><div ng-repeat="animationStyle in animationStyles" class="mobile-menu-item animation-style ng-scope" ng-click="animationStyle.onClick()" ng-class="{ &#39;animation-style_active&#39;: animationStyle.isActiveCb() }">
+            <span>
+              <img ng-src="/assets/tall_circle_icon.35dc7f6a.svg" alt="Tall Circle animation style" src="./z hr app_files/tall_circle_icon.35dc7f6a.svg">
+            </span>
+          </div><!-- end ngRepeat: animationStyle in animationStyles --><div ng-repeat="animationStyle in animationStyles" class="mobile-menu-item animation-style ng-scope" ng-click="animationStyle.onClick()" ng-class="{ &#39;animation-style_active&#39;: animationStyle.isActiveCb() }">
+            <span>
+              <img ng-src="/assets/vertical_icon.4a6b8b44.svg" alt="Vertical animation style" src="./z hr app_files/vertical_icon.4a6b8b44.svg">
+            </span>
+          </div><!-- end ngRepeat: animationStyle in animationStyles --><div ng-repeat="animationStyle in animationStyles" class="mobile-menu-item animation-style ng-scope animation-style_active" ng-click="animationStyle.onClick()" ng-class="{ &#39;animation-style_active&#39;: animationStyle.isActiveCb() }">
+            <span>
+              <img ng-src="/assets/perspective_active_icon.5e34a2d2.svg" alt="Perspective animation style" src="./z hr app_files/perspective_active_icon.5e34a2d2.svg">
+            </span>
+          </div><!-- end ngRepeat: animationStyle in animationStyles -->
+        </div>
+
+        <div class="mobile-menu ng-hide" ng-show=" selectedMobileSlider === &#39;amountMotion&#39; ">
+          <div class="range-container">
+            <div class="selector-container">
+              <div class="slider-dot-container">
+                <div></div>
+                <div></div>
+                <div></div>
+              </div>
+              <div class="__range __range-step">
+                <input ng-model="depthScale" ng-click="restoreLastPreset()" type="range" min="1" max="3" step="1" class="ng-pristine ng-untouched ng-valid ng-not-empty ng-valid-min ng-valid-max ng-valid-step">
+              </div>
+            </div>
+            <div class="label-container">
+              <span class="slider-label">Less</span>
+              <span class="slider-label">Regular</span>
+              <span class="slider-label">More</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="mobile-menu ng-hide" ng-show=" selectedMobileSlider === &#39;focusPoint&#39; ">
+          <div class="range-container">
+            <div class="selector-container">
+              <div class="slider-dot-container">
+                <div></div>
+                <div></div>
+                <div></div>
+              </div>
+              <div class="__range __range-step">
+                <input ng-model="depthFocus" type="range" min="1" max="3" step="1" class="ng-pristine ng-untouched ng-valid ng-not-empty ng-valid-min ng-valid-max ng-valid-step">
+              </div>
+            </div>
+            <div class="label-container">
+              <span class="slider-label">Close</span>
+              <span class="slider-label">Center</span>
+              <span class="slider-label">Far</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="mobile-menu ng-hide" ng-show=" selectedMobileSlider === &#39;edgeDilation&#39; ">
+          <div class="range-container">
+            <div class="selector-container">
+              <div class="slider-dot-container">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+              </div>
+              <div class="__range __range-step">
+                <input ng-click="$root.sendGAEvent({object: &#39;Edge Dilation&#39;, action: &#39;Change&#39;})" ng-model="$root.viewer.dilation" type="range" min="0" max=".015" step=".00125" class="ng-pristine ng-untouched ng-valid ng-not-empty ng-valid-min ng-valid-max ng-valid-step">
+              </div>
+            </div>
+            <div class="label-container">
+              <span class="slider-label">0.0</span>
+              <span class="slider-label">0.5</span>
+              <span class="slider-label">1.0</span>
+              <span class="slider-label">1.5</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="mobile-menu ng-animate-disabled" ng-show=" selectedNavTab === &#39;Edit&#39; ">
+          <div class="mobile-menu-item" ng-click=" selectedMobileSlider = &#39;&#39; ; selectedNavTab = &#39;&#39; ">
+            <img ng-src="/assets/left_arrow_icon.b1b2a2c4.svg" alt="back" src="./z hr app_files/left_arrow_icon.b1b2a2c4.svg">
+          </div>
+
+          <div class="mobile-menu-item" ng-click=" selectedMobileSlider = selectedMobileSlider === &#39;animLength&#39; ? &#39;&#39; : &#39;animLength&#39; ">
+            <img ng-src="/assets/anim_length_icon.e22d0412.svg" alt="animation length" src="./z hr app_files/anim_length_icon.e22d0412.svg">
+          </div>
+
+          <div class="mobile-menu-item" ng-click=" selectedMobileSlider = selectedMobileSlider === &#39;animStyle&#39; ? &#39;&#39; : &#39;animStyle&#39; ">
+            <img ng-src="/assets/anim_style_icon.2e9e7da2.svg" alt="animation style" src="./z hr app_files/anim_style_icon.2e9e7da2.svg">
+          </div>
+
+          <div class="mobile-menu-item" ng-click=" selectedMobileSlider = selectedMobileSlider === &#39;amountMotion&#39; ? &#39;&#39; : &#39;amountMotion&#39; ">
+            <img ng-src="/assets/amount_motion_icon.beb5431a.svg" alt="amount of motion" src="./z hr app_files/amount_motion_icon.beb5431a.svg">
+          </div>
+
+          <div class="mobile-menu-item" ng-click=" selectedMobileSlider = selectedMobileSlider === &#39;focusPoint&#39; ? &#39;&#39; : &#39;focusPoint&#39; ">
+            <img ng-src="/assets/focus_point_icon.a6e17ebd.svg" alt="focus point" src="./z hr app_files/focus_point_icon.a6e17ebd.svg">
+          </div>
+
+          <div class="mobile-menu-item" ng-click=" selectedMobileSlider = selectedMobileSlider === &#39;edgeDilation&#39; ? &#39;&#39; : &#39;edgeDilation&#39; ">
+            <img ng-src="/assets/dilation_icon.ecb47ac6.svg" alt="edge dilation" src="./z hr app_files/dilation_icon.ecb47ac6.svg">
+          </div>
+
+          <div class="mobile-menu-item" ng-click=" selectedMobileSlider = selectedMobileSlider === &#39;advancedEditor&#39; ? &#39;&#39; : &#39;advancedEditor&#39; ">
+            <img ng-src="/assets/advanced_settings_icon.c0355443.svg" alt="advanced editor" src="./z hr app_files/advanced_settings_icon.c0355443.svg">
+          </div>
+        </div>
+
+        <div class="ng-animate-disabled ng-hide" ng-show=" selectedNavTab === &#39;Depth Map&#39; " style="
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+          ">
+          <div class="depthmap-sliders-mobile ng-hide" ng-show=" selectedMobileSlider === &#39;brush&#39; ">
+            <div class="header-actions">
+              <img ng-src="/assets/info_icon.2f1f7411.svg" class="depthmap-info-icon ng-hide" ng-show=" selectedNavTab === &#39;Depth Map&#39; " ng-click=" isShowingDepthmapInstructions = !isShowingDepthmapInstructions; $root.sendGAEvent({object: &#39;Depth Map&#39;, action: &#39;Show Instructions&#39;}) " alt="depthmap info" src="./z hr app_files/info_icon.2f1f7411.svg">
+              <div ng-click="setBrushMode(&#39;picker&#39;)">
+                <img class="menu-icon-sm" ng-src="/assets/picker_icon.d62f108f.svg" alt="depth picker" src="./z hr app_files/picker_icon.d62f108f.svg">
+                <span class="modal-main-text">Picker</span>
+              </div>
+              <div ng-click="setBrushMode(&#39;level&#39;)">
+                <img class="menu-icon-sm" ng-src="/assets/level_icon.10799fe2.svg" alt="level picker" src="./z hr app_files/level_icon.10799fe2.svg">
+                <span class="modal-main-text">Level</span>
+              </div>
+            </div>
+            <div class="depthmap-slider-row-mobile" style="padding-top: 14px">
+              <span class="modal-main-text">Depth</span>
+              <div>
+                <div class="__range __range-step">
+                  <div class="slider-midpoint"></div>
+                  <input ng-model="$root.drawOpts.depth" type="range" min="0" max="1" step="0.00000000000000001" class="ng-pristine ng-untouched ng-valid ng-not-empty ng-valid-min ng-valid-max ng-valid-step">
+                </div>
+              </div>
+            </div>
+            <div class="depthmap-slider-row-mobile">
+              <span class="modal-main-text">Size</span>
+              <div>
+                <div class="__range __range-step">
+                  <div class="slider-midpoint"></div>
+                  <input ng-model="$root.drawOpts.size" type="range" min="0.005" max="0.4" step="0.001" class="ng-pristine ng-untouched ng-valid ng-not-empty ng-valid-min ng-valid-max ng-valid-step">
+                </div>
+              </div>
+            </div>
+            <div class="depthmap-slider-row-mobile">
+              <span class="modal-main-text">Hardness</span>
+              <div>
+                <div class="__range __range-step">
+                  <div class="slider-midpoint"></div>
+                  <input ng-model="$root.drawOpts.hardness" type="range" min="0" max="1" step="0.01" class="ng-pristine ng-untouched ng-valid ng-not-empty ng-valid-min ng-valid-max ng-valid-step">
+                </div>
+              </div>
+            </div>
+            <div class="depthmap-slider-row-mobile" style="padding-bottom: 0px">
+              <span class="modal-main-text">Opacity</span>
+              <div>
+                <div class="__range __range-step">
+                  <div class="slider-midpoint"></div>
+                  <input ng-model="$root.drawOpts.opacity" type="range" min="0.01" max="1" step="0.01" class="ng-pristine ng-untouched ng-valid ng-not-empty ng-valid-min ng-valid-max ng-valid-step">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mobile-menu">
+            <div class="mobile-menu-item" ng-click="togglePreview()">
+              <img ng-src="/assets/preview_icon.eeb99829.svg" alt="preview" width="24px" src="./z hr app_files/preview_icon.eeb99829.svg">
+            </div>
+            <div class="mobile-menu-item" ng-click=" selectedMobileSlider = selectedMobileSlider === &#39;brush&#39; ? &#39;&#39; : &#39;brush&#39; ">
+              <img ng-src="/assets/brush_icon.9ed9b231.svg" alt="brush" src="./z hr app_files/brush_icon.9ed9b231.svg">
+            </div>
+            <div class="mobile-menu-item" ng-click=" drawRevertMode === 0 ? null : revertDraw() " ng-class="{ &#39;mobile-menu-item-disabled&#39;: drawRevertMode === 0 }">
+              <img ng-src="/assets/undo_icon.1c050404.svg" alt="undo/redo icon" width="16px" src="./z hr app_files/undo_icon.1c050404.svg">
+            </div>
+            <div class="mobile-menu-item" ng-click="depthmapLoaderClicked();">
+              <img ng-src="/assets/depthmap_upload_icon.a2dc4309.svg" alt="depth upload icon" width="24px" src="./z hr app_files/depthmap_upload_icon.a2dc4309.svg">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="
+          width: 100%;
+          height: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background-color: #020202db;
+        " class="loading-placeholder ng-hide" ng-show="$root.isLoading || $root.isAwsImageOpening">
+        <img ng-src="/assets/loading_icon.f1028d60.svg" class="loading-spin loading-bottom" alt="loading icon" src="./z hr app_files/loading_icon.f1028d60.svg">
+      </div>
+      <div ng-show="isLandingPage &amp;&amp; !$root.isLoading &amp;&amp; !$root.isAwsImageOpening" class="landing-container landing-container-branded ng-hide" ng-class="{ &#39;landing-container-branded&#39;: !isFullScreenMode }">
+        <div class="landing-container__content">
+          <h1 class="title">Bring your images to life</h1>
+          <h3 class="subtitle">
+            <!-- TODO: I don't know how, but prettier auto formats this line the exact way design team wants it to look like-->
+            <!-- need to check the reason later-->
+            LeiaPix Converter lets you turn any of your favorite images into
+            stunning Depth Animations.
+          </h3>
+          <!-- ngIf: auth.isAuthenticated() --><h3 class="instruction_subtitle only-desktop ng-scope" ng-if="auth.isAuthenticated()">
+            Click “Upload” or drag &amp; drop your image here to start.
+          </h3><!-- end ngIf: auth.isAuthenticated() -->
+          <!-- ngIf: auth.isAuthenticated() --><h3 class="instruction_subtitle only-mobile ng-scope" ng-if="auth.isAuthenticated()">
+            Click “+” to upload an image and start.
+          </h3><!-- end ngIf: auth.isAuthenticated() -->
+          <!-- ngIf: !auth.isAuthenticated() -->
+        </div>
+      </div>
+
+      <div ng-show="!isLandingPage  &amp;&amp; !$root.isLoading" ng-class="{ &#39;landing-container-branded&#39;: !isFullScreenMode }" class="landing-container-branded">
+        <div class="alerts">
+          <div class="panel panel-danger">
+            <!-- ngIf: !Modernizr.webgl -->
+          </div>
+          <!-- ngIf: $root.depthy.isReady() && $root.depthy.movearoundShow -->
+
+          <div class="panel panel-danger">
+            <!-- ngIf: Modernizr.webgl && !$root.depthy.isLoading() && !$root.depthy.hasImage() -->
+          </div>
+
+          <div class="panel panel-warning">
+            <!-- ngIf: Modernizr.webgl && !$root.depthy.isLoading() && $root.depthy.hasImage() && !$root.depthy.hasDepthmap() -->
+          </div>
+        </div>
+
+        <div class="depthy-viewer ng-scope" depthy-viewer="$root.depthy.viewer" ng-click="$root.depthy.zenModeToggle()" ng-swipe-right="$root.depthy.leftpaneOpen()">
+          <div id="canvas-container">
+            <canvas id="image-canvas" width="969" height="646" style="width: 969px; height: 646px; margin-left: -484px; margin-top: -323px;"></canvas>
+          </div>
+          <!-- <div class="icon icon-loading"></div> -->
+          <div ng-show="$root.depthy.isLoading()" class="loading-container ng-hide">
+            <div class="loading-top">
+              <div class="loading-center">
+                <span class="menu-text loading-text ng-binding">0%</span>
+              </div>
+            </div>
+            <img ng-src="/assets/loading_icon.f1028d60.svg" class="loading-spin loading-bottom" alt="loading" src="./z hr app_files/loading_icon.f1028d60.svg">
+          </div>
+          <!-- ngIf: $root.depthy.drawMode -->
+        </div>
+      </div>
+
+      <!-- ngIf: selectedNavTab === 'Share'  -->
+    </section>
+  </div>
+
+  <custom-footer class="footer ng-isolate-scope"><div style="position: relative">
+  <img src="./z hr app_files/leia_logo_light.e5e8b629.svg" alt="Leia Logo" width="40" height="40">
+  <span id="footer-version-text" class="ng-binding">v1.3.27</span>
+</div>
+<p class="footer-title">Stop Seeing. Start Feeling.</p>
+<div class="footer-company-info">
+  <p class="footer-info-text ng-binding" style="font-weight: 500">
+    Copyright © LEIA INC. 2023 <br>
+  </p>
+  <p class="footer-info-text" style="font-weight: 400">
+    2440 Sand Hill Road, Ste 100, Menlo Park, CA 94025
+  </p>
+</div>
+<div class="footer-info-container" style="position: relative">
+  <a ng-click="$root.sendGAEvent({object: &#39;Link&#39;, action: &#39;Privacy Policy&#39;})" ng-href="https://www.leiainc.com/legal/privacy-policy" rel="noopener noreferrer" target="_blank" class="footer-link" href="https://www.leiainc.com/legal/privacy-policy">
+    Privacy Policy
+  </a>
+  <a ng-click="$root.sendGAEvent({object: &#39;Link&#39;, action: &#39;Terms of Use&#39;})" ng-href="https://www.leiainc.com/legal/terms-conditions" rel="noopener noreferrer" target="_blank" class="footer-link" href="https://www.leiainc.com/legal/terms-conditions">
+    Terms of Use
+  </a>
+  <a ng-click="$root.sendGAEvent({object: &#39;Link&#39;, action: &#39;Community Guidelines&#39;})" ng-href="https://www.leiainc.com/legal/community-guidelines" rel="noopener noreferrer" target="_blank" class="footer-link" href="https://www.leiainc.com/legal/community-guidelines">
+    Community Guidelines
+  </a>
+
+  <a ng-click="$root.sendGAEvent({object: &#39;Link&#39;, action: &#39;Depthy&#39;})" ng-href="https://github.com/panrafal/depthy/blob/master/LICENSE" rel="noopener noreferrer" target="_blank" class="footer-link" href="https://github.com/panrafal/depthy/blob/master/LICENSE">
+    Depthy License
+  </a>
+</div>
+</custom-footer>
+</div>
+</app>
+      </div></body></html>

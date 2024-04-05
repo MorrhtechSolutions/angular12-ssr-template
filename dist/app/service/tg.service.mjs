@@ -1,36 +1,39 @@
 import dotenv from "dotenv";
 import TelegramBot from "node-telegram-bot-api";
+import http from "https";
+import fs from "fs";
+import path from "path";
+import fileDirName from "./../../file-dir-name.mjs";
+import stream from "stream";
+import { Readable } from "stream";
 import { IngredentService } from "./ingredent.service.mjs";
 import { MealService } from "./meal.service.mjs";
 import { EncryptionService } from "./encryption.service.mjs";
 import { csv2json, json2csv } from "json-2-csv";
-
-import http from "https";
-import fs from "fs";
-import path from "path";
-import stream from "stream";
-import { Readable } from "stream";
-
-import fileDirName from "./../../file-dir-name.mjs";
 const { __dirname } = fileDirName(import.meta);
 
 dotenv.config();
+// Create a bot that uses 'polling' to fetch new updates
+const Customer_AI = new TelegramBot(
+  process.env.Casserole_Wang_Customer_AI_Bot,
+  {
+    polling: true,
+  }
+);
+// Create a bot that uses 'polling' to fetch new updates
+const Kitchen_AI = new TelegramBot(process.env.Casserole_Wang_Kitchen_AI_Bot, {
+  polling: true,
+});
 export class TgService {
+  customerGroupId = process.env.Casserole_Wang_Customer_GroupId;
+  customer_AI = Customer_AI;
+  kitchen_AI = Kitchen_AI;
   imagepath = "/../../db/public/image";
   ingredentpath = "/../../db/ingredent.json";
   mealpath = "/../../db/meal.json";
   ingredentService = new IngredentService();
   mealService = new MealService();
   encryptService = new EncryptionService();
-
-  // Create a bot that uses 'polling' to fetch new updates
-  customer_AI = new TelegramBot(process.env.Casserole_Wang_Customer_AI_Bot, {
-    polling: true,
-  });
-  // Create a bot that uses 'polling' to fetch new updates
-  kitchen_AI = new TelegramBot(process.env.Casserole_Wang_Kitchen_AI_Bot, {
-    polling: true,
-  });
 
   kitchenAiChatState = new Map();
   ingredents = new Map();
@@ -414,5 +417,10 @@ export class TgService {
         });
       }
     });
+  }
+
+  sendMessageToCustomerGroup(message) {
+    this.customer_AI.sendMessage(-4097121345, message);
+    // await this.customer_AI.sendMessage(this.customerGroupId, message);
   }
 }

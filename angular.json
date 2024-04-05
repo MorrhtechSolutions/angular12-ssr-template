@@ -56,6 +56,8 @@
               "src/assets/vendor/css-hamburgers/hamburgers.min.css",
               "src/assets/css/util.css",
               "src/assets/css/main.css",
+              "src/assets/css/fontawesome.css",
+              "src/assets/css/theme.css",
               "src/assets/dist/css/style.css",
               "src/styles.scss"
             ],
@@ -63,6 +65,9 @@
               "src/assets/vendors/scripts/jq.min.js",
               "src/assets/src/scripts/jquery.min.js",
               "src/assets/vendors/scripts/core.js",
+              "src/assets/vendors/@popperjs/popper.min.js",
+              "src/assets/vendors/is/is.min.js",
+              "src/assets/vendors/fontawesome/all.min.js",
               "src/assets/vendors/scripts/script.min.js",
               "src/assets/vendors/scripts/process.js",
               "src/assets/vendors/scripts/layout-settings.js",
@@ -89,6 +94,7 @@
               "src/assets/js/qrcode.min.js",
               "src/assets/js/scrollreveal.min.js",
               "src/assets/dist/js/main.min.js",
+              "src/assets/js/theme.js",
               "src/assets/js/main.js"
             ]
           },
@@ -97,8 +103,8 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "4mb",
-                  "maximumError": "5mb"
+                  "maximumWarning": "5mb",
+                  "maximumError": "10mb"
                 },
                 {
                   "type": "anyComponentStyle",

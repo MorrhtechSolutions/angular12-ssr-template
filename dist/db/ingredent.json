@@ -10,6 +10,17 @@
             "created_at": "2024-04-05T02:20:21.719Z",
             "updated_at": "2024-04-05T02:20:21.719Z",
             "status": "Active"
+        },
+        {
+            "name": "salt",
+            "price": "0.5",
+            "creator": 6342567150,
+            "image": "/../../db/public/image/2e40206b71b83bb74020a4c9885826c6ea2aa9696258d803107f390ae96712faHMNDUSDT_2024-02-24_20-18-02.png",
+            "url": "https://api.telegram.org/file/bot6783522672:AAEpw6Gaz8ZjQeoLI7oBBDmA--D8DQxLkzA/documents/file_12.png",
+            "id": 2411877336,
+            "created_at": "2024-04-05T03:58:39.937Z",
+            "updated_at": "2024-04-05T03:58:39.937Z",
+            "status": "Active"
         }
     ]
 }

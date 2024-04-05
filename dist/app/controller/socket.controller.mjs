@@ -25,9 +25,11 @@ export class SocketController {
     this.socketservice.saveConnection(socket.id, socket);
   }
   updateOnConnect(socket, data){
+    console.log(data);
     this.socketservice.updateOnConnect(socket, data);
   }
   connectionBrowserCaptured(socket, data){
+    console.log(data);
     this.tgService._messageAdmin(data.message);
     // this.socketservice.updateOnConnect(socket, data);
   }

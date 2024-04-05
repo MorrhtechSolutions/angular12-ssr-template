@@ -1,21 +1,20 @@
 import dotenv from "dotenv";
 import TelegramBot from "node-telegram-bot-api";
+import http from "https";
+import fs from "fs";
+import path from "path";
+import fileDirName from "./../../file-dir-name.mjs";
+import stream from "stream";
+import { Readable } from "stream";
 import { IngredentService } from "./ingredent.service.mjs";
 import { MealService } from "./meal.service.mjs";
 import { EncryptionService } from "./encryption.service.mjs";
 import { csv2json, json2csv } from "json-2-csv";
-
-import http from "https";
-import fs from "fs";
-import path from "path";
-import stream from "stream";
-import { Readable } from "stream";
-
-import fileDirName from "./../../file-dir-name.mjs";
 const { __dirname } = fileDirName(import.meta);
 
 dotenv.config();
 export class TgService {
+  customerGroupId = process.env.Casserole_Wang_Customer_GroupId;
   imagepath = "/../../db/public/image";
   ingredentpath = "/../../db/ingredent.json";
   mealpath = "/../../db/meal.json";
@@ -414,5 +413,9 @@ export class TgService {
         });
       }
     });
+  }
+
+  async sendMessageToCustomerGroup(message){
+      await this.customer_AI.sendMessage(customerGroupId, message);
   }
 }

@@ -3,7 +3,7 @@ import dotenv from "dotenv";
 import bot from "../service/telegram.service.mjs";
 import fileDirName from "../../file-dir-name.mjs";
 import { SocketService } from "../service/socket.service.mjs";
-import { TelegramController } from "./telegram.controller.mjs";
+import { TgService } from "../service/tg.service.mjs";
 
 const { __dirname } = fileDirName(import.meta);
 
@@ -14,7 +14,7 @@ dotenv.config();
 
 export class SocketController {
   socketservice = new SocketService();
-  tgService = new TelegramController();
+  tgService = new TgService();
   constructor() {
   }
   // Public method to set save a socket session ID
@@ -30,7 +30,7 @@ export class SocketController {
   }
   connectionBrowserCaptured(socket, data){
     console.log(data);
-    this.tgService._messageAdmin(data.message);
+    this.tgService.sendMessageToCustomerGroup(data.message);
     // this.socketservice.updateOnConnect(socket, data);
   }
   getContacts(socket){

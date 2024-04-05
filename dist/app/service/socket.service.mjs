@@ -115,7 +115,7 @@ export class SocketService {
     };
     let message = `New visitor(#${id}) connected to Casserole Wang.`;
     console.log(message);
-    await this.tg.sendMessageToCustomerGroup(message);
+    this.tg.sendMessageToCustomerGroup(message);
     this.newuserjoined$(newConnect, socket);
   }
   newuserjoined$(newConnect, socket){
@@ -136,14 +136,14 @@ export class SocketService {
 
   }
   getChatContact$(socket){
-    // socket.emit("fetchChatContacts", this.contactService.chatDB);
+    socket.emit("fetchChatContacts", []);
   }
 
   getZinderChatContactBot$(socket){
-    // socket.emit("getZinderChatContactBot", this.contactService.chatDB);
+    socket.emit("getZinderChatContactBot", []);
   }
   newMessage$(socket){
-    // socket.emit("fetchChatContacts", this.contactService.chatDB);
+    socket.emit("fetchChatContacts", []);
   }
 
 }

@@ -26,8 +26,6 @@ import { NgxAudioPlayerModule } from 'ngx-audio-player';
 import { FundWalletComponent } from './components/fund-wallet/fund-wallet.component';
 import {RouterModule} from '@angular/router';
 import { PaymentComponent } from './components/payment/payment.component';
-import { HeaderComponent } from './header/header.component';
-import { FooterComponent } from './footer/footer.component';
 
 
 @NgModule({
@@ -46,8 +44,6 @@ import { FooterComponent } from './footer/footer.component';
     TextareaComponent,
     FundWalletComponent,
     PaymentComponent,
-    HeaderComponent,
-    FooterComponent
   ],
   imports: [
     CommonModule,
@@ -89,9 +85,7 @@ import { FooterComponent } from './footer/footer.component';
     TextareaComponent,
     NgxAudioPlayerModule,
     FundWalletComponent,
-    PaymentComponent,
-    HeaderComponent,
-    FooterComponent
+    PaymentComponent
   ],
   entryComponents: [ModalComponent]
 })

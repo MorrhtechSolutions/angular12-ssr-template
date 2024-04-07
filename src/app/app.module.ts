@@ -13,12 +13,13 @@ import { DeviceInfoInterceptor } from './shared/interceptors/device-info.interce
 import { UrlCachingInterceptor } from './shared/interceptors/url-caching.interceptor';
 import { HeaderInterceptor } from './shared/interceptors/header.interceptor';
 import { LoaderInterceptor } from './shared/interceptors/loader.interceptor';
-import { MatIconModule } from '@angular/material/icon'
+import { MatIconModule } from '@angular/material/icon';
 
 
 @NgModule({
   declarations: [
     AppComponent,
+
 
 
   ],

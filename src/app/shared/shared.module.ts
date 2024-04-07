@@ -45,8 +45,6 @@ import { PaymentComponent } from './components/payment/payment.component';
     TextareaComponent,
     FundWalletComponent,
     PaymentComponent,
-    HeaderComponent,
-    FooterComponent
   ],
   imports: [
     CommonModule,

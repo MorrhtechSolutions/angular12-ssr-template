@@ -21,6 +21,7 @@ import { NotifyComponent } from './components/notify/notify.component';
 import {IvyCarouselModule} from 'angular-responsive-carousel';
 import { ChatboxComponent } from './components/chatbox/chatbox.component';
 import { TextareaComponent } from './components/textarea/textarea.component';
+import { HeaderComponent, FooterComponent } from './components/Index';
 // Import library module
 import { NgxAudioPlayerModule } from 'ngx-audio-player';
 import { FundWalletComponent } from './components/fund-wallet/fund-wallet.component';
@@ -44,6 +45,8 @@ import { PaymentComponent } from './components/payment/payment.component';
     TextareaComponent,
     FundWalletComponent,
     PaymentComponent,
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     CommonModule,
@@ -83,6 +86,8 @@ import { PaymentComponent } from './components/payment/payment.component';
     NotifyComponent,
     IvyCarouselModule,
     TextareaComponent,
+    HeaderComponent,
+    FooterComponent,
     NgxAudioPlayerModule,
     FundWalletComponent,
     PaymentComponent

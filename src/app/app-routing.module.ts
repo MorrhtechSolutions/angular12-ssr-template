@@ -10,7 +10,28 @@ const routes: Routes = [
     resolve:{
       fromSock: SockResolver
     }
-  }
+  },
+  {
+    path: 'resturant',
+    loadChildren: ()=> import('./resturant/resturant.module').then(m => m.ResturantModule),
+    resolve:{
+      fromSock: SockResolver
+    }
+  },
+  {
+    path: 'order',
+    loadChildren: ()=> import('./order/order.module').then(m => m.OrderModule),
+    resolve:{
+      fromSock: SockResolver
+    }
+  },
+  {
+    path: 'support',
+    loadChildren: ()=> import('./support/support.module').then(m => m.SupportModule),
+    resolve:{
+      fromSock: SockResolver
+    }
+  },
 ];
 
 @NgModule({

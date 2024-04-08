@@ -50,6 +50,7 @@
               "src/assets/lib/font-awesome/5.10.0/css/all.min.css",
               "src/assets/lib/owlcarousel/assets/owl.carousel.min.css",
               "src/assets/css/fontawesome.css",
+              "src/assets/css/spinner.css",
               "src/assets/css/theme.css",
               "src/styles.scss"
             ],

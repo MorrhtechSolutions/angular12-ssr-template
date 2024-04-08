@@ -1,3 +1,5 @@
+import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -21,7 +23,6 @@ import { NotifyComponent } from './components/notify/notify.component';
 import {IvyCarouselModule} from 'angular-responsive-carousel';
 import { ChatboxComponent } from './components/chatbox/chatbox.component';
 import { TextareaComponent } from './components/textarea/textarea.component';
-import { HeaderComponent, FooterComponent } from './components/Index';
 // Import library module
 import { NgxAudioPlayerModule } from 'ngx-audio-player';
 import { FundWalletComponent } from './components/fund-wallet/fund-wallet.component';
@@ -45,6 +46,8 @@ import { PaymentComponent } from './components/payment/payment.component';
     TextareaComponent,
     FundWalletComponent,
     PaymentComponent,
+    FooterComponent,
+    HeaderComponent
   ],
   imports: [
     CommonModule,

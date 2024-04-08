@@ -140,7 +140,7 @@ export class ScriptsService {
     }).finally(() => {
       setTimeout(() => {
         this.spinner.hide()
-      }, 1000);
+      }, 2000);
     })
 
   }

@@ -1,3 +1,5 @@
+import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -44,6 +46,8 @@ import { PaymentComponent } from './components/payment/payment.component';
     TextareaComponent,
     FundWalletComponent,
     PaymentComponent,
+    FooterComponent,
+    HeaderComponent
   ],
   imports: [
     CommonModule,
@@ -83,6 +87,8 @@ import { PaymentComponent } from './components/payment/payment.component';
     NotifyComponent,
     IvyCarouselModule,
     TextareaComponent,
+    HeaderComponent,
+    FooterComponent,
     NgxAudioPlayerModule,
     FundWalletComponent,
     PaymentComponent

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ScriptsService } from 'src/app/shared/services/client/scripts.service';
 
 @Component({
   selector: 'app-ingredent',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class IngredentComponent implements OnInit {
 
-  constructor() { }
+  constructor(private scriptService: ScriptsService) { }
 
   ngOnInit(): void {
+  }
+
+  changePage(){
+    this.scriptService.changePage('resturant')
   }
 
 }

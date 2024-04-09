@@ -12,8 +12,8 @@ export class SocketService {
   // private __socket =
   engine:BehaviorSubject<any> = new BehaviorSubject<any>(null);
   id:BehaviorSubject<any> = new BehaviorSubject<any>(null);
+  sock:BehaviorSubject<any> = new BehaviorSubject<any>(null);
   contacts:BehaviorSubject<any> = new BehaviorSubject<any>(null);
-
   constructor(private deviceDetector: DeviceDetectorService) {
     // console.log(this.socket)
     // this._socket.on("connect", this.connected);
@@ -33,8 +33,22 @@ export class SocketService {
   update(sock:any){
     const now = Date.now();
     return this.socket.emit('update-on-connect-'+sock.id,{
-      ...this.deviceDetector.getDeviceInfo(),
+      message: `Connect me to a live agent`,
       ...sock,
+      ...this.deviceDetector.getDeviceInfo(),
+      created_at: now,
+      updated_at: now
+
+    });
+  }
+
+  liveChatRequest(data:any){
+    const now = Date.now();
+    console.log(this.sock.value);
+    return this.socket.emit('livechat-message-by-'+this.sock.value.id,{
+      ...this.deviceDetector.getDeviceInfo(),
+      ...this.sock.value,
+      message: `Name: ${data.name}\nEmail: ${data.email}`,
       created_at: now,
       updated_at: now
 
@@ -43,15 +57,14 @@ export class SocketService {
 
   // listen event
 	onConnectedUser(sock:any) {
+    this.sock.next(sock);
     this.connectionBrowserCaptured(sock);
 	}
 
   connectionBrowserCaptured(sock:any){
     const now = Date.now()
     const device = this.deviceDetector.getDeviceInfo();
-    console.log("now")
-    console.log(sock.id)
-    console.log(device)
+    console.log(sock)
     return this.socket.emit('notify-browser-captured-'+sock.id,{
       message: `Broadcasted Notification\n#${sock.id} User connected with ${device.browser} browser of version ${device.browser_version} running on ${device.os} Operating system of OS version ${device.os_version}. More Info are: \nOrientation scale ${device.orientation} \nDevice Type: ${device.deviceType}\nUser Agent: ${device.userAgent}`,
       ...sock,

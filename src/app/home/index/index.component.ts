@@ -8,12 +8,16 @@ import { ScriptsService } from 'src/app/shared/services/client/scripts.service';
 })
 export class IndexComponent implements OnInit {
 
-  constructor(private scriptSevice: ScriptsService) { }
+  constructor(private scriptService: ScriptsService) { }
 
   ngOnInit(): void {
   }
   navigateToOrder(){
-    this.scriptSevice.changePage('order');
+    this.scriptService.changePage('order');
+  }
+
+  changePage(){
+    this.scriptService.changePage('resturant')
   }
 
 }

@@ -103,7 +103,13 @@ export class IngredentService {
    * @returns callback with array of data
    */
     async all(cb) {
-      const ingredents = await this.ingredents()
+      let ingredents = await this.ingredents();
+      ingredents = ingredents.map(
+        ing=>{
+          const image = ing.image.substring(7);
+          return {...ing, image}
+        }
+      )
       return cb(ingredents);
     }
 }

@@ -91,7 +91,8 @@ import { PaymentComponent } from './components/payment/payment.component';
     FooterComponent,
     NgxAudioPlayerModule,
     FundWalletComponent,
-    PaymentComponent
+    PaymentComponent,
+    ChatboxComponent
   ],
   entryComponents: [ModalComponent]
 })

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ScriptsService } from 'src/app/shared/services/client/scripts.service';
 
 @Component({
   selector: 'app-banner',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BannerComponent implements OnInit {
 
-  constructor() { }
+  constructor(private scriptService:ScriptsService) { }
 
   ngOnInit(): void {
+  }
+  submit(){
+    this.scriptService.changePage('resturant');
   }
 
 }

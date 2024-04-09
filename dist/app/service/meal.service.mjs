@@ -103,7 +103,13 @@ export class MealService {
    * @returns callback with array of data
    */
     async all(cb) {
-      const meals = await this.meals()
+      let meals = await this.meals();
+      meals = meals.map(
+        ing=>{
+          const image = ing.image.substring(7);
+          return {...ing, image}
+        }
+      )
       return cb(meals);
     }
 }

@@ -1,87 +1,62 @@
-.max-height-500px{
-  max-height: 500px !important;
-}
-.bg-pry{
-  background-color: #1fb6b0 !important;
-}
-.m-height-400{
-  max-height: 400px;
-  min-height: 200px;
-}
-.max-height-600{
-  max-height: 600px;
-}
-.border-bs{
-  border-bottom: 1px solid;
+.chat
+{
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
-.mCustomScrollBox {
-  position: relative;
-  overflow: hidden;
-  height: calc(100% - 220px);
-  max-width: 100%;
-  outline: 0;
-  direction: ltr;
-  overflow-y: scroll;
-}
-.chat-profile-header .left .chat-profile-photo img {
-  width: 50px;
-  height: 50px;
-  border-radius: 100%;
-}
-.chat-img img{
-  width: 30px;
-  height: 30px;
-  border-radius: 100%;
-}
-.min-h-50{
-  min-height: 60px !important;
-}
-.chat-detail{
-  max-height: 70vh !important;
-  min-height: 10vh !important;
-  height: 70vh !important;
-}
-.border-bs{
-  border-bottom: 1px solid;
+.chat li
+{
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    border-bottom: 1px dotted #B3A9A9;
 }
 
+.chat li.left .chat-body
+{
+    margin-left: 60px;
+}
 
-@media only screen and (max-width: 600px) {
-  .chat-detail{
-    max-height: 70vh !important;
-    min-height: 10vh !important;
-    height: 60vh !important;
-  }
-  .mCustomScrollBox {
-    position: relative;
-    overflow: hidden;
-    height: calc(100% - 265px);
-    max-width: 100%;
-    outline: 0;
-    direction: ltr;
+.chat li.right .chat-body
+{
+    margin-right: 60px;
+}
+.bloxing{
+  color: black !important;
+}
+
+.chat li .chat-body p
+{
+    margin: 0;
+    color: #777777;
+}
+
+.panel .slidedown .glyphicon, .chat .glyphicon
+{
+    margin-right: 5px;
+}
+
+.panel-body
+{
     overflow-y: scroll;
-  }
-  .mCustomScrollBox-mb {
-    position: relative;
-    overflow: hidden;
-    height: calc(100% - 150px) !important;
-    max-width: 100%;
-    outline: 0;
-    direction: ltr;
-    overflow-y: scroll;
-  }
+    height: 400px;
+    width: 100% !important;
 }
 
-@media screen and (min-width: 800px) {
-  // this css will only be used when the screen size is min 800px
-  .mCustomScrollBox-mb-lg {
-    position: relative;
-    overflow: hidden;
-    height: calc(100% - 340px) !important;
-    max-width: 100%;
-    outline: 0;
-    direction: ltr;
-    overflow-y: scroll;
-  }
+::-webkit-scrollbar-track
+{
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar
+{
+    width: 12px;
+    background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar-thumb
+{
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+    background-color: #555;
 }

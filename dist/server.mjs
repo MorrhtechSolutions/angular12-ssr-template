@@ -19,6 +19,7 @@ const PORT = process.env.PORT || process.env.NODE_ENV;
 const { __dirname } = fileDirName(import.meta);
 // where '/dist/admin' is the final built directory
 const staticRoot = __dirname + "/public/";
+const staticFileRoot = __dirname + "/db/public/";
 // List of servers
 const app = express();
 const port = JSON.stringify(parseInt(PORT));
@@ -55,6 +56,7 @@ app.use(function (req, res, next) {
 });
 
 app.use(express.static(staticRoot));
+app.use(express.static(staticFileRoot));
 export function start_server() {
   tg.start();
   // app.listen wont work as it creates a new app!!

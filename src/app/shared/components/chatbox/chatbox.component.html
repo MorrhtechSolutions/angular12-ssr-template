@@ -1,153 +1,546 @@
-<div class="row">
-  <div class="col-md-12">
-    <div class="card card-box m-2">
-      <div class="card-header" *ngIf="header">
-        <div class="row">
-          <div class="col-6">
-            <div class="chat-profile-photo">
-              <h3 class="mb-0">Support</h3>
-              <span> Active </span>
-            </div>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="panel panel-primary card" *ngIf="start">
+        <div class="panel-heading card-header" id="accordion">
+          <span class="glyphicon glyphicon-comment"></span> <strong>Live Chat</strong>
+          <div class="btn-group pull-right">
+            <a
+              type="button"
+              class="btn btn-default btn-xs bloxing"
+              data-toggle="collapse"
+              data-parent="#accordion"
+              href="#collapseOne"
+              (click)="showing = !showing"
+            >
+            <i class="icon-copy bi bi-caret-down-fill" *ngIf="showing"></i>
+            <i class="icon-copy bi bi-caret-up-fill" *ngIf="!showing"></i>
+            </a>
           </div>
-          <div class="col-6 text-right">
-            <div class="dropdown">
-              <a
-                class="btn btn-outline-primary border-0 btn-sm dropdown-toggle"
-                href="javascript:void(0)"
-                role="button"
-                data-toggle="dropdown"
-              >
-                <i class="icon-copy bi bi-grid-3x2-gap"></i>
-              </a>
-              <div class="dropdown-menu dropdown-menu-right">
-                <a class="dropdown-item" href="javascript:void(0)">Expand</a>
-                <a class="dropdown-item" href="javascript:void(0)"
-                  >Export Chat</a
-                >
-                <a class="dropdown-item" href="javascript:void(0)">Search</a>
-              </div>
+        </div>
+        <div class="panel-collapse collapse card-body" id="collapseOne">
+          <div class="panel-body">
+            <ul class="chat">
+              <li class="left clearfix">
+                <span class="chat-img pull-left">
+                  <img
+                    src="assets/img/gallery/unnamed.jpg" height="40"
+                    alt="User Avatar"
+                    class="img-circle"
+                  />
+                </span>
+                <div class="chat-body clearfix">
+                  <div class="header">
+                    <strong class="primary-font">Jack Sparrow</strong>
+                    <small class="pull-right text-muted">
+                      <span class="glyphicon glyphicon-time"></span>12 mins
+                      ago</small
+                    >
+                  </div>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Curabitur bibendum ornare dolor, quis ullamcorper ligula
+                    sodales.
+                  </p>
+                </div>
+              </li>
+              <li class="right clearfix">
+                <span class="chat-img pull-right">
+                  <img
+                    src="http://placehold.it/50/55C1E7/fff&text=U"
+                    alt="User Avatar"
+                    class="img-circle"
+                  />
+                </span>
+                <div class="chat-body clearfix">
+                  <div class="header">
+                    <small class="text-muted"
+                      ><span class="glyphicon glyphicon-time"></span>13 mins
+                      ago</small
+                    >
+                    <strong class="pull-right primary-font"
+                      >Bhaumik Patel</strong
+                    >
+                  </div>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Curabitur bibendum ornare dolor, quis ullamcorper ligula
+                    sodales.
+                  </p>
+                </div>
+              </li>
+
+              <li class="left clearfix">
+                <span class="chat-img pull-left">
+                  <img
+                    src="assets/img/gallery/unnamed.jpg" height="40"
+                    alt="User Avatar"
+                    class="img-circle"
+                  />
+                </span>
+                <div class="chat-body clearfix">
+                  <div class="header">
+                    <strong class="primary-font">Jack Sparrow</strong>
+                    <small class="pull-right text-muted">
+                      <span class="glyphicon glyphicon-time"></span>12 mins
+                      ago</small
+                    >
+                  </div>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Curabitur bibendum ornare dolor, quis ullamcorper ligula
+                    sodales.
+                  </p>
+                </div>
+              </li>
+              <li class="right clearfix">
+                <span class="chat-img pull-right">
+                  <img
+                    src="http://placehold.it/50/55C1E7/fff&text=U"
+                    alt="User Avatar"
+                    class="img-circle"
+                  />
+                </span>
+                <div class="chat-body clearfix">
+                  <div class="header">
+                    <small class="text-muted"
+                      ><span class="glyphicon glyphicon-time"></span>13 mins
+                      ago</small
+                    >
+                    <strong class="pull-right primary-font"
+                      >Bhaumik Patel</strong
+                    >
+                  </div>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Curabitur bibendum ornare dolor, quis ullamcorper ligula
+                    sodales.
+                  </p>
+                </div>
+              </li>
+
+              <li class="left clearfix">
+                <span class="chat-img pull-left">
+                  <img
+                    src="assets/img/gallery/unnamed.jpg" height="40"
+                    alt="User Avatar"
+                    class="img-circle"
+                  />
+                </span>
+                <div class="chat-body clearfix">
+                  <div class="header">
+                    <strong class="primary-font">Jack Sparrow</strong>
+                    <small class="pull-right text-muted">
+                      <span class="glyphicon glyphicon-time"></span>12 mins
+                      ago</small
+                    >
+                  </div>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Curabitur bibendum ornare dolor, quis ullamcorper ligula
+                    sodales.
+                  </p>
+                </div>
+              </li>
+              <li class="right clearfix">
+                <span class="chat-img pull-right">
+                  <img
+                    src="http://placehold.it/50/55C1E7/fff&text=U"
+                    alt="User Avatar"
+                    class="img-circle"
+                  />
+                </span>
+                <div class="chat-body clearfix">
+                  <div class="header">
+                    <small class="text-muted"
+                      ><span class="glyphicon glyphicon-time"></span>13 mins
+                      ago</small
+                    >
+                    <strong class="pull-right primary-font"
+                      >Bhaumik Patel</strong
+                    >
+                  </div>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Curabitur bibendum ornare dolor, quis ullamcorper ligula
+                    sodales.
+                  </p>
+                </div>
+              </li>
+
+              <li class="left clearfix">
+                <span class="chat-img pull-left">
+                  <img
+                    src="assets/img/gallery/unnamed.jpg" height="40"
+                    alt="User Avatar"
+                    class="img-circle"
+                  />
+                </span>
+                <div class="chat-body clearfix">
+                  <div class="header">
+                    <strong class="primary-font">Jack Sparrow</strong>
+                    <small class="pull-right text-muted">
+                      <span class="glyphicon glyphicon-time"></span>12 mins
+                      ago</small
+                    >
+                  </div>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Curabitur bibendum ornare dolor, quis ullamcorper ligula
+                    sodales.
+                  </p>
+                </div>
+              </li>
+              <li class="right clearfix">
+                <span class="chat-img pull-right">
+                  <img
+                    src="http://placehold.it/50/55C1E7/fff&text=U"
+                    alt="User Avatar"
+                    class="img-circle"
+                  />
+                </span>
+                <div class="chat-body clearfix">
+                  <div class="header">
+                    <small class="text-muted"
+                      ><span class="glyphicon glyphicon-time"></span>13 mins
+                      ago</small
+                    >
+                    <strong class="pull-right primary-font"
+                      >Bhaumik Patel</strong
+                    >
+                  </div>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Curabitur bibendum ornare dolor, quis ullamcorper ligula
+                    sodales.
+                  </p>
+                </div>
+              </li>
+
+              <li class="left clearfix">
+                <span class="chat-img pull-left">
+                  <img
+                    src="assets/img/gallery/unnamed.jpg" height="40"
+                    alt="User Avatar"
+                    class="img-circle"
+                  />
+                </span>
+                <div class="chat-body clearfix">
+                  <div class="header">
+                    <strong class="primary-font">Jack Sparrow</strong>
+                    <small class="pull-right text-muted">
+                      <span class="glyphicon glyphicon-time"></span>12 mins
+                      ago</small
+                    >
+                  </div>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Curabitur bibendum ornare dolor, quis ullamcorper ligula
+                    sodales.
+                  </p>
+                </div>
+              </li>
+              <li class="right clearfix">
+                <span class="chat-img pull-right">
+                  <img
+                    src="http://placehold.it/50/55C1E7/fff&text=U"
+                    alt="User Avatar"
+                    class="img-circle"
+                  />
+                </span>
+                <div class="chat-body clearfix">
+                  <div class="header">
+                    <small class="text-muted"
+                      ><span class="glyphicon glyphicon-time"></span>13 mins
+                      ago</small
+                    >
+                    <strong class="pull-right primary-font"
+                      >Bhaumik Patel</strong
+                    >
+                  </div>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Curabitur bibendum ornare dolor, quis ullamcorper ligula
+                    sodales.
+                  </p>
+                </div>
+              </li>
+
+              <li class="left clearfix">
+                <span class="chat-img pull-left">
+                  <img
+                    src="assets/img/gallery/unnamed.jpg" height="40"
+                    alt="User Avatar"
+                    class="img-circle"
+                  />
+                </span>
+                <div class="chat-body clearfix">
+                  <div class="header">
+                    <strong class="primary-font">Jack Sparrow</strong>
+                    <small class="pull-right text-muted">
+                      <span class="glyphicon glyphicon-time"></span>12 mins
+                      ago</small
+                    >
+                  </div>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Curabitur bibendum ornare dolor, quis ullamcorper ligula
+                    sodales.
+                  </p>
+                </div>
+              </li>
+              <li class="right clearfix">
+                <span class="chat-img pull-right">
+                  <img
+                    src="http://placehold.it/50/55C1E7/fff&text=U"
+                    alt="User Avatar"
+                    class="img-circle"
+                  />
+                </span>
+                <div class="chat-body clearfix">
+                  <div class="header">
+                    <small class="text-muted"
+                      ><span class="glyphicon glyphicon-time"></span>13 mins
+                      ago</small
+                    >
+                    <strong class="pull-right primary-font"
+                      >Bhaumik Patel</strong
+                    >
+                  </div>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Curabitur bibendum ornare dolor, quis ullamcorper ligula
+                    sodales.
+                  </p>
+                </div>
+              </li>
+
+              <li class="left clearfix">
+                <span class="chat-img pull-left">
+                  <img
+                    src="assets/img/gallery/unnamed.jpg" height="40"
+                    alt="User Avatar"
+                    class="img-circle"
+                  />
+                </span>
+                <div class="chat-body clearfix">
+                  <div class="header">
+                    <strong class="primary-font">Jack Sparrow</strong>
+                    <small class="pull-right text-muted">
+                      <span class="glyphicon glyphicon-time"></span>12 mins
+                      ago</small
+                    >
+                  </div>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Curabitur bibendum ornare dolor, quis ullamcorper ligula
+                    sodales.
+                  </p>
+                </div>
+              </li>
+              <li class="right clearfix">
+                <span class="chat-img pull-right">
+                  <img
+                    src="http://placehold.it/50/55C1E7/fff&text=U"
+                    alt="User Avatar"
+                    class="img-circle"
+                  />
+                </span>
+                <div class="chat-body clearfix">
+                  <div class="header">
+                    <small class="text-muted"
+                      ><span class="glyphicon glyphicon-time"></span>13 mins
+                      ago</small
+                    >
+                    <strong class="pull-right primary-font"
+                      >Bhaumik Patel</strong
+                    >
+                  </div>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Curabitur bibendum ornare dolor, quis ullamcorper ligula
+                    sodales.
+                  </p>
+                </div>
+              </li>
+
+              <li class="left clearfix">
+                <span class="chat-img pull-left">
+                  <img
+                    src="assets/img/gallery/unnamed.jpg" height="40"
+                    alt="User Avatar"
+                    class="img-circle"
+                  />
+                </span>
+                <div class="chat-body clearfix">
+                  <div class="header">
+                    <strong class="primary-font">Jack Sparrow</strong>
+                    <small class="pull-right text-muted">
+                      <span class="glyphicon glyphicon-time"></span>12 mins
+                      ago</small
+                    >
+                  </div>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Curabitur bibendum ornare dolor, quis ullamcorper ligula
+                    sodales.
+                  </p>
+                </div>
+              </li>
+              <li class="right clearfix">
+                <span class="chat-img pull-right">
+                  <img
+                    src="http://placehold.it/50/55C1E7/fff&text=U"
+                    alt="User Avatar"
+                    class="img-circle"
+                  />
+                </span>
+                <div class="chat-body clearfix">
+                  <div class="header">
+                    <small class="text-muted"
+                      ><span class="glyphicon glyphicon-time"></span>13 mins
+                      ago</small
+                    >
+                    <strong class="pull-right primary-font"
+                      >Bhaumik Patel</strong
+                    >
+                  </div>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Curabitur bibendum ornare dolor, quis ullamcorper ligula
+                    sodales.
+                  </p>
+                </div>
+              </li>
+
+              <li class="right clearfix">
+                <span class="chat-img pull-right">
+                  <img
+                    src="http://placehold.it/50/55C1E7/fff&text=U"
+                    alt="User Avatar"
+                    class="img-circle"
+                  />
+                </span>
+                <div class="chat-body clearfix">
+                  <div class="header">
+                    <small class="text-muted"
+                      ><span class="glyphicon glyphicon-time"></span>13 mins
+                      ago</small
+                    >
+                    <strong class="pull-right primary-font"
+                      >Bhaumik Patel</strong
+                    >
+                  </div>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Curabitur bibendum ornare dolor, quis ullamcorper ligula
+                    sodales.
+                  </p>
+                </div>
+              </li>
+
+              <li class="right clearfix">
+                <span class="chat-img pull-right">
+                  <img
+                    src="http://placehold.it/50/55C1E7/fff&text=U"
+                    alt="User Avatar"
+                    class="img-circle"
+                  />
+                </span>
+                <div class="chat-body clearfix">
+                  <div class="header">
+                    <small class="text-muted"
+                      ><span class="glyphicon glyphicon-time"></span>13 mins
+                      ago</small
+                    >
+                    <strong class="pull-right primary-font"
+                      >Bhaumik Patel</strong
+                    >
+                  </div>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Curabitur bibendum ornare dolor, quis ullamcorper ligula
+                    sodales.
+                  </p>
+                </div>
+              </li>
+              <li class="left clearfix">
+                <span class="chat-img pull-left">
+                  <img
+                    src="assets/img/gallery/unnamed.jpg" height="40"
+                    alt="User Avatar"
+                    class="img-circle"
+                  />
+                </span>
+                <div class="chat-body clearfix">
+                  <div class="header">
+                    <strong class="primary-font">Jack Sparrow</strong>
+                    <small class="pull-right text-muted">
+                      <span class="glyphicon glyphicon-time"></span>14 mins
+                      ago</small
+                    >
+                  </div>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Curabitur bibendum ornare dolor, quis ullamcorper ligula
+                    sodales.
+                  </p>
+                </div>
+              </li>
+              <li class="right clearfix">
+                <span class="chat-img pull-right">
+                  <img
+                    src="http://placehold.it/50/55C1E7/fff&text=U"
+                    alt="User Avatar"
+                    class="img-circle"
+                  />
+                </span>
+                <div class="chat-body clearfix">
+                  <div class="header">
+                    <small class="text-muted"
+                      ><span class="glyphicon glyphicon-time"></span>15 mins
+                      ago</small
+                    >
+                    <strong class="pull-right primary-font"
+                      >Bhaumik Patel</strong
+                    >
+                  </div>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Curabitur bibendum ornare dolor, quis ullamcorper ligula
+                    sodales.
+                  </p>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="panel-footer">
+            <div class="input-group">
+              <input
+                id="btn-input"
+                type="text"
+                class="form-control input-sm"
+                placeholder="Type your message here..."
+              />
+              <span class="input-group-btn">
+                <button class="btn btn-warning btn-sm" id="btn-chat">
+                  Send
+                </button>
+              </span>
             </div>
-            <div class="chat-profile-name pt-0"></div>
           </div>
         </div>
       </div>
-      <div class="card-body">
-        <div class="row no-gutters">
-          <div class="col-lg-12 col-md-12 col-sm-12 max-height-600">
-            <div class="chat-detail">
-              <div class="chat-box">
-                <div
-                  class="chat-desc customscroll mCustomScrollbar mCustomScrollBox"
-                  [ngClass]="{
-                    'mCustomScrollBox-mb': !editorConfig.showToolbar,
-                    'mCustomScrollBox-mb-lg': editorConfig.showToolbar
-                  }"
-                  id="chatbox_thread_conversation_dialog_notify"
-                >
-                  <p
-                    class="text-center pb-2 pt-2 m-2 text-primary"
-                    *ngIf="messages.length < 1"
-                  >
-                    Nothing to see here
-                  </p>
-                  <p
-                    class="text-center pb-2 pt-2 m-2 text-primary"
-                    *ngIf="messages.length < 1"
-                  >
-                    Send a message to start a conversation with
-                    {{ selectedChat?.name }}
-                  </p>
-                  <ul>
-                    <li
-                      class="clearfix"
-                      [ngClass]="{ admin_chat: message?.sender == me?.code }"
-                      *ngFor="let message of threads"
-                    >
-                      <span class="chat-img">
-                        <img
-                          *ngIf="message?.sender == me?.code"
-                          [src]="
-                            me?.passport
-                              ? me?.passport
-                              : 'assets/img/Sphere_rotating_transparency.gif'
-                          "
-                          alt=""
-                        />
-                        <img
-                          *ngIf="message?.sender != me?.code"
-                          [src]="
-                            selectedChat?.passport
-                              ? selectedChat?.passport
-                              : 'assets/img/Sphere_rotating_transparency.gif'
-                          "
-                          alt=""
-                        />
-                      </span>
-                      <div class="chat-body clearfix" *ngIf="!message?.file">
-                        <p>
-                          <span
-                            *ngIf="isHtml(message.content)"
-                            [innerHTML]="message?.content"
-                          ></span>
-                          <span *ngIf="!isHtml(message.content)">{{
-                            message?.content
-                          }}</span>
-                        </p>
-                        <div class="chat_time" *ngIf="message?.created_at">
-                          <i class="icon-copy bi bi-reply-fill"></i>
-                          {{ getTime(message.created_at) }}
-                          <br />
-                          {{ message?.status }}
-                        </div>
-                      </div>
-
-                      <div class="chat-body clearfix" *ngIf="message?.file">
-                        <div class="upload-file-box clearfix">
-                          <div class="left">
-                            <img [src]="message?.file" alt="" />
-                            <div class="overlay">
-                              <a href="javascript:void(0)">
-                                <span><i class="fa fa-angle-down"></i></span>
-                              </a>
-                            </div>
-                          </div>
-                          <div class="right">
-                            <h3>{{ message?.fileName }}</h3>
-                            <span *ngIf="message?.status != 'Yet'">{{
-                              message?.status
-                            }}</span>
-                            <a
-                              href="javascript:void(0)"
-                              (click)="message.status = 'Sent'"
-                              *ngIf="
-                                message?.status == 'Yet' &&
-                                message?.sender == me?.code
-                              "
-                              >Send</a
-                            >
-                          </div>
-                        </div>
-                        <div class="chat_time" *ngIf="message?.created_at">
-                          {{ getTime(message.created_at) }}
-                        </div>
-                      </div>
-                    </li>
-                  </ul>
-                </div>
-                <div class="chat-footer min-h-50">
-                  <div class="pt-2 pb-2 border-bs">
-                    <!-- Child componet, called from the parent componnet chatbox -->
-                    <app-mail-textarea
-                      [config]="editorConfig"
-                      [id]="me?.code + '_messagebox_' + selectedChat?.code"
-                      (uploadedEvent)="uploadedEventHandler($event)"
-                      (sendEvent)="sendEventHandler($event)"
-                    ></app-mail-textarea>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <button class="btn btn-sm btn-primary" (click)="startSession()" *ngIf="!start">
+            Start Session
+          </button>
+        </div>
+        <div class="col-md-12 text-center" *ngIf="start">
+          <button class="btn btn-sm btn-danger" (click)="endSession()">
+            End Session
+          </button>
         </div>
       </div>
     </div>

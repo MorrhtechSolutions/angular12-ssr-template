@@ -114,14 +114,11 @@ export class SocketService {
       updated_at: now,
     };
     let message = `New visitor(#${id}) connected to Casserole Wang.`;
-    console.log(message);
     this.tg.sendMessageToCustomerGroup(message);
     this.newuserjoined$(newConnect, socket);
   }
   newuserjoined$(newConnect, socket){
     socket.emit("newuserjoined", newConnect);
-    console.log("newConnect");
-    console.log(newConnect);
   }
   async updateOnConnect(socket, data){
     this.updateOnSuccess$(socket, data);
@@ -144,6 +141,11 @@ export class SocketService {
   }
   newMessage$(socket){
     socket.emit("fetchChatContacts", []);
+  }
+  chatRequest$(socket, data){
+    let message = `Session #${socket.id} is waiting for a customer agent to connect.\n\n${data.message}\n\nSend /connectAgent ${socket.id} {agent firstname}\n\nto connect with this customer.\n\nexample: /connectAgent ${socket.id} Som`
+    this.tg.sendMessageToCustomerGroup(message);
+    socket.emit("awaitingLiveAgent", `Thank you for your patience. Your Session id id ${socket.id}. Our team is currently experiencing higher volumes, but rest assured, we'll be with you shortly. Your query is important to us, and we're working diligently to connect you with the right agent. Thank you for your understanding.`);
   }
 
 }

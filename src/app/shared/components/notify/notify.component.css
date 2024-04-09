@@ -8,12 +8,16 @@
   margin-top: 40px;
   margin-bottom: 40px;
 }
+.pr2{
+  padding-right: 10px;
+}
 .welcome-modal {
   bottom: 50px;
   width: 320px;
   background: #fff;
   border-radius: 12px 12px 0 0;
-  padding: 0 24px 16px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   -webkit-box-shadow: 0 0 44px rgba(0, 0, 0, 0.2);
   box-shadow: 0 0 44px rgba(0, 0, 0, 0.2);
   z-index: 120;

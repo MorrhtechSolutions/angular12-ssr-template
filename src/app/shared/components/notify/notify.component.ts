@@ -5,6 +5,7 @@ import { environment } from 'src/environments/environment';
 import { throwError } from 'rxjs';
 import { FileService } from '../../services/client/file.service';
 import { Track } from 'ngx-audio-player';
+import { ScriptsService } from '../../services/client/scripts.service';
 
 @Component({
   selector: 'app-notify',
@@ -116,8 +117,7 @@ export class NotifyComponent implements OnInit {
   ];
   startedConversation: boolean = false;
   /* A class method of name `constructor` doing nothing. A special method the program class[NotifyComponent] helps you run once class is created */
-  constructor(private _fs: FileService) {
-    console.log("Constructor called")
+  constructor(private _fs: FileService, private scriptService:ScriptsService) {
     console.log(this.createdAt)
   }
   /* A class method of name `ngOnInit` doing something. A special method the program class[NotifyComponent] helps you run once component
@@ -209,6 +209,10 @@ export class NotifyComponent implements OnInit {
 
   startChat(state:boolean){
     this.startedConversation =state;
+  }
+  navigateTo(state:boolean){
+    this.shouldShow = state;
+    // this.scriptService.changePage('support');
   }
 
 

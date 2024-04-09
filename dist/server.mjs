@@ -19,6 +19,7 @@ const PORT = process.env.PORT || process.env.NODE_ENV;
 const { __dirname } = fileDirName(import.meta);
 // where '/dist/admin' is the final built directory
 const staticRoot = __dirname + "/public/";
+const staticFileRoot = __dirname + "/db/public/";
 // List of servers
 const app = express();
 const port = JSON.stringify(parseInt(PORT));
@@ -55,6 +56,7 @@ app.use(function (req, res, next) {
 });
 
 app.use(express.static(staticRoot));
+app.use(express.static(staticFileRoot));
 export function start_server() {
   tg.start();
   // app.listen wont work as it creates a new app!!
@@ -80,7 +82,6 @@ export function start_server() {
     io.on("connection", (socket) => {
       now = new Date(Date.now());
       mes = `New client connection at ${now.toLocaleTimeString()}, ${now.toLocaleDateString()}.`;
-      console.log(mes);
       tg.sendMessageToCustomerGroup(mes);
 
       const socketcontroller = new SocketController();
@@ -93,6 +94,12 @@ export function start_server() {
       socket.on("notify-browser-captured-" + socket.id, (data) =>
         socketcontroller.connectionBrowserCaptured(socket, data)
       );
+      socket.on("livechat-message-by-" + socket.id, (data) =>
+        socketcontroller.chatRequest(socket, data)
+      );
+      // socket.on("livechat-requested-by-" + socket.id, (data) =>
+      //   socketcontroller.connectionBrowserCaptured(socket, data)
+      // );
     });
   });
 }

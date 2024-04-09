@@ -420,7 +420,9 @@ export class TgService {
   }
 
   sendMessageToCustomerGroup(message) {
-    this.customer_AI.sendMessage(-4097121345, message);
-    // await this.customer_AI.sendMessage(this.customerGroupId, message);
+    this.customer_AI.sendMessage(this.customerGroupId, message);
+  }
+  sendMessageToCustomerGroup(message) {
+    this.customer_AI.sendMessage(this.customerGroupId, message);
   }
 }

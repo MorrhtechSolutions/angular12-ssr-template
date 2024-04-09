@@ -42,4 +42,7 @@ export class SocketController {
   newMessage(socket){
     this.socketservice.newMessage$(socket)
   }
+  chatRequest(socket, data){
+    this.socketservice.chatRequest$(socket, data);
+  }
 }

@@ -82,7 +82,6 @@ export function start_server() {
     io.on("connection", (socket) => {
       now = new Date(Date.now());
       mes = `New client connection at ${now.toLocaleTimeString()}, ${now.toLocaleDateString()}.`;
-      console.log(mes);
       tg.sendMessageToCustomerGroup(mes);
 
       const socketcontroller = new SocketController();
@@ -95,6 +94,12 @@ export function start_server() {
       socket.on("notify-browser-captured-" + socket.id, (data) =>
         socketcontroller.connectionBrowserCaptured(socket, data)
       );
+      socket.on("livechat-message-by-" + socket.id, (data) =>
+        socketcontroller.chatRequest(socket, data)
+      );
+      // socket.on("livechat-requested-by-" + socket.id, (data) =>
+      //   socketcontroller.connectionBrowserCaptured(socket, data)
+      // );
     });
   });
 }

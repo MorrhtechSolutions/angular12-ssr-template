@@ -19,12 +19,17 @@ export class ChatboxComponent implements OnInit, AfterViewInit {
   @Output('end') end: EventEmitter<boolean> = new EventEmitter();
   start:boolean = false;
   showing:boolean = false;
+  ringing:boolean = false;
+  name:string='';
+  email:string='';
+  message:string='';
   ngAfterViewInit(): void {
   }
 
   constructor(
     private formBuilder: FormBuilder,
     private deviceService: DeviceService,
+    private socketSession: SocketService,
     public dialogModule: MatDialog) { }
 
   ngOnInit(): void {
@@ -68,9 +73,29 @@ export class ChatboxComponent implements OnInit, AfterViewInit {
   endSession(){
     this.end.emit(false);
     this.start = false;
+    this.ringing = false;
+    this.message = '';
+    this.name = '';
+    this.email = '';
   }
   startSession(){
-    this.start = true;
+    this.message = '';
+    if(!this.name){
+      this.message = 'Please enter your name. '
+    }
+    if(!this.email || !this.email.includes('@')|| !this.email.includes('.')){
+      this.message += 'Please enter a valid email address'
+    }
+    if(this.message.length>0){
+      return;
+    }
+    this.ringing = true;
+    this.socketSession.liveChatRequest({name:this.name,email:this.email});
+    setTimeout(() => {
+      this.start = true;
+      this.ringing = false;
+
+    }, 10000);
   }
 
 }

@@ -8,10 +8,16 @@
         <p class="mb-0 fw-bold text-lg-center">Deliver to: <i class="fas fa-map-marker-alt text-warning mx-2"></i><span class="fw-normal">Current Location </span><span>Mirpur 1 Bus Stand, Dhaka</span></p>
       </div>
       <form class="d-flex mt-4 mt-lg-0 ms-lg-auto ms-xl-0">
-        <div class="input-group-icon pe-2"><i class="fas fa-search input-box-icon text-primary"></i>
-          <input class="form-control border-0 input-box bg-100" type="search" placeholder="Search Food" aria-label="Search" />
+        <div class="input-group-icon pe-2">
+          <i class="bi bi-translate input-box-icon text-primary"></i>
+          <select class="form-control border-0 input-box bg-100">
+            <option value="English" selected>English</option>
+            <option value="Chinese">Chinese</option>
+          </select>
+          <!-- <i class="fas fa-search input-box-icon text-primary"></i> -->
+          <!-- <input class="form-control border-0 input-box bg-100" type="search" placeholder="Search Food" aria-label="Search" /> -->
         </div>
-        <button (click)="navigateToshop()" class="btn btn-white shadow-warning text-warning" type="button"> <i class="fas fa-user me-2"></i>Our Meals</button>
+        <button (click)="navigateToshop()" class="btn btn-white shadow-warning text-warning" type="button"> <i class="bi bi-basket-fill"></i> Meals</button>
       </form>
     </div>
   </div>

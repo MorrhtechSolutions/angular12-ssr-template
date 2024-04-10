@@ -17,8 +17,7 @@ export const environment = {
   passageAppId: '8nWALwN5Ot37pEsAmoh3fc2y',
   teegramToken:'',
   appDomain: 'http://localhost:5000',
-  zinder_pub_key: 'e056f60d04c3b7c1dp9JBY0f9cd9ed6UrJn826oAwNUrZ84594pwgjfrzjt7h44f247c7dgcANUrcJoA0r22b0182',
-  zinder_pri_key: '7f2G4iAwNUrJcGe05gNUrJBYZjsGkcAY0LWp9ck0826oA0826wNUrJcAf2G2G4iAnrY0LWp9n'
+  pub_key: "7f2G4iAwNUrJcGe05gNUrJBYZjsGkcAY0LWp9ck0826oA0826wNUrJcAf2G2G4iAnrY0LWp9n"
 };
 
 /*

@@ -3,6 +3,8 @@ import { DeviceDetectorService } from 'ngx-device-detector';
 import { BehaviorSubject } from 'rxjs';
 import { io } from "socket.io-client";
 import { environment } from 'src/environments/environment';
+import { DeviceService } from './device.service';
+import { ScriptsService } from './scripts.service';
 @Injectable({
   providedIn: 'root'
 })
@@ -14,13 +16,15 @@ export class SocketService {
   id:BehaviorSubject<any> = new BehaviorSubject<any>(null);
   sock:BehaviorSubject<any> = new BehaviorSubject<any>(null);
   contacts:BehaviorSubject<any> = new BehaviorSubject<any>(null);
-  constructor(private deviceDetector: DeviceDetectorService) {
+  session:BehaviorSubject<any[]> = new BehaviorSubject<any[]>([]);
+  ongoingSession:BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
+
+  constructor(private deviceDetector: DeviceDetectorService, private deviceService:DeviceService, private scriptService:ScriptsService) {
     // console.log(this.socket)
     // this._socket.on("connect", this.connected);
     // this._socket.on("disconnect", this.disconnected);
   }
   connected(){
-    console.log(this.socket)
     if(this.socket){
       this.onConnectedUser({id:this.socket.id, status: 'connected'})
       this.engine.next(this.socket.io.engine);
@@ -42,18 +46,6 @@ export class SocketService {
     });
   }
 
-  liveChatRequest(data:any){
-    const now = Date.now();
-    console.log(this.sock.value);
-    return this.socket.emit('livechat-message-by-'+this.sock.value.id,{
-      ...this.deviceDetector.getDeviceInfo(),
-      ...this.sock.value,
-      message: `Name: ${data.name}\nEmail: ${data.email}`,
-      created_at: now,
-      updated_at: now
-
-    });
-  }
 
   // listen event
 	onConnectedUser(sock:any) {
@@ -64,7 +56,6 @@ export class SocketService {
   connectionBrowserCaptured(sock:any){
     const now = Date.now()
     const device = this.deviceDetector.getDeviceInfo();
-    console.log(sock)
     return this.socket.emit('notify-browser-captured-'+sock.id,{
       message: `Broadcasted Notification\n#${sock.id} User connected with ${device.browser} browser of version ${device.browser_version} running on ${device.os} Operating system of OS version ${device.os_version}. More Info are: \nOrientation scale ${device.orientation} \nDevice Type: ${device.deviceType}\nUser Agent: ${device.userAgent}`,
       ...sock,
@@ -85,10 +76,41 @@ export class SocketService {
     });
   }
 
+  liveChatRequest(data:any){
+    const now = Date.now();
+    const session = this.session.value;
+    const talk = {
+      id: this.sock.value.id,
+      message: `Name: ${data.name}\nEmail: ${data.email}`,
+      sender: "Customer",
+      at: Date.now(),
+      session: this.sock.value.id,
+    }
+    session.push(talk);
+    this.session.next(session);
+    return this.socket.emit('livechat-message-by-'+this.sock.value.id,{
+      ...this.deviceDetector.getDeviceInfo(),
+      ...this.sock.value,
+      message: `Name: ${data.name}\nEmail: ${data.email}`,
+      created_at: now,
+      updated_at: now
+
+    });
+  }
+  agentConnected(){
+    this.socket.on(`agentconnected-${this.sock.value.id}`,(data)=>{
+      this.deviceService.oSuccessNotification(`Support Message`, data.message);
+      const session = this.session.value;
+      // data.conversation = this.scriptService.decryptSha256(data.conversation);
+      // data.conversation = JSON.parse(data.conversation);
+      session.push(data.conversation);
+      this.session.next(session);
+      this.ongoingSession.next(true);
+    })
+  }
+
   getContacts(){
     this.socket.on('fetchChatContacts',(args)=>{
-      console.log('Contact args')
-      console.log(args);
       this.contacts.next(args)
     });
 		return this.socket.emit('fetchContactRequest',{

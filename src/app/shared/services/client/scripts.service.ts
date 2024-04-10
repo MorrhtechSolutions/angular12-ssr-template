@@ -28,6 +28,7 @@ export class ScriptsService {
     map((c: any) => c.countries),
     shareReplay(1)
   );
+  key:any = environment.pub_key;
   private scripts: any = {};
 
   constructor(private _meta: Meta, private _route: Router, private _ns: NotificationsService,
@@ -132,17 +133,16 @@ export class ScriptsService {
   }
 
   changePage(page: string) {
-    this._route.navigate([page]).then(() => {
-      this.spinner.show()
-    }).catch((reason: any) => {
+    this._route.navigate([page])
+    .then(() => this.spinner.show())
+    .catch((reason: any) => {
       console.log(reason);
       this._ns.error('oOopss', 'issues navigating to page');
-    }).finally(() => {
-      setTimeout(() => {
-        this.spinner.hide()
-      }, 2000);
     })
-
+    .finally(() => {
+      this.scrollTo();
+      setTimeout(() => this.spinner.hide(), 2000);
+    })
   }
   /**
 * Calculate a 32 bit FNV-1a hash
@@ -183,16 +183,16 @@ export class ScriptsService {
   _isHttps() {
     return "https:" === location.protocol;
   }
-  encryptSha256(key:any, data:any){
-    return sjcl.encrypt(key, data)
+  encryptSha256(data:any){
+    return sjcl.encrypt(this.key, data)
   }
   hashSha256(data:any){
     let dataBit = sjcl.hash.sha256.hash(data);
     let dataHash = sjcl.codec.hex.fromBits(dataBit);
     return dataHash;
   }
-  decryptSha256(key:any, data:any){
-    return sjcl.decrypt(key,data);
+  decryptSha256(data:any){
+    return sjcl.decrypt(this.key,data);
   }
 
 }

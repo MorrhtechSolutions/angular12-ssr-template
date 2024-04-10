@@ -25,6 +25,7 @@ export class ChatboxComponent implements OnInit, AfterViewInit {
   message:string='';
   ngAfterViewInit(): void {
   }
+  conversation:any[]=[]
 
   constructor(
     private formBuilder: FormBuilder,
@@ -33,6 +34,7 @@ export class ChatboxComponent implements OnInit, AfterViewInit {
     public dialogModule: MatDialog) { }
 
   ngOnInit(): void {
+    this.socketSession.session.subscribe(c=>this.conversation = c);
 
   }
 
@@ -91,11 +93,16 @@ export class ChatboxComponent implements OnInit, AfterViewInit {
     }
     this.ringing = true;
     this.socketSession.liveChatRequest({name:this.name,email:this.email});
-    setTimeout(() => {
-      this.start = true;
-      this.ringing = false;
-
-    }, 10000);
+    this.socketSession.ongoingSession.subscribe(
+      result=>{
+        if(result){
+          this.start = true;
+          this.ringing = false;
+        }else{
+          setTimeout(() => this.endSession(), 120000);
+        }
+      }
+    )
   }
 
 }

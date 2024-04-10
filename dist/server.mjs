@@ -79,12 +79,13 @@ export function start_server() {
         credentials: true,
       },
     });
+    tg.io = io;
     io.on("connection", (socket) => {
       now = new Date(Date.now());
       mes = `New client connection at ${now.toLocaleTimeString()}, ${now.toLocaleDateString()}.`;
       tg.sendMessageToCustomerGroup(mes);
 
-      const socketcontroller = new SocketController();
+      const socketcontroller = new SocketController(io);
 
       socketcontroller.init(socket);
       socket.on("new_message", () => socketcontroller.newMessage(socket));
@@ -94,8 +95,8 @@ export function start_server() {
       socket.on("notify-browser-captured-" + socket.id, (data) =>
         socketcontroller.connectionBrowserCaptured(socket, data)
       );
-      socket.on("livechat-message-by-" + socket.id, (data) =>
-        socketcontroller.chatRequest(socket, data)
+      socket.on("livechat-message-by-" + socket.id, async (data) =>
+        await socketcontroller.chatRequest(socket, data)
       );
       // socket.on("livechat-requested-by-" + socket.id, (data) =>
       //   socketcontroller.connectionBrowserCaptured(socket, data)

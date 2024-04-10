@@ -15,7 +15,8 @@ dotenv.config();
 export class SocketController {
   socketservice = new SocketService();
   tgService = new TgService();
-  constructor() {
+  constructor(io) {
+    this.socketservice.setio(io)
   }
   // Public method to set save a socket session ID
   init(socket){
@@ -25,11 +26,9 @@ export class SocketController {
     this.socketservice.saveConnection(socket.id, socket);
   }
   updateOnConnect(socket, data){
-    console.log(data);
     this.socketservice.updateOnConnect(socket, data);
   }
   connectionBrowserCaptured(socket, data){
-    console.log(data);
     this.tgService.sendMessageToCustomerGroup(data.message);
     // this.socketservice.updateOnConnect(socket, data);
   }
@@ -42,7 +41,7 @@ export class SocketController {
   newMessage(socket){
     this.socketservice.newMessage$(socket)
   }
-  chatRequest(socket, data){
-    this.socketservice.chatRequest$(socket, data);
+  async chatRequest(socket, data){
+    await this.socketservice.chatRequest$(socket, data);
   }
 }

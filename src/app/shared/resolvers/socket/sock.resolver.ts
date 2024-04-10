@@ -25,11 +25,15 @@ export class SockResolver implements Resolve<boolean> {
   }
   private connected(){
     this.socketService.connected();
-    this.deviceService.oSuccessNotification(`Connected`, 'Successfully connected to client')
+    this.deviceService.oSuccessNotification(`Connected`, 'Successfully connected to client');
+    this.agentConnected();
   }
   private disconnected(reason:any){
     this.socketService.disconnected(reason);
     this.deviceService.oErrorNotification(`Failed Connection`, 'Failed connected to client')
+  }
+  private agentConnected(){
+    this.socketService.agentConnected();
   }
   private closed(reason:any){
     this.socketService.closed(reason);

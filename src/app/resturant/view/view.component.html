@@ -1,1 +1,62 @@
-<p>view works!</p>
+<app-header></app-header>
+
+
+
+<section class="py-5 mt-6">
+  <div class="container">
+    <div class="row gx-5">
+      <aside class="col-lg-6">
+        <div class="border rounded-4 mb-3 d-flex justify-content-center">
+            <img style="max-width: 100%; max-height: 100vh; margin: auto;" class="rounded-4 fit" src="assets/img/gallery/ruby-tuesday.png">
+        </div>
+      </aside>
+      <main class="col-lg-6">
+        <div class="ps-lg-3">
+          <h4 class="title text-dark">
+            Ruby tuesday
+          </h4>
+          <div class="d-flex flex-row my-3">
+            <div class="text-warning mb-1 me-2">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+              <span class="ms-1">
+                4.5
+              </span>
+            </div>
+            <span class="text-muted"><i class="fas fa-shopping-basket fa-sm mx-1"></i>154 orders</span>
+            <span class="text-success ms-2">In stock</span>
+          </div>
+
+          <p>
+            A perfectly cooked steak is tender, juicy, and bursting with flavor. Its exterior is caramelized to a golden brown, forming a delicious crust, while the interior remains moist and pink, cooked to the diner's desired level of doneness. Each bite melts in the mouth, releasing rich, savory notes and leaving a lingering satisfaction that epitomizes culinary excellence.
+          </p>
+
+
+
+          <hr>
+
+          <div class="row mb-4">
+
+            <!-- col.// -->
+            <div class="col-md-12 col-6 mb-3">
+              <label class="mb-2 d-block">Quantity</label>
+              <form [formGroup]="orderForm" (ngSubmit)="addToCart()">
+                <label for="quantity">Select Quantity:</label>
+                <select formControlName="quantity" id="quantity">
+                  <option *ngFor="let num of quantities" [value]="num">{{ num }}</option>
+                </select>
+                <button type="submit" class="btn btn-primary shadow-0 col-md-6 float-right"><i class="me-1 fa fa-shopping-basket"></i> Add to cart</button>
+              </form>
+            </div>
+          </div>
+          <button class="btn btn-warning shadow-0" (click)="changePage()"> Go Back </button>
+        </div>
+      </main>
+    </div>
+  </div>
+</section>
+
+<app-footer></app-footer>

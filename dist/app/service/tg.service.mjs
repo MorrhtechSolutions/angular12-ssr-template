@@ -10,6 +10,7 @@ import { IngredentService } from "./ingredent.service.mjs";
 import { MealService } from "./meal.service.mjs";
 import { EncryptionService } from "./encryption.service.mjs";
 import { csv2json, json2csv } from "json-2-csv";
+import { SessionService } from "./session.service.mjs";
 const { __dirname } = fileDirName(import.meta);
 
 dotenv.config();
@@ -34,22 +35,33 @@ export class TgService {
   ingredentService = new IngredentService();
   mealService = new MealService();
   encryptService = new EncryptionService();
-
+  sessionService = new SessionService();
   kitchenAiChatState = new Map();
   ingredents = new Map();
+  _io;
+  get io() {
+    return this._io;
+  }
+  set io(value) {
+    this._io = value;
+  }
   constructor() {}
 
   start() {
     this.customer_AI.on("polling_error", (msg) => console.log(msg));
     this.customer_AI.on("polling_error", (msg) => console.log(msg));
 
-    this.customer_AI.on("message", (msg, match) => {
+    this.customer_AI.on("message", async (msg, match) => {
       const chatId = msg.chat.id;
-      const text = msg.text;
+      let text = msg.text;
       // const resp = match[1];
       if (!text || text.length < 1) {
         this.customer_AI.sendMessage(chatId, "Send /help to get help");
       } else {
+        // /connectAgent Q_QFKayTdsZ-7x52AAAD Som
+        if (text.includes("/connectAgent")) {
+          text = "/connectAgent";
+        }
         switch (text) {
           case "/1":
             break;
@@ -84,6 +96,10 @@ export class TgService {
           case "/11":
             break;
           case "/12":
+            break;
+
+          case "/connectAgent":
+            await this._connectAgent(msg);
             break;
 
           default:
@@ -163,7 +179,7 @@ export class TgService {
   customermenu(msg) {
     this.customer_AI.sendMessage(
       msg.chat.id,
-      `Welcome to Zinder Customer Our Chat ID is ${msg.chat.id}.\nEnter\n/1. View total active customers at the moment\n/2. View total customers last 24 hours\n/3. View total customers for the week\n/4. View total customers for the month\n/5. View total customers for the year\n/6. Download customer data\n/7. View total active visitors at the moment\n/8. View total visitors last 24 hours\n/9. View total visitors for the week\n/10. View total visitors for the month\n/11. View total visitors for the year\n/12. Download visitors data`
+      `Welcome to Zinder Customer Our Chat ID is ${msg.chat.id}.\nEnter\n/1. View total active customers at the moment\n/2. View total customers last 24 hours\n/3. View total customers for the week\n/4. View total customers for the month\n/5. View total customers for the year\n/6. Download customer data\n/7. View total active visitors at the moment\n/8. View total visitors last 24 hours\n/9. View total visitors for the week\n/10. View total visitors for the month\n/11. View total visitors for the year\n/12. Download visitors data\n\n/connectAgent {CustomersessionID} {Yourname}. To connect to an active support customer`
     );
   }
   kitchenmenu(msg) {
@@ -417,6 +433,93 @@ export class TgService {
         });
       }
     });
+  }
+  async _connectAgent(message) {
+    const text = message.text;
+    // console.log(text);
+    const excludingcommand = String(text).slice("/connectAgent".length + 1);
+    const words = excludingcommand.split(" ");
+    if (words.length < 1) {
+      this.customer_AI.sendMessage(
+        message.chat.id,
+        "Incomplete command. Command missing sessionID and agent name. Send /help for help."
+      );
+      return;
+    }
+    if (words.length < 2) {
+      this.customer_AI.sendMessage(
+        message.chat.id,
+        "Incomplete command. Agent name. Send /help for help."
+      );
+      return;
+    }
+    const sessionId = words[0];
+    const firstname = words[1];
+    // console.log(this._io)
+    const result = this._io.sockets.sockets.get(sessionId);
+    if (!result) {
+      this.customer_AI.sendMessage(
+        message.chat.id,
+        "Cannot connect, session is closed."
+      );
+      return;
+    }
+    const welcome = `Thank you for connecting with us. My name is ${firstname}, how may i be of help?`;
+    const upddate = {
+      id: sessionId,
+      message: welcome,
+      sender: "Agent-" + message.from.id,
+      at: Date.now(),
+      session: sessionId,
+    };
+    this._io.to(sessionId).emit(`agentconnected-${sessionId}`, {
+      message: welcome,
+      conversation: upddate,
+    });
+    this.customer_AI.sendMessage(
+      message.chat.id,
+      `Connected to user. Auto-welcome message sent:\n\n${welcome}`
+    );
+    const session = await this.sessionService.findBy("socket", sessionId);
+    if (!session) {
+      const _session = {
+        socket: sessionId,
+        conversation: [
+          {
+            id: sessionId,
+            message: "Initials",
+            sender: "Customer",
+            at: Date.now(),
+            session: sessionId,
+          },
+          upddate,
+        ],
+      };
+      await this.sessionService.save(_session, (res) => {
+        console.log(res);
+      });
+    }
+    try {
+      session.conversation = JSON.parse(
+        this.encryptService.decryptSha256(session.conversation)
+      );
+      session.conversation.push(upddate);
+      session.conversation = this.encryptService.encryptSha256(
+        JSON.stringify(session.conversation)
+      );
+      await this.sessionService.getByIndex(
+        "socket",
+        sessionId,
+        async (index) =>
+          await this.sessionService.update(
+            session,
+            index,
+            () => (res) => console.log(res)
+          )
+      );
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   sendMessageToCustomerGroup(message) {

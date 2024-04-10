@@ -1,6 +1,8 @@
 import sjcl from "sjcl";
-
+import dotenv from "dotenv";
+dotenv.config();
 export class EncryptionService {
+  psk = process.env.PRIVATE_SESSION_KEY;
   constructor() {}
 
   /**
@@ -32,17 +34,15 @@ export class EncryptionService {
     return hval >>> 0;
   }
 
-  hashSha256(data){
+  hashSha256(data) {
     let dataBit = sjcl.hash.sha256.hash(data);
     let dataHash = sjcl.codec.hex.fromBits(dataBit);
     return dataHash;
   }
-  encryptSha256(key, data){
-    return sjcl.encrypt(key, data)
+  encryptSha256(data) {
+    return sjcl.encrypt(this.psk, data);
   }
-  decryptSha256(key, data){
-    return sjcl.decrypt(key,data);
+  decryptSha256(data) {
+    return sjcl.decrypt(this.psk, data);
   }
-
-
 }

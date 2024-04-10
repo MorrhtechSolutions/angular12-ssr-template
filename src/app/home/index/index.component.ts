@@ -12,6 +12,9 @@ export class IndexComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  navigateToOrder(){
+    this.scriptService.changePage('order');
+  }
 
   changePage(){
     this.scriptService.changePage('resturant')

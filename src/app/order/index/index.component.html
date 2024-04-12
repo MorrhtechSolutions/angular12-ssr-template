@@ -1,1 +1,707 @@
-<p>index works!</p>
+<app-header></app-header>
+
+
+<section class="py-0 bg-primary-gradient">
+
+  <div class="container">
+    <div class="row justify-content-center g-0">
+      <section id="testimonial">
+        <div class="container">
+
+          <app-search></app-search>
+
+          <div class="row h-100">
+            <div class="col-lg-7 mx-auto text-center mb-6">
+              <h5 class="fw-bold fs-3 fs-lg-5 lh-sm mb-3">Locate & Track Order</h5>
+            </div>
+          </div>
+          <div class="row gx-3">
+            <div class="col-6 col-md-3 col-lg-3 h-100 mb-5">
+              <div class="card card-span h-100 text-white rounded-3">
+                <img
+                  class="img-fluid rounded-3 h-100 pointer"
+                  src="assets/img/gallery/food-world.png"
+                  alt="..."
+                />
+                <div class="card-img-overlay ps-0">
+                  <span class="badge bg-danger p-2 ms-3"
+                    ><i class="fas fa-tag me-2 fs-0"></i
+                    ><span class="fs-0">20% off</span></span
+                  ><span class="badge bg-primary ms-2 me-1 p-2"
+                    ><i class="fas fa-clock me-1 fs-0"></i
+                    ><span class="fs-0">Fast</span></span
+                  >
+                </div>
+                <div class="card-body ps-0 col-lg-12">
+                  <div class="d-flex align-items-center mb-3">
+                    <img
+                      class="img-fluid iconic"
+                      src="assets/img/gallery/unnamed.jpg"
+                      height="40"
+                      alt=""
+                    />
+                    <div
+                      class="flex-1 pointer ms-3"
+                      (click)="navigateTo('/resturant/view/' + 'Food_world')"
+                    >
+                      <h5 class="mb-0 fw-bold text-1000">Food world</h5>
+                      <span class="text-primary fs--1 me-1"
+                        >$</span
+                      ><span class="mb-0 text-primary">46</span>
+
+                    </div>
+                  </div>
+                  <div class="col-lg-12 d-flex justify-content-center mt-2">
+                    <a
+                      class="btn btn-sm btn-danger"
+                      (click)="showAddToCart()"
+                      href="javascript:void()"
+                      >Add to cart
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-6 col-md-3 col-lg-3 h-100 mb-5">
+              <div class="card card-span h-100 text-white rounded-3">
+                <img
+                  class="img-fluid rounded-3 h-100 pointer"
+                  src="assets/img/gallery/pizza-hub.png"
+                  alt="..."
+                />
+                <div class="card-img-overlay ps-0">
+                  <span class="badge bg-danger p-2 ms-3"
+                    ><i class="fas fa-tag me-2 fs-0"></i
+                    ><span class="fs-0">10% off</span></span
+                  ><span class="badge bg-primary ms-2 me-1 p-2"
+                    ><i class="fas fa-clock me-1 fs-0"></i
+                    ><span class="fs-0">Fast</span></span
+                  >
+                </div>
+                <div class="card-body ps-0 col-lg-12">
+                  <div class="d-flex align-items-center mb-3">
+                    <img
+                      class="img-fluid iconic"
+                      src="assets/img/gallery/unnamed.jpg"
+                      height="40"
+                      alt=""
+                    />
+                    <div
+                      class="flex-1 pointer ms-3"
+                      (click)="navigateTo('/resturant/view/' + 'Pizza_hub')"
+                    >
+                      <h5 class="mb-0 fw-bold text-1000">Pizza hub</h5>
+                      <span class="text-primary fs--1 me-1"
+                        >$</span
+                      ><span class="mb-0 text-primary">40</span>
+                    </div>
+                  </div>
+                  <div class="col-lg-12 d-flex justify-content-center mt-2">
+                    <a
+                      class="btn btn-sm btn-danger"
+                      (click)="showAddToCart()"
+                      href="javascript:void()"
+                      >Add to cart
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-6 col-md-3 col-lg-3 h-100 mb-5">
+              <div class="card card-span h-100 text-white rounded-3">
+                <img
+                  class="img-fluid rounded-3 h-100 pointer"
+                  src="assets/img/gallery/donuts-hut.png"
+                  alt="..."
+                />
+                <div class="card-img-overlay ps-0">
+                  <span class="badge bg-danger p-2 ms-3"
+                    ><i class="fas fa-tag me-2 fs-0"></i
+                    ><span class="fs-0">15% off</span></span
+                  ><span class="badge bg-primary ms-2 me-1 p-2"
+                    ><i class="fas fa-clock me-1 fs-0"></i
+                    ><span class="fs-0">Fast</span></span
+                  >
+                </div>
+                <div class="card-body ps-0 col-lg-12">
+                  <div class="d-flex align-items-center mb-3">
+                    <img
+                      class="img-fluid iconic"
+                      src="assets/img/gallery/unnamed.jpg"
+                      height="40"
+                      alt=""
+                    />
+                    <div
+                      class="flex-1 pointer ms-3"
+                      (click)="navigateTo('/resturant/view/' + 'Donuts_hut')"
+                    >
+                      <h5 class="mb-0 fw-bold text-1000">Donuts hut</h5>
+                      <span class="text-primary fs--1 me-1"
+                        >$</span
+                      ><span class="mb-0 text-primary">20</span>
+                    </div>
+                  </div>
+                  <div class="col-lg-12 d-flex justify-content-center mt-2">
+                    <a
+                      class="btn btn-sm btn-danger"
+                      (click)="showAddToCart()"
+                      href="javascript:void()"
+                      >Add to cart
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-6 col-md-3 col-lg-3 h-100 mb-5">
+              <div class="card card-span h-100 text-white rounded-3">
+                <img
+                  class="img-fluid rounded-3 h-100 pointer"
+                  src="assets/img/gallery/donuthut.png"
+                  alt="..."
+                />
+                <div class="card-img-overlay ps-0">
+                  <span class="badge bg-danger p-2 ms-3"
+                    ><i class="fas fa-tag me-2 fs-0"></i
+                    ><span class="fs-0">15% off</span></span
+                  ><span class="badge bg-primary ms-2 me-1 p-2"
+                    ><i class="fas fa-clock me-1 fs-0"></i
+                    ><span class="fs-0">Fast</span></span
+                  >
+                </div>
+                <div class="card-body ps-0 col-lg-12">
+                  <div class="d-flex align-items-center mb-3">
+                    <img
+                      class="img-fluid iconic"
+                      src="assets/img/gallery/unnamed.jpg"
+                      height="40"
+                      alt=""
+                    />
+                    <div
+                      class="flex-1 pointer ms-3"
+                      (click)="navigateTo('/resturant/view/' + 'Donuts_hut')"
+                    >
+                      <h5 class="mb-0 fw-bold text-1000">Donuts hut</h5>
+                      <span class="text-primary fs--1 me-1"
+                        >$</span
+                      ><span class="mb-0 text-primary">50</span>
+                    </div>
+                  </div>
+                  <div class="col-lg-12 d-flex justify-content-center mt-2">
+                    <a
+                      class="btn btn-sm btn-danger"
+                      (click)="showAddToCart()"
+                      href="javascript:void()"
+                      >Add to cart
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-6 col-md-3 col-lg-3 h-100 mb-5">
+              <div class="card card-span h-100 text-white rounded-3">
+                <img
+                  class="img-fluid rounded-3 h-100 pointer"
+                  src="assets/img/gallery/ruby-tuesday.png"
+                  alt="..."
+                />
+                <div class="card-img-overlay ps-0">
+                  <span class="badge bg-danger p-2 ms-3"
+                    ><i class="fas fa-tag me-2 fs-0"></i
+                    ><span class="fs-0">10% off</span></span
+                  ><span class="badge bg-primary ms-2 me-1 p-2"
+                    ><i class="fas fa-clock me-1 fs-0"></i
+                    ><span class="fs-0">Fast</span></span
+                  >
+                </div>
+                <div class="card-body ps-0 col-lg-12">
+                  <div class="d-flex align-items-center mb-3">
+                    <img
+                      class="img-fluid iconic"
+                      src="assets/img/gallery/unnamed.jpg"
+                      height="40"
+                      alt=""
+                    />
+                    <div
+                      class="flex-1 pointer ms-3"
+                      (click)="navigateTo('/resturant/view/' + 'Ruby_tuesday')"
+                    >
+                      <h5 class="mb-0 fw-bold text-1000">Ruby tuesday</h5>
+                      <span class="text-primary fs--1 me-1"
+                        >$</span
+                      ><span class="mb-0 text-primary">50</span>
+                    </div>
+                  </div>
+                  <div class="col-lg-12 d-flex justify-content-center mt-2">
+                    <a
+                      class="btn btn-sm btn-danger"
+                      (click)="showAddToCart()"
+                      href="javascript:void()"
+                      >Add to cart
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-6 col-md-3 col-lg-3 h-100 mb-5">
+              <div class="card card-span h-100 text-white rounded-3">
+                <img
+                  class="img-fluid rounded-3 h-100 pointer"
+                  src="assets/img/gallery/kuakata.png"
+                  alt="..."
+                />
+                <div class="card-img-overlay ps-0">
+                  <span class="badge bg-danger p-2 ms-3"
+                    ><i class="fas fa-tag me-2 fs-0"></i
+                    ><span class="fs-0">10% off</span></span
+                  ><span class="badge bg-primary ms-2 me-1 p-2"
+                    ><i class="fas fa-clock me-1 fs-0"></i
+                    ><span class="fs-0">Fast</span></span
+                  >
+                </div>
+                <div class="card-body ps-0 col-lg-12">
+                  <div class="d-flex align-items-center mb-3">
+                    <img
+                      class="img-fluid iconic"
+                      src="assets/img/gallery/unnamed.jpg"
+                      height="40"
+                      alt=""
+                    />
+                    <div
+                      class="flex-1 pointer ms-3"
+                      (click)="navigateTo('/resturant/view/' + 'Kuakata_Fried_Chicken')"
+                    >
+                      <h5 class="mb-0 fw-bold text-1000">Kuakata Fried Chicken</h5>
+                      <span class="text-primary fs--1 me-1"
+                        >$</span
+                      ><span class="mb-0 text-primary">50</span>
+                    </div>
+                  </div>
+                  <div class="col-lg-12 d-flex justify-content-center mt-2">
+                    <a
+                      class="btn btn-sm btn-danger"
+                      (click)="showAddToCart()"
+                      href="javascript:void()"
+                      >Add to cart
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-6 col-md-3 col-lg-3 h-100 mb-5">
+              <div class="card card-span h-100 text-white rounded-3">
+                <img
+                  class="img-fluid rounded-3 h-100 pointer"
+                  src="assets/img/gallery/red-square.png"
+                  alt="..."
+                />
+                <div class="card-img-overlay ps-0">
+                  <span class="badge bg-danger p-2 ms-3"
+                    ><i class="fas fa-tag me-2 fs-0"></i
+                    ><span class="fs-0">10% off</span></span
+                  ><span class="badge bg-primary ms-2 me-1 p-2"
+                    ><i class="fas fa-clock me-1 fs-0"></i
+                    ><span class="fs-0">Fast</span></span
+                  >
+                </div>
+                <div class="card-body ps-0 col-lg-12">
+                  <div class="d-flex align-items-center mb-3">
+                    <img
+                      class="img-fluid iconic"
+                      src="assets/img/gallery/unnamed.jpg"
+                      height="40"
+                      alt=""
+                    />
+                    <div
+                      class="flex-1 pointer ms-3"
+                      (click)="navigateTo('/resturant/view/' + 'Kuakata_Fried_Chicken')"
+                    >
+                      <h5 class="mb-0 fw-bold text-1000">Kuakata Fried Chicken</h5>
+                      <span class="text-primary fs--1 me-1"
+                        >$</span
+                      ><span class="mb-0 text-primary">50</span>
+                    </div>
+                  </div>
+                  <div class="col-lg-12 d-flex justify-content-center mt-2">
+                    <a
+                      class="btn btn-sm btn-danger"
+                      (click)="showAddToCart()"
+                      href="javascript:void()"
+                      >Add to cart
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-6 col-md-3 col-lg-3 h-100 mb-5">
+              <div class="card card-span h-100 text-white rounded-3">
+                <img
+                  class="img-fluid rounded-3 h-100 pointer"
+                  src="assets/img/gallery/taco-bell.png"
+                  alt="..."
+                />
+                <div class="card-img-overlay ps-0">
+                  <span class="badge bg-danger p-2 ms-3"
+                    ><i class="fas fa-tag me-2 fs-0"></i
+                    ><span class="fs-0">10% off</span></span
+                  ><span class="badge bg-primary ms-2 me-1 p-2"
+                    ><i class="fas fa-clock me-1 fs-0"></i
+                    ><span class="fs-0">Fast</span></span
+                  >
+                </div>
+                <div class="card-body ps-0 col-lg-12">
+                  <div class="d-flex align-items-center mb-3">
+                    <img
+                      class="img-fluid iconic"
+                      src="assets/img/gallery/unnamed.jpg"
+                      height="40"
+                      alt=""
+                    />
+                    <div
+                      class="flex-1 pointer ms-3"
+                      (click)="navigateTo('/resturant/view/' + 'Taco_bell')"
+                    >
+                      <h5 class="mb-0 fw-bold text-1000">Taco bell</h5>
+                      <span class="text-primary fs--1 me-1"
+                        >$</span
+                      ><span class="mb-0 text-primary">50</span>
+                    </div>
+                  </div>
+                  <div class="col-lg-12 d-flex justify-content-center mt-2">
+                    <a
+                      class="btn btn-sm btn-danger"
+                      (click)="showAddToCart()"
+                      href="javascript:void()"
+                      >Add to cart
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-6 col-md-3 col-lg-3 h-100 mb-5">
+              <div class="card card-span h-100 text-white rounded-3">
+                <img
+                  class="img-fluid rounded-3 h-100 pointer"
+                  src="assets/img/gallery/donuthut.png"
+                  alt="..."
+                />
+                <div class="card-img-overlay ps-0">
+                  <span class="badge bg-danger p-2 ms-3"
+                    ><i class="fas fa-tag me-2 fs-0"></i
+                    ><span class="fs-0">15% off</span></span
+                  ><span class="badge bg-primary ms-2 me-1 p-2"
+                    ><i class="fas fa-clock me-1 fs-0"></i
+                    ><span class="fs-0">Fast</span></span
+                  >
+                </div>
+                <div class="card-body ps-0 col-lg-12">
+                  <div class="d-flex align-items-center mb-3">
+                    <img
+                      class="img-fluid iconic"
+                      src="assets/img/gallery/unnamed.jpg"
+                      height="40"
+                      alt=""
+                    />
+                    <div
+                      class="flex-1 pointer ms-3"
+                      (click)="navigateTo('/resturant/view/' + 'Donuts_hut')"
+                    >
+                      <h5 class="mb-0 fw-bold text-1000">Donuts hut</h5>
+                      <span class="text-primary fs--1 me-1"
+                        >$</span
+                      ><span class="mb-0 text-primary">50</span>
+                    </div>
+                  </div>
+                  <div class="col-lg-12 d-flex justify-content-center mt-2">
+                    <a
+                      class="btn btn-sm btn-danger"
+                      (click)="showAddToCart()"
+                      href="javascript:void()"
+                      >Add to cart
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-6 col-md-3 col-lg-3 h-100 mb-5">
+              <div class="card card-span h-100 text-white rounded-3">
+                <img
+                  class="img-fluid rounded-3 h-100 pointer"
+                  src="assets/img/gallery/ruby-tuesday.png"
+                  alt="..."
+                />
+                <div class="card-img-overlay ps-0">
+                  <span class="badge bg-danger p-2 ms-3"
+                    ><i class="fas fa-tag me-2 fs-0"></i
+                    ><span class="fs-0">10% off</span></span
+                  ><span class="badge bg-primary ms-2 me-1 p-2"
+                    ><i class="fas fa-clock me-1 fs-0"></i
+                    ><span class="fs-0">Fast</span></span
+                  >
+                </div>
+                <div class="card-body ps-0 col-lg-12">
+                  <div class="d-flex align-items-center mb-3">
+                    <img
+                      class="img-fluid iconic"
+                      src="assets/img/gallery/unnamed.jpg"
+                      height="40"
+                      alt=""
+                    />
+                    <div
+                      class="flex-1 pointer ms-3"
+                      (click)="navigateTo('/resturant/view/' + 'Ruby_tuesday')"
+                    >
+                      <h5 class="mb-0 fw-bold text-1000">Ruby tuesday</h5>
+                      <span class="text-primary fs--1 me-1"
+                        >$</span
+                      ><span class="mb-0 text-primary">50</span>
+                    </div>
+                  </div>
+                  <div class="col-lg-12 d-flex justify-content-center mt-2">
+                    <a
+                      class="btn btn-sm btn-danger"
+                      (click)="showAddToCart()"
+                      href="javascript:void()"
+                      >Add to cart
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-6 col-md-3 col-lg-3 h-100 mb-5">
+              <div class="card card-span h-100 text-white rounded-3">
+                <img
+                  class="img-fluid rounded-3 h-100 pointer"
+                  src="assets/img/gallery/kuakata.png"
+                  alt="..."
+                />
+                <div class="card-img-overlay ps-0">
+                  <span class="badge bg-danger p-2 ms-3"
+                    ><i class="fas fa-tag me-2 fs-0"></i
+                    ><span class="fs-0">10% off</span></span
+                  ><span class="badge bg-primary ms-2 me-1 p-2"
+                    ><i class="fas fa-clock me-1 fs-0"></i
+                    ><span class="fs-0">Fast</span></span
+                  >
+                </div>
+                <div class="card-body ps-0 col-lg-12">
+                  <div class="d-flex align-items-center mb-3">
+                    <img
+                      class="img-fluid iconic"
+                      src="assets/img/gallery/unnamed.jpg"
+                      height="40"
+                      alt=""
+                    />
+                    <div
+                      class="flex-1 pointer ms-3"
+                      (click)="navigateTo('/resturant/view/' + 'Kuakata_Fried_Chicken')"
+                    >
+                      <h5 class="mb-0 fw-bold text-1000">Kuakata Fried Chicken</h5>
+                      <span class="text-primary fs--1 me-1"
+                        >$</span
+                      ><span class="mb-0 text-primary">50</span>
+                    </div>
+                  </div>
+                  <div class="col-lg-12 d-flex justify-content-center mt-2">
+                    <a
+                      class="btn btn-sm btn-danger"
+                      (click)="showAddToCart()"
+                      href="javascript:void()"
+                      >Add to cart
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-6 col-md-3 col-lg-3 h-100 mb-5">
+              <div class="card card-span h-100 text-white rounded-3">
+                <img
+                  class="img-fluid rounded-3 h-100 pointer"
+                  src="assets/img/gallery/red-square.png"
+                  alt="..."
+                />
+                <div class="card-img-overlay ps-0">
+                  <span class="badge bg-danger p-2 ms-3"
+                    ><i class="fas fa-tag me-2 fs-0"></i
+                    ><span class="fs-0">10% off</span></span
+                  ><span class="badge bg-primary ms-2 me-1 p-2"
+                    ><i class="fas fa-clock me-1 fs-0"></i
+                    ><span class="fs-0">Fast</span></span
+                  >
+                </div>
+                <div class="card-body ps-0 col-lg-12">
+                  <div class="d-flex align-items-center mb-3">
+                    <img
+                      class="img-fluid iconic"
+                      src="assets/img/gallery/unnamed.jpg"
+                      height="40"
+                      alt=""
+                    />
+                    <div
+                      class="flex-1 pointer ms-3"
+                      (click)="navigateTo('/resturant/view/' + 'Kuakata_Fried_Chicken')"
+                    >
+                      <h5 class="ml-n10 text-1000">Kuakata Fried Chicken</h5>
+                      <span class="text-primary fs--1 me-1"
+                        >$</span
+                      ><span class="mb-0 text-primary">50</span>
+                    </div>
+                  </div>
+                  <div class="col-lg-12 d-flex justify-content-center mt-2">
+                    <a
+                      class="btn btn-sm btn-danger"
+                      (click)="showAddToCart()"
+                      href="javascript:void()"
+                      >Add to cart
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-6 col-md-3 col-lg-3 h-100 mb-5">
+              <div class="card card-span h-100 text-white rounded-3">
+                <img
+                  class="img-fluid rounded-3 h-100 pointer"
+                  src="assets/img/gallery/food-world.png"
+                  alt="..."
+                />
+                <div class="card-img-overlay ps-0">
+                  <span class="badge bg-danger p-2 ms-3"
+                    ><i class="fas fa-tag me-2 fs-0"></i
+                    ><span class="fs-0">20% off</span></span
+                  ><span class="badge bg-primary ms-2 me-1 p-2"
+                    ><i class="fas fa-clock me-1 fs-0"></i
+                    ><span class="fs-0">Fast</span></span
+                  >
+                </div>
+                <div class="card-body ps-0 col-lg-12">
+                  <div class="d-flex align-items-center mb-3">
+                    <img
+                      class="img-fluid iconic"
+                      src="assets/img/gallery/unnamed.jpg"
+                      height="40"
+                      alt=""
+                    />
+                    <div
+                      class="flex-1 pointer ms-3"
+                      (click)="navigateTo('/resturant/view/' + 'Food_world')"
+                    >
+                      <h5 class="mb-0 fw-bold text-1000">Food world</h5>
+                      <span class="text-primary fs--1 me-1"
+                        >$</span
+                      ><span class="mb-0 text-primary">46</span>
+
+                    </div>
+                  </div>
+                  <div class="col-lg-12 d-flex justify-content-center mt-2">
+                    <a
+                      class="btn btn-sm btn-danger"
+                      (click)="showAddToCart()"
+                      href="javascript:void()"
+                      >Add to cart
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-6 col-md-3 col-lg-3 h-100 mb-5">
+              <div class="card card-span h-100 text-white rounded-3">
+                <img
+                  class="img-fluid rounded-3 h-100 pointer"
+                  src="assets/img/gallery/pizza-hub.png"
+                  alt="..."
+                />
+                <div class="card-img-overlay ps-0">
+                  <span class="badge bg-danger p-2 ms-3"
+                    ><i class="fas fa-tag me-2 fs-0"></i
+                    ><span class="fs-0">10% off</span></span
+                  ><span class="badge bg-primary ms-2 me-1 p-2"
+                    ><i class="fas fa-clock me-1 fs-0"></i
+                    ><span class="fs-0">Fast</span></span
+                  >
+                </div>
+                <div class="card-body ps-0 col-lg-12">
+                  <div class="d-flex align-items-center mb-3">
+                    <img
+                      class="img-fluid iconic"
+                      src="assets/img/gallery/unnamed.jpg"
+                      height="40"
+                      alt=""
+                    />
+                    <div
+                      class="flex-1 pointer ms-3"
+                      (click)="navigateTo('/resturant/view/' + 'Pizza_hub')"
+                    >
+                      <h5 class="mb-0 fw-bold text-1000">Pizza hub</h5>
+                      <span class="text-primary fs--1 me-1"
+                        >$</span
+                      ><span class="mb-0 text-primary">40</span>
+                    </div>
+                  </div>
+                  <div class="col-lg-12 d-flex justify-content-center mt-2">
+                    <a
+                      class="btn btn-sm btn-danger"
+                      (click)="showAddToCart()"
+                      href="javascript:void()"
+                      >Add to cart
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-6 col-md-3 col-lg-3 h-100 mb-5">
+              <div class="card card-span h-100 text-white rounded-3">
+                <img
+                  class="img-fluid rounded-3 h-100 pointer"
+                  src="assets/img/gallery/donuts-hut.png"
+                  alt="..."
+                />
+                <div class="card-img-overlay ps-0">
+                  <span class="badge bg-danger p-2 ms-3"
+                    ><i class="fas fa-tag me-2 fs-0"></i
+                    ><span class="fs-0">15% off</span></span
+                  ><span class="badge bg-primary ms-2 me-1 p-2"
+                    ><i class="fas fa-clock me-1 fs-0"></i
+                    ><span class="fs-0">Fast</span></span
+                  >
+                </div>
+                <div class="card-body ps-0 col-lg-12">
+                  <div class="d-flex align-items-center mb-3">
+                    <img
+                      class="img-fluid iconic"
+                      src="assets/img/gallery/unnamed.jpg"
+                      height="40"
+                      alt=""
+                    />
+                    <div
+                      class="flex-1 pointer ms-3"
+                      (click)="navigateTo('/resturant/view/' + 'Donuts_hut')"
+                    >
+                      <h5 class="mb-0 fw-bold text-1000">Donuts hut</h5>
+                      <span class="text-primary fs--1 me-1"
+                        >$</span
+                      ><span class="mb-0 text-primary">20</span>
+                    </div>
+                  </div>
+                  <div class="col-lg-12 d-flex justify-content-center mt-2">
+                    <a
+                      class="btn btn-sm btn-danger"
+                      (click)="showAddToCart()"
+                      href="javascript:void()"
+                      >Add to cart
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+    </div>
+  </div><!-- end of .container-->
+
+</section>
+
+
+<app-footer></app-footer>
+

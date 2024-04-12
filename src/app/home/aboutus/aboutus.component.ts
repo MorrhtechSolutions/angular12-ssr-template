@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ScriptsService } from 'src/app/shared/services/client/scripts.service';
 
 @Component({
   selector: 'app-aboutus',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AboutusComponent implements OnInit {
 
-  constructor() { }
+  constructor(private scriptService: ScriptsService) { }
 
   ngOnInit(): void {
+  }
+
+  navigateTo(url:string){
+    this.scriptService.changePage(url);
+  }
+
+  changePage(){
+    this.scriptService.changePage('');
   }
 
 }

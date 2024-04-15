@@ -1,0 +1,82 @@
+
+<nav
+  class="navbar navbar-expand-lg navbar-light bg-light fixed-top"
+  data-navbar-on-scroll="data-navbar-on-scroll"
+>
+  <div class="container">
+    <a
+      class="navbar-brand d-inline-flex"
+      (click)="navigateToHome()"
+      href="javascript:void()"
+    >
+      <img
+        class="d-inline-block"
+        src="assets/img/gallery/unnamed.jpg"
+        height="40"
+        alt="logo"
+      />
+      <span class="text-1000 fs-3 fw-bold ms-2 text-gradient"
+        >Casserole Wang
+      </span>
+    </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"> </span>
+    </button>
+    <div
+      class="collapse navbar-collapse border-top border-lg-0 my-2 mt-lg-0"
+      id="navbarSupportedContent"
+    >
+      <div class="mx-auto pt-5 pt-lg-0 d-block d-lg-none d-xl-block">
+        <p class="mb-0 fw-bold text-lg-center">
+          <span class="row">
+            <span class="col-3 text-center">
+              Admin
+            </span>
+            <span class="col-6">
+              <span>
+                <select class="form-control border-0 input-box bg-100 bordsplash">
+                  <option value="English" selected>English</option>
+                  <option value="Chinese">Chinese</option>
+                </select>
+              </span>
+            </span>
+            <span class="col-3">
+              <span class="fw-normal pointer text-center" (click)="navigateToHome()">Logout </span>
+            </span>
+          </span>
+        </p>
+      </div>
+      <form class="d-flex mt-4 mt-lg-0 ms-lg-auto ms-xl-0">
+        <button
+          (click)="navigateToIng()"
+          class="btn btn-white shadow-warning text-warning bordsplash"
+          type="button"
+        >
+          Ingredent
+        </button>
+        <button
+          (click)="navigateToMeal()"
+          class="btn btn-white shadow-warning text-warning bordsplash"
+          type="button"
+        >
+          Meals
+        </button>
+        <button
+          (click)="navigateToOrder()"
+          class="btn btn-white shadow-warning text-warning bordsplash"
+          type="button"
+        >
+          Orders
+        </button>
+      </form>
+    </div>
+  </div>
+</nav>

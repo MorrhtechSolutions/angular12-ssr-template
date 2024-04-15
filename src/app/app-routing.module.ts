@@ -32,6 +32,20 @@ const routes: Routes = [
       fromSock: SockResolver
     }
   },
+  {
+    path: 'auth',
+    loadChildren: ()=> import('./auth/auth.module').then(m => m.AuthModule),
+    resolve:{
+      fromSock: SockResolver
+    }
+  },
+  {
+    path: 'admin',
+    loadChildren: ()=> import('./admin/admin.module').then(m => m.AdminModule),
+    resolve:{
+      fromSock: SockResolver
+    }
+  },
 ];
 
 @NgModule({

@@ -6,7 +6,7 @@ export const environment = {
   production: false,
   flutter_public_key: 'FLWPUBK_TEST-a4a5eb63502343944dcead00a9b5dcfd-X',
   flutter_private_key: 'FLWSECK_TEST-1794be45c373885f3e33d0d76bbb0d66-X',
-  api: 'http://localhost:3000',
+  api: 'http://localhost:5000',
   btc: 'bc1qgtcy9pwgjfrzjt7h4kplurqg6je57naatz0z96',
   emailApi: 'https://zinder-mail-server.onrender.com',
   uploadApi: 'http://localhost:3002',

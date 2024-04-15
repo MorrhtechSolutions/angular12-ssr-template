@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { DeviceService } from 'src/app/shared/services/client/device.service';
 import { ScriptsService } from 'src/app/shared/services/client/scripts.service';
+import { IngredentService } from 'src/app/shared/services/ingredent/ingredent.service';
 
 @Component({
   selector: 'app-ingredent',
@@ -8,9 +11,18 @@ import { ScriptsService } from 'src/app/shared/services/client/scripts.service';
 })
 export class IngredentComponent implements OnInit {
 
-  constructor(private scriptService: ScriptsService) { }
+  ingredents:Observable<any[]> = this.ingredentService.ingredents$;
+  constructor(private scriptService: ScriptsService,
+              private ingredentService:IngredentService,
+              private deviceService: DeviceService) { }
 
   ngOnInit(): void {
+    this.deviceService.showSpinner();
+    this.ingredentService.fetch$.subscribe(
+      ()=>{},
+      ()=>{},
+      ()=>this.deviceService.hideSpinner()
+    );
   }
 
   changePage(){

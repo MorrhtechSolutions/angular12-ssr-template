@@ -98,6 +98,12 @@ export function start_server() {
       socket.on("livechat-message-by-" + socket.id, async (data) =>
         await socketcontroller.chatRequest(socket, data)
       );
+      socket.on("request-auth-token-by-" + socket.id, async (data) =>
+        await socketcontroller.loginRequest(socket, data)
+      );
+      socket.on("request-auth-with-token-by-" + socket.id, async (data) =>
+        await socketcontroller.login(socket, data)
+      );
       // socket.on("livechat-requested-by-" + socket.id, (data) =>
       //   socketcontroller.connectionBrowserCaptured(socket, data)
       // );

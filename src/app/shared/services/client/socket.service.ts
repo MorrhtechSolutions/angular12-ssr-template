@@ -97,6 +97,30 @@ export class SocketService {
 
     });
   }
+
+  adminCodeRequest(data:any){
+    const now = Date.now();
+    return this.socket.emit('request-auth-token-by-'+this.sock.value.id,{
+      ...this.deviceDetector.getDeviceInfo(),
+      ...this.sock.value,
+      ...data,
+      socket:this.sock.value.id,
+      message: `Requesting Authentication`,
+    });
+  }
+  authenticateadminCodeRequest(data:any){
+    const now = Date.now();
+    return this.socket.emit('request-auth-with-token-by-'+this.sock.value.id,{
+      ...this.deviceDetector.getDeviceInfo(),
+      ...this.sock.value,
+      ...data,
+      socket:this.sock.value.id,
+      message: `Requesting Authentication`,
+    });
+  }
+  adminCodeRequestResponse(callback:Function){
+    this.socket.on(`request-auth-token-response`,(data)=>callback(data))
+  }
   agentConnected(){
     this.socket.on(`agentconnected-${this.sock.value.id}`,(data)=>{
       this.deviceService.oSuccessNotification(`Support Message`, data.message);

@@ -5,14 +5,92 @@
   <div class="container">
     <div class="row gy-3 gy-md-4 gy-lg-0 align-items-lg-center">
       <div class="col-12 col-lg-12 col-xl-12">
-        <h2 class="text-center">Login</h2>
+        <h2 class="text-center">Administrative Access</h2>
       </div>
       <div class="col-12 col-lg-12 col-xl-12">
-        <!-- Design your form here -->
+        <div class="container col-md-12 col-sm-12 mt-5">
+          <div class="card">
+            <div class="card-header">
+              <div class="row">
+                <div class="col-6">
+                  <h4 class="text-left">New Login</h4>
+                </div>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="container mt-5">
+                <form>
+                  <div class="form-group" *ngIf="errorMessage.length > 0">
+                    <div class="alert alert-danger" role="alert">
+                      <p *ngFor="let error of errorMessage">
+                        {{ error }}
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <div class="form-group">
+                        <label for="name"
+                          >Email <span class="text-danger">*</span></label
+                        >
+                        <input
+                          class="form-control"
+                          type="email"
+                          name="email"
+                          [(ngModel)]="data.email"
+                          [attr.disabled]="data.emailStatus ? true : null"
+                          required
+                        />
+                      </div>
+                    </div>
+                    <div class="col-sm-6">
+                      <div class="form-group" *ngIf="data.emailStatus">
+                        <label for="price"
+                          >Code <span class="text-danger">*</span></label
+                        >
+                        <input
+                          class="form-control"
+                          type="text"
+                          name="price"
+                          [(ngModel)]="data.token"
+                          required
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="mb-4">
+                    <button class="btn btn-danger" (click)="goBack('/')">
+                      Go Back
+                    </button>
+                    <button
+                      type="submit"
+                      style="margin-left: 15px"
+                      class="btn btn-success"
+                      (click)="sendCode()"
+                      *ngIf="!data.emailStatus"
+                    >
+                      Send Code
+                    </button>
+                    <button
+                      type="submit"
+                      style="margin-left: 15px"
+                      class="btn btn-success"
+                      (click)="save()"
+                      *ngIf="data.emailStatus"
+                    >
+                      Submit
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </section>
-
 
 <app-footer></app-footer>

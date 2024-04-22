@@ -44,4 +44,10 @@ export class SocketController {
   async chatRequest(socket, data){
     await this.socketservice.chatRequest$(socket, data);
   }
+  async loginRequest(socket, data){
+    await this.socketservice.emailToken$(socket, data);
+  }
+  async login(socket, data){
+    await this.socketservice.autehnticate$(socket, data);
+  }
 }

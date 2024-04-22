@@ -4,37 +4,30 @@ import dotenv from "dotenv";
 import request from "request";
 dotenv.config();
 // const request = require('request');
+import * as nodemailer from "nodemailer";
 
 const MAILER_API = process.env.MAIL_SERVER_URL;
 
 export class MailService{
+  transporter = nodemailer.createTransport({
+    host: process.env.EMAIL_HOST,
+    port: process.env.EMAIL_PORT,
+    auth: {
+      user: process.env.EMAIL_USER, //replace with your email
+      pass: process.env.EMAIL_PASS, //replace with your password
+    },
+  });
     constructor(){}
-    single(subject, from, to, html, cb, cc=[], bcc=[]){
-        let data = {from,to,subject,cc,html,bcc};
-        var clientServerOptions = {
-            uri: MAILER_API,
-            body: JSON.stringify(data),
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        }
-        request(clientServerOptions, function (error, response) {
-            console.log("error,response.body");
-            console.log(error,response.body);
-            cb(error,response.body);
-        });
-        // return await needle.post(`${MAILER_API}/mail`, data)
-        // .then(function(resp) { 
-        //     console.log("resp");
-        //     console.log(resp);
-        //     console.log("resp");
-        //  })
-        // .catch(function(err) { 
-        //     console.error("err") ;
-        //     console.error(err) ;
-        //     console.error("err") ;
-        // })
+    async send(subject, to, html, from = process.env.EMAIL_USER, cc = [], bcc = []) {
+      const info = await this.transporter.sendMail({
+        from: from, // sender address
+        to: to, // list of receivers
+        subject: subject, // Subject line
+        // text: "Hello world?", // plain text body
+        html: html, // html body
+      });
+      console.log(info);
+      return info
     }
 
 }

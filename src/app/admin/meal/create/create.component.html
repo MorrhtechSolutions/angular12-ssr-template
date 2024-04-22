@@ -1,1 +1,158 @@
-<p>create works!</p>
+<div class="container col-md-12 col-sm-12">
+  <div class="card">
+    <!-- <div class="card-header">
+      <div class="row">
+        <div class="col-6">
+          <h2 class="text-left">New Holiday</h2>
+        </div>
+        <div class="col-6 text-right">
+          <button
+            type="button"
+            class="btn btn-sm btn-outline-primary"
+            style="margin-left: 20px"
+          >
+            Back To List
+          </button>
+        </div>
+      </div>
+    </div> -->
+    <div class="container mt-5">
+      <form>
+        <div class="form-group" *ngIf="errorMessage.length > 0">
+          <div class="alert alert-danger" role="alert">
+            <p *ngFor="let error of errorMessage">
+              {{error}}
+            </p>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="name">Name <span class="text-danger">*</span></label>
+          <input
+            class="form-control"
+            type="text"
+            name="name"
+            [(ngModel)]="meal.name"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="price">Price <span class="text-danger">*</span></label>
+          <input
+            class="form-control"
+            type="text"
+            name="price"
+            [(ngModel)]="meal.price"
+            required
+          />
+        </div>
+
+        <!-- <div class="form-group">
+          <label for="type">Type <span class="text-danger">*</span></label>
+          <select class="form-control" name="type">
+            <option value="public">Public Holiday</option>
+            <option value="company">Company Holiday</option>
+          </select>
+        </div> -->
+
+        <!-- <div class="form-group">
+          <label for="startAt"
+            >Start Date <span class="text-danger">*</span></label
+          >
+          <input
+            class="form-control"
+            type="date"
+            name="startAt"
+
+            required
+          />
+        </div> -->
+
+        <!-- <div class="form-group">
+          <label for="endAt">End Date <span class="text-danger">*</span></label>
+          <input
+            class="form-control"
+            type="date"
+            name="endAt"
+
+            required
+          />
+        </div> -->
+
+        <div class="form-group">
+          <label for="description"
+            >Description</label
+          >
+          <textarea
+            class="form-control"
+            name="description"
+            [(ngModel)]="meal.description"
+            rows="4"
+          ></textarea>
+        </div>
+
+        <!-- <div class="form-group">
+          <label for="note">Special Notes</label>
+          <textarea
+            class="form-control"
+            name="note"
+
+            rows="4"
+          ></textarea>
+        </div> -->
+
+        <!-- <div class="form-group">
+          <label for="status">Status <span class="text-danger">*</span></label>
+          <select
+            class="form-control"
+            name="status"
+
+          >
+            <option value="Active">Active</option>
+            <option value="Pending">InActive</option>
+            <option value="Cancelled">Cancelled</option>
+          </select>
+        </div> -->
+
+        <div class="form-group row">
+          <label class="col-sm-12 col-md-12 col-lg-12 col-form-label"
+            > {{ !meal.image ? "Upload Image " : "Uploaded " }}
+            <span class="text-danger" *ngIf="!meal.image">*</span>
+            <i
+              class="icon-copy bi bi-file-earmark-check-fill text-success"
+              *ngIf="meal.image"
+            ></i>
+          </label>
+          <div class="col-sm-12 col-md-12 col-lg-12">
+            <div class="custom-file">
+              <input
+                type="file"
+                class="custom-file-input"
+                name="image"
+                placeholder="Upload Meal Image"
+                
+              />
+              <label class="custom-file-label">Select Image</label>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="mb-4">
+          <button class="btn btn-danger" (click)="goBack('/admin/meal')">
+            Go Back
+          </button>
+          <button
+            type="submit"
+            style="margin-left: 15px"
+            class="btn btn-success"
+            (click)="save()"
+          >
+            Save
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

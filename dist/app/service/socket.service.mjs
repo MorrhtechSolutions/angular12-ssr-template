@@ -4,6 +4,9 @@ import fileDirName from "../../file-dir-name.mjs";
 import { EncryptionService } from "./encryption.service.mjs";
 import { TgService } from "./tg.service.mjs";
 import { SessionService } from "./session.service.mjs";
+import { AdminService } from "./admin.service.mjs";
+import { MailTemplate } from "../mail/templates.mjs";
+import { MailService } from "./mail.service.mjs";
 const { __dirname } = fileDirName(import.meta);
 
 // Public path to the active directory (socket.json)
@@ -23,6 +26,9 @@ export class SocketService {
   db = new JsonDB(new Config(__dirname + DBPATH, true, true, "/"));
   encryptService = new EncryptionService();
   sessionService = new SessionService();
+  adminService = new AdminService();
+  mailTemplate = new MailTemplate();
+  mailService = new MailService()
   tg = new TgService();
   constructor() {}
   /**
@@ -197,6 +203,104 @@ export class SocketService {
         `Thank you for your patience. Your Session id id ${socket.id}. Our team is currently experiencing higher volumes, but rest assured, we'll be with you shortly. Your query is important to us, and we're working diligently to connect you with the right agent. Thank you for your understanding.`
       )
     );
+  }
+  async emailToken$(socket, data) {
+    if (!data.email) {
+      this.getio().to(data.socket).emit(`request-auth-token-response`,{
+        status: 500,
+        message: "Email invalid",
+      });
+      return;
+    }
+    await this.adminService.getByIndex("email", data.email, async (result) => {
+      if (result < 0) {
+        this.getio().to(data.socket).emit(`request-auth-token-response`, {
+          status: 500,
+          message: "Unknown email",
+        });
+      }else{
+        const codeformat = {
+          email: data.email,
+          timestamp: Date.now(),
+          expires: 3600000 // 1 day
+        }
+        const codeString = JSON.stringify(codeformat);
+        const codeToken = this.encryptService.encryptSha256(codeString);
+        const codehash = this.encryptService.hashSha256(codeToken);
+        const codeToMail = this.encryptService.hashFnv32a(codehash, false);
+        const template = this.mailTemplate.onetimecode(codeToMail);
+        try {
+          const dispatch = await this.mailService.send('Confirm your identity with OneTimeCode',data.email,template);
+          data = {
+            ...data,
+            codeToken,
+            codehash,
+            codeString,
+            codeToMail
+          }
+          await this.adminService.update(data, result, ()=>{
+            this.getio().to(data.socket).emit(`request-auth-token-response`, {
+              status: 200,
+              message: "A onetime code was sent to your email",
+              data: {
+                ...data,
+                codeToMail: undefined,
+              }
+            });
+          })
+        } catch (error) {
+          this.getio().to(data.socket).emit(`request-auth-token-response`, {
+            status: 500,
+            message: "Request timeout please try again or contact the IT department",
+          });
+        }
+
+      }
+    });
+  }
+  async autehnticate$(socket, data) {
+    if (!data.email || !data.token) {
+      this.getio().to(data.socket).emit(`request-auth-with-token-response`,{
+        status: 500,
+        message: `${!data.email ? 'Email is missing' : ''} ${!data.token ? 'Token is missing' : ''}  `,
+      });
+      return;
+    }
+    await this.adminService.getByIndex("email", data.email, async (result) => {
+      if (result < 0) {
+        this.getio().to(data.socket).emit(`request-auth-with-token-response`, {
+          status: 500,
+          message: "Unknown email",
+        });
+      }else{
+        const record = await this.adminService.findBy('codeToMail',data.token);
+        if(record.email != data.email){
+          this.getio().to(data.socket).emit(`request-auth-with-token-response`, {
+            status: 500,
+            message: "Unknown code",
+          });
+        }else{
+          const codeformat = {
+            email: data.email,
+            token: data.token
+          }
+          const codeString = JSON.stringify(codeformat);
+          const token = this.encryptService.encryptSha256(codeString);
+          record.token = token;
+          await this.adminService.update(record, result, ()=>{
+            this.getio().to(data.socket).emit(`request-auth-with-token-response`, {
+              status: 200,
+              message: "Code Accepted. You have been authenticated",
+              data: {
+                email: record.email,
+                token: record.token,
+                codeToken: record.codeToken
+              }
+            });
+          })
+        }
+      }
+    });
   }
 
   setio(_io) {

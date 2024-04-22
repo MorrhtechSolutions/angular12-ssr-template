@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ScriptsService } from 'src/app/shared/services/client/scripts.service';
 
 @Component({
   selector: 'app-all',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AllComponent implements OnInit {
 
-  constructor() { }
+  constructor(private sc: ScriptsService) { }
 
   ngOnInit(): void {
+  }
+
+  changePage(){
+    this.sc.changePage('/admin/meal/create')
   }
 
 }

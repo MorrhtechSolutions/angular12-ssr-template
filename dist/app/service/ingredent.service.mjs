@@ -104,12 +104,12 @@ export class IngredentService {
    */
     async all(cb) {
       let ingredents = await this.ingredents();
-      ingredents = ingredents.map(
-        ing=>{
-          const image = ing.image.substring(7);
-          return {...ing, image}
-        }
-      )
+      // ingredents = ingredents.map(
+      //   ing=>{
+      //     const image = ing.image.substring(7);
+      //     return {...ing, image}
+      //   }
+      // )
       return cb(ingredents);
     }
 }

@@ -1,1 +1,98 @@
-<p>create works!</p>
+<div class="container col-md-12 col-sm-12 mt-5">
+  <div class="card">
+    <div class="card-header">
+      <div class="row">
+        <div class="col-6">
+          <h4 class="text-left">New Ingredent</h4>
+        </div>
+
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="container mt-5">
+        <form>
+          <div class="form-group" *ngIf="errorMessage.length > 0">
+            <div class="alert alert-danger" role="alert">
+              <p *ngFor="let error of errorMessage">
+                {{error}}
+              </p>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="name">Name <span class="text-danger">*</span></label>
+            <input
+              class="form-control"
+              type="text"
+              name="name"
+              [(ngModel)]="ingredent.name"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="price">Price <span class="text-danger">*</span></label>
+            <input
+              class="form-control"
+              type="text"
+              name="price"
+              [(ngModel)]="ingredent.price"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="description"
+              >Description</label
+            >
+            <textarea
+              class="form-control"
+              name="description"
+              [(ngModel)]="ingredent.description"
+              rows="4"
+            ></textarea>
+          </div>
+
+
+          <div class="form-group row">
+            <label class="col-sm-12 col-md-12 col-lg-12 col-form-label"
+              > {{ !ingredent.image ? "Upload Image " : "Uploaded " }}
+              <span class="text-danger" *ngIf="!ingredent.image">*</span>
+              <i
+                class="icon-copy bi bi-file-earmark-check-fill text-success"
+                *ngIf="ingredent.image"
+              ></i>
+            </label>
+            <div class="col-sm-12 col-md-12 col-lg-12">
+              <div class="custom-file">
+                <input
+                  type="file"
+                  class="custom-file-input"
+                  name="image"
+                  (change)="handleFileInput($event)"
+                  placeholder="Upload Meal Image"
+
+                />
+                <label class="custom-file-label">Select Image ({{!fileToUpload ? '0 uploaded' : '1 Uploaded'}})</label>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="mb-4">
+            <button class="btn btn-danger" (click)="goBack('/admin/ingredent')">
+              Go Back
+            </button>
+            <button
+              type="submit"
+              style="margin-left: 15px"
+              class="btn btn-success"
+              (click)="save()"
+            >
+              Save
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

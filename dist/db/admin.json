@@ -9,19 +9,19 @@
             "browser_version": "123.0.0.0",
             "deviceType": "desktop",
             "orientation": "landscape",
-            "id": "LzGeEULxVXKZFlN3AAAD",
+            "id": "R0LtPZIgdNGQr5omAAAD",
             "status": "connected",
             "email": "info@morrhtechsolutions.com",
             "emailStatus": false,
             "tokenStatus": false,
-            "token": "{\"iv\":\"vLXoZpAc+06PKcZOOJk/0w==\",\"v\":1,\"iter\":10000,\"ks\":128,\"ts\":64,\"mode\":\"ccm\",\"adata\":\"\",\"cipher\":\"aes\",\"salt\":\"VOVIRfFSIq8=\",\"ct\":\"o0Cf44a4QenAzdyFgGi8C3DHEzcM2Bl+tGQ2wbtiSlBMBZcU5SJiGF/dcZs/kBBw1iLSi0tgenHk0IAwajPC4bI4SV8=\"}",
-            "socket": "LzGeEULxVXKZFlN3AAAD",
+            "token": "{\"iv\":\"6J/lKcYWZa4UEY4tiodc3g==\",\"v\":1,\"iter\":10000,\"ks\":128,\"ts\":64,\"mode\":\"ccm\",\"adata\":\"\",\"cipher\":\"aes\",\"salt\":\"4zpP9U2JkfU=\",\"ct\":\"yT2++FrNemXe2E+zjFL8A7xmrbJKMcNEqh5FXHWO5E9H4Rv3lRM+GQD9yJucFR+ugyT/gvw455133KvswqC8y0bve1J6\"}",
+            "socket": "R0LtPZIgdNGQr5omAAAD",
             "message": "Requesting Authentication",
-            "codeToken": "{\"iv\":\"r+s9AlcJX10Wm8vLzwpkfw==\",\"v\":1,\"iter\":10000,\"ks\":128,\"ts\":64,\"mode\":\"ccm\",\"adata\":\"\",\"cipher\":\"aes\",\"salt\":\"VOVIRfFSIq8=\",\"ct\":\"IRIA8SW8Izbc3bga3RnTp3s71obDi4VBJWl633hkw/T7oLEtI9no3e1dQDFOWH234KiE555b+VqKR/ggThAEW43sfuouBgNe/083TwVNjPNEEv2KMkP3Fu9IAQ==\"}",
-            "codehash": "c2abdb27eaf4eeb23d60878ea6c61f55cea3d66ad325a0b2cddea55d1a99dc6c",
-            "codeString": "{\"email\":\"info@morrhtechsolutions.com\",\"timestamp\":1713790961194,\"expires\":3600000}",
-            "codeToMail": 1506957763,
-            "updated_at": "2024-04-22T13:02:57.820Z"
+            "codeToken": "{\"iv\":\"DnbWURTjWAmMOVcSL/k55g==\",\"v\":1,\"iter\":10000,\"ks\":128,\"ts\":64,\"mode\":\"ccm\",\"adata\":\"\",\"cipher\":\"aes\",\"salt\":\"4zpP9U2JkfU=\",\"ct\":\"uZoKOmc7NXAAhIDw7CceOtR8yj+94jtfLn25fsWntkJ4UGjk1GBQJKqbQp1+9TrbFjcmwjgR6n5qQpgTZZJHPljh28gVHwNM9k7N1TNaXAka6tjZtda55zRvkw==\"}",
+            "codehash": "21280c53133fea6ea1714c2001864a97b52ab6a3e316133d9eecbaf4ae8b60d6",
+            "codeString": "{\"email\":\"info@morrhtechsolutions.com\",\"timestamp\":1713824123908,\"expires\":3600000}",
+            "codeToMail": 3317281011,
+            "updated_at": "2024-04-22T22:15:45.780Z"
         }
     ]
 }

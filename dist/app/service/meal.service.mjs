@@ -104,12 +104,12 @@ export class MealService {
    */
     async all(cb) {
       let meals = await this.meals();
-      meals = meals.map(
-        ing=>{
-          const image = ing.image.substring(7);
-          return {...ing, image}
-        }
-      )
+      // meals = meals.map(
+      //   ing=>{
+      //     const image = ing.image.substring(7);
+      //     return {...ing, image}
+      //   }
+      // )
       return cb(meals);
     }
 }

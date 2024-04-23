@@ -184,53 +184,21 @@ export class IngredentController {
   }
   async _validateCreate(body){
     let errors = [];
-    if (!body.who) {
-      errors.unshift("who is not found");
+    if (!body.token) {
+      errors.unshift("Token is not found");
     }
     if (!body.name) {
       errors.unshift("Name is not found");
     }
-    if (!body.short_description) {
+    if (!body.description) {
       errors.unshift("short description is not found");
     }
-    if (!body.full_description) {
-      errors.unshift("full description is not found");
+    if (!body.image) {
+      errors.unshift("Image is not found");
     }
-    if (!body.color) {
-      errors.unshift("Color is not found");
+    if (!body.price) {
+      errors.unshift("Price is not found");
     }
-    if (!body.owner) {
-      errors.unshift("Owner is not found");
-    }
-    if (!body.companies) {
-      errors.unshift("Company is not found");
-    }
-    if (!body.ingredents) {
-      errors.unshift("Ingredents is not found");
-    }
-    if (body.name && body.name.length > 100) {
-      errors.unshift("name is too long to update. Max character is 100");
-    }
-    if (body.short_description && body.short_description.length > 100) {
-      errors.unshift(
-        "short_description is too long to update. Max character is 100"
-      );
-    }
-    if (body.full_description && body.full_description.length < 100) {
-      errors.unshift(
-        "full_description is too short to update. Min character is 100"
-      );
-    }
-    // if (
-    //   body.status &&
-    //   body.status !== "Active" &&
-    //   body.status !== "Inactive" &&
-    //   body.status !== "Pending"
-    // ) {
-    //   errors.unshift(
-    //     "Status must be either of these values [Active, Inactive, Pending]"
-    //   );
-    // }
     return errors;
   }
   _validateRead(body) {

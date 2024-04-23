@@ -10,6 +10,8 @@ import compression from "compression";
 import { Server } from "socket.io";
 import fileDirName from "./file-dir-name.mjs";
 import crons from "./app/cron/index.mjs";
+import bodyParser from "body-parser";
+
 import { TgService } from "./app/service/tg.service.mjs";
 import { SocketController } from "./app/controller/socket.controller.mjs";
 import { IngredentController } from "./app/controller/ingredent.controller.mjs";
@@ -28,6 +30,12 @@ const ingredentController = new IngredentController();
 const mealController = new MealController();
 app.set("port", port);
 const server = http.createServer(app);
+
+// create application/json parser
+app.use(bodyParser.json());
+// create application/x-www-form-urlencoded parser
+app.use(bodyParser.urlencoded({ extended: false }));
+
 // Compression middleware
 app.use(compression());
 /* other middleware */
@@ -35,8 +43,16 @@ app.use(compression());
 /* place any backend routes you have here */
 
 app.get("/ingredent/all", (req, res) => ingredentController.all(req, res));
+app.post("/ingredent/create", (req, res) => ingredentController.create(req, res));
+app.get('/ingredent/read', (req, res)=>ingredentController.read(req, res));
+app.patch('/ingredent/update', (req, res)=>ingredentController.update(req, res));
+app.delete('/ingredent/delete', (req, res)=>ingredentController.delete(req, res));
 
 app.get("/meal/all", (req, res) => mealController.all(req, res));
+app.post("/meal/create", (req, res) => mealController.create(req, res));
+app.get('/meal/read', (req, res)=>mealController.read(req, res));
+app.patch('/meal/update', (req, res)=>mealController.update(req, res));
+app.delete('/meal/delete', (req, res)=>mealController.delete(req, res));
 
 /* end of backend routes */
 app.use(function (req, res, next) {
@@ -104,8 +120,9 @@ export function start_server() {
       socket.on("request-auth-with-token-by-" + socket.id, async (data) =>
         await socketcontroller.login(socket, data)
       );
-      // socket.on("livechat-requested-by-" + socket.id, (data) =>
-      //   socketcontroller.connectionBrowserCaptured(socket, data)
+
+      // socket.on("create-meal-by-" + socket.id, async (data) =>
+      //   await socketcontroller.loginRequest(socket, data)
       // );
     });
   });

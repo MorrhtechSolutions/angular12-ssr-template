@@ -1,3 +1,38 @@
 {
-    "records": []
+    "records": [
+        {
+            "name": "Chibuchi Orajiaku",
+            "price": "3223",
+            "description": "dfffffffffffffffffff",
+            "image": {},
+            "status": "Active",
+            "token": "{\"iv\":\"6J/lKcYWZa4UEY4tiodc3g==\",\"v\":1,\"iter\":10000,\"ks\":128,\"ts\":64,\"mode\":\"ccm\",\"adata\":\"\",\"cipher\":\"aes\",\"salt\":\"4zpP9U2JkfU=\",\"ct\":\"yT2++FrNemXe2E+zjFL8A7xmrbJKMcNEqh5FXHWO5E9H4Rv3lRM+GQD9yJucFR+ugyT/gvw455133KvswqC8y0bve1J6\"}",
+            "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36",
+            "browserVersion": "123.0.0.0",
+            "os": "Windows",
+            "osVersion": "windows-10",
+            "browser": "Chrome",
+            "deviceOrientation": "landscape",
+            "id": 2591295645,
+            "created_at": "2024-04-22T23:27:57.733Z",
+            "updated_at": "2024-04-22T23:27:57.733Z"
+        },
+        {
+            "name": "Chibuchi Orajiaku",
+            "price": "3223",
+            "description": "sddddddddddd",
+            "image": "http://localhost:3002/v/2-3-2024/1713829077374-f8.jpg",
+            "status": "Active",
+            "token": "{\"iv\":\"6J/lKcYWZa4UEY4tiodc3g==\",\"v\":1,\"iter\":10000,\"ks\":128,\"ts\":64,\"mode\":\"ccm\",\"adata\":\"\",\"cipher\":\"aes\",\"salt\":\"4zpP9U2JkfU=\",\"ct\":\"yT2++FrNemXe2E+zjFL8A7xmrbJKMcNEqh5FXHWO5E9H4Rv3lRM+GQD9yJucFR+ugyT/gvw455133KvswqC8y0bve1J6\"}",
+            "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36",
+            "browserVersion": "123.0.0.0",
+            "os": "Windows",
+            "osVersion": "windows-10",
+            "browser": "Chrome",
+            "deviceOrientation": "landscape",
+            "id": 2591295645,
+            "created_at": "2024-04-22T23:38:07.395Z",
+            "updated_at": "2024-04-22T23:38:07.395Z"
+        }
+    ]
 }

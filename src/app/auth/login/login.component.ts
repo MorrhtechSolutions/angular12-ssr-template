@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/shared/services/auth/auth.service';
 import { DeviceService } from 'src/app/shared/services/client/device.service';
 import { ScriptsService } from 'src/app/shared/services/client/scripts.service';
 import { SocketService } from 'src/app/shared/services/client/socket.service';
@@ -17,7 +18,7 @@ export class LoginComponent implements OnInit {
     token: ''
   };
   hashedData:any = null;
-  constructor(private scriptService: ScriptsService, private socketService: SocketService, private deviceService: DeviceService) { }
+  constructor(private scriptService: ScriptsService, private socketService: SocketService, private deviceService: DeviceService, private authService: AuthService) { }
 
   ngOnInit(): void {
   }
@@ -68,6 +69,7 @@ export class LoginComponent implements OnInit {
       this.data.email = '';
     }else{
       this.deviceService.oSuccessNotification('Response', data.message);
+      this.authService.store(JSON.stringify(data.data));
       console.log(data);
       this.hashedData = null;
       this.data = {
@@ -76,6 +78,7 @@ export class LoginComponent implements OnInit {
         tokenStatus: false,
         token: ''
       };
+      this.scriptService.changePage('/admin/order');
     }
   }
 

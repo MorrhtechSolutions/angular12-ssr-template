@@ -7,6 +7,7 @@ import { ListComponent } from './list/list.component';
 import { CreateComponent } from './create/create.component';
 import { ViewComponent } from './view/view.component';
 import { SharedModule } from '../shared/shared.module';
+import { SearchComponent } from './search/search.component';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { SharedModule } from '../shared/shared.module';
     IndexComponent,
     ListComponent,
     CreateComponent,
-    ViewComponent
+    ViewComponent,
+    SearchComponent
   ],
   imports: [
     CommonModule,

@@ -10,6 +10,7 @@ import fs from "fs";
 const app = express();
 const JSONPORT = process.env.FILE_PORT || 3002;
 const uploadedFiles = [];
+const staticFileRoot = __dirname + "/db/public/";
 
 // default options
 app.use(fileUpload());
@@ -17,6 +18,7 @@ app.use(busboy());
 
 app.use([authMiddleware]);
 app.use(express.static('public'));
+app.use(express.static(staticFileRoot));
 
 // app.get('/', function(req, res) {
 //   console.log(req);

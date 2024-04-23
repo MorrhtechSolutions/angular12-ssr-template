@@ -28,6 +28,8 @@ import { NgxAudioPlayerModule } from 'ngx-audio-player';
 import { FundWalletComponent } from './components/fund-wallet/fund-wallet.component';
 import {RouterModule} from '@angular/router';
 import { PaymentComponent } from './components/payment/payment.component';
+import { CartComponent } from './components/cart/cart.component';
+import { CheckoutComponent } from './components/checkout/checkout.component';
 
 
 @NgModule({
@@ -47,7 +49,9 @@ import { PaymentComponent } from './components/payment/payment.component';
     FundWalletComponent,
     PaymentComponent,
     FooterComponent,
-    HeaderComponent
+    HeaderComponent,
+    CartComponent,
+    CheckoutComponent
   ],
   imports: [
     CommonModule,

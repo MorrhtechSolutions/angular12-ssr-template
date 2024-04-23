@@ -19,6 +19,7 @@ import { FAQComponent } from './faq/faq.component';
 import { TermsComponent } from './terms/terms.component';
 import { PrivacyComponent } from './privacy/privacy.component';
 import { CookieComponent } from './cookie/cookie.component';
+import { SearchbyComponent } from './searchby/searchby.component';
 
 
 @NgModule({
@@ -38,7 +39,8 @@ import { CookieComponent } from './cookie/cookie.component';
     FAQComponent,
     TermsComponent,
     PrivacyComponent,
-    CookieComponent
+    CookieComponent,
+    SearchbyComponent
   ],
   imports: [
     CommonModule,

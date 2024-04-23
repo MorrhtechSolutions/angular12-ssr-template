@@ -11,6 +11,7 @@ import { MealService } from 'src/app/shared/services/meal/meal.service';
 })
 export class MealComponent implements OnInit {
   meals:Observable<any[]> = this.mealService.meals$;
+    shuffles: any[] = []
   constructor(private scriptService: ScriptsService,
               private mealService:MealService,
               private deviceService: DeviceService) { }
@@ -18,7 +19,7 @@ export class MealComponent implements OnInit {
   ngOnInit(): void {
     this.deviceService.showSpinner();
     this.mealService.fetch$.subscribe(
-      ()=>{},
+      (data: any) => { this.shuffles =data.slice(0, 8);  },
       ()=>{},
       ()=>this.deviceService.hideSpinner()
     );

@@ -11,21 +11,28 @@ import { IngredentService } from 'src/app/shared/services/ingredent/ingredent.se
 })
 export class IngredentComponent implements OnInit {
 
-  ingredents:Observable<any[]> = this.ingredentService.ingredents$;
+  ingredents: Observable<any[]> = this.ingredentService.ingredents$;
+
+  shuffles: any = {
+    first: [],
+    second: [],
+    third: [],
+    fourth: [],
+  }
   constructor(private scriptService: ScriptsService,
-              private ingredentService:IngredentService,
-              private deviceService: DeviceService) { }
+    private ingredentService: IngredentService,
+    private deviceService: DeviceService) { }
 
   ngOnInit(): void {
     this.deviceService.showSpinner();
     this.ingredentService.fetch$.subscribe(
-      ()=>{},
-      ()=>{},
-      ()=>this.deviceService.hideSpinner()
+      (data: any) => { this.shuffles.first = data.slice(0, 4); this.shuffles.second = data.slice(0, 4); this.shuffles.third = data.slice(0, 4); this.shuffles.fourth = data.slice(0, 4); },
+      () => { },
+      () => this.deviceService.hideSpinner()
     );
   }
 
-  changePage(){
+  changePage() {
     this.scriptService.changePage('resturant')
   }
 

@@ -2,6 +2,7 @@
 # compiled output
 /dist/node_modules
 /dist/public
+/dist/db/public
 /dist/db/connections.json
 /dist/db/data/telegram.json
 /dist/Sparklingv2

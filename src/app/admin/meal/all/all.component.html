@@ -46,11 +46,12 @@
             <div class="align-self-center">
               <i
                 class="fx40 bi bi-cloud-download primary font-large-2 float-left pointer"
+                (click)="export()"
               ></i>
             </div>
             <div class="media-body text-right">
-              <h3>Download</h3>
-              <span>Generate Report</span>
+              <h3 (click)="export()" class="pointer">Download</h3>
+              <span (click)="export()" class="pointer">Generate Report</span>
             </div>
           </div>
         </div>

@@ -30,4 +30,46 @@ export class AllComponent implements OnInit {
     this.scriptService.changePage('/admin/ingredent/create')
   }
 
+  exportNow(){
+    const headers = [
+          'name',
+          'price',
+          'description',
+          'total',
+          'image',
+          'status',
+          'user_agent',
+          'browserVersion',
+          'os',
+          'osVersion',
+          'browser',
+          'deviceOrientation',
+          'id',
+          'created_at',
+          'updated_at'
+    ];
+    this.ds.showSpinner();
+    const data = this.shuffles.map(
+      m=>{
+        return {
+          name: m.name,
+          description:m.description,
+          price:m.price,
+          image:m.image,
+          status:m.status,
+          user_agent:m.user_agent,
+          browserVersion:m.browserVersion,
+          os:m.os,
+          osVersion:m.osVersion,
+          browser:m.browser,
+          deviceOrientation:m.deviceOrientation,
+          id:m.id,
+          created_at:m.created_at,
+          updated_at:m.updated_at,
+        }
+      }
+    )
+    this.scriptService.exportToCsv(data, headers);
+    this.ds.hideSpinner();
+  }
 }

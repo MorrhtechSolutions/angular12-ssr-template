@@ -39,11 +39,14 @@
         <div class="card-body">
           <div class="media d-flex">
             <div class="align-self-center">
-              <i class="fx40 bi bi-cloud-download primary font-large-2 float-left pointer"></i>
+              <i
+                class="fx40 bi bi-cloud-download primary font-large-2 float-left pointer"
+                (click)="exportNow()"
+              ></i>
             </div>
             <div class="media-body text-right">
-              <h3>Download</h3>
-              <span>Generate Report</span>
+              <h3 (click)="exportNow()" class="pointer">Download</h3>
+              <span (click)="exportNow()" class="pointer">Generate Report</span>
             </div>
           </div>
         </div>

@@ -7,6 +7,7 @@ import { Meta } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { NotificationsService } from 'angular2-notifications';
+import csvDownload from 'json-to-csv-export'
 import sjcl from "sjcl";
 
 @Injectable({
@@ -201,5 +202,14 @@ export class ScriptsService {
         /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
       );
   };
+  exportToCsv(data:any, headers:any){
+    const dataToConvert = {
+      data,
+      filename: ""+this.hashFnv32a(`${Date.now()}`, true, this.hashSha256(`${Date.now()}`)),
+      delimiter: "",
+      headers
+    }
+    return csvDownload(dataToConvert);
+  }
 
 }

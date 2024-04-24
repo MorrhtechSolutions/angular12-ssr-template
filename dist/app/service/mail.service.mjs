@@ -18,7 +18,7 @@ export class MailService{
     },
   });
     constructor(){}
-    async send(subject, to, html, from = process.env.EMAIL_USER, cc = [], bcc = []) {
+    async send(subject, to, html, cc = [], bcc = [], from = process.env.EMAIL_USER) {
       const info = await this.transporter.sendMail({
         from: from, // sender address
         to: to, // list of receivers

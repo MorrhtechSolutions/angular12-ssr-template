@@ -11,7 +11,9 @@ import { MealService } from 'src/app/shared/services/meal/meal.service';
 })
 export class ListComponent implements OnInit {
   meals:Observable<any[]> = this.mealService.meals$;
-  shuffles: any[] = []
+  shuffles: any[] = [];
+  searchResult:any = null;
+  key:any = '';
   constructor(private ds: DeviceService, private scriptService: ScriptsService, private mealService: MealService) { }
 
   ngOnInit(): void {
@@ -23,6 +25,14 @@ export class ListComponent implements OnInit {
     );
   }
 
+  handleClicked($event){
+    this.searchResult = $event;
+    this.shuffles=this.searchResult;
+
+  }
+  keyChanged($event){
+    this.key = $event;
+  }
   showAddToCart(){
     this.ds.oSuccessNotification('Added to cart', 'You have successfully added this item to cart');
   }

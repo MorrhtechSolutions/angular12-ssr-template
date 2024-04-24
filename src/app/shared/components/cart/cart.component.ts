@@ -24,7 +24,7 @@ export class CartComponent implements OnInit {
     $(`#${this.id}`).modal('toggle');
   }
   checkoutmodal() {
-    this.scriptService.changePage('resturant');
+    this.scriptService.changePage('order');
     $(`#${this.id}`).modal('toggle');
     document.getElementById('Checkout0662btn')?.click();
   }

@@ -21,6 +21,9 @@
   position: relative;
   }
 
+  .img-fluid{
+    max-height: 200px;
+  }
   #progressbar-1 #step1:before {
   content: "1";
   color: #fff;

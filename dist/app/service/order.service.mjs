@@ -2,6 +2,8 @@ import { JsonDB, Config } from "node-json-db";
 
 import fileDirName from "../../file-dir-name.mjs";
 import { EncryptionService } from "./encryption.service.mjs";
+import { MailTemplate } from "../mail/templates.mjs";
+import { MailService } from "./mail.service.mjs";
 const { __dirname } = fileDirName(import.meta);
 
 // Public path to the active directory (order.json)
@@ -19,6 +21,8 @@ const DBPATH = "/../../db/order.json";
 export class OrderService {
   db = new JsonDB(new Config(__dirname + DBPATH, true, true, "/"));
   encryptService = new EncryptionService();
+  mailTemplate = new MailTemplate();
+  mailService = new MailService();
   constructor() {}
   /**
    * Fetch all orders from db
@@ -41,8 +45,14 @@ export class OrderService {
     data.created_at = now;
     data.updated_at = now;
     // Set the active property
-    data.status = "Active";
+    data.status = "Pending";
     await this.db.push('/records[]', data);
+    const template = this.mailTemplate.orderReceived(data.id);
+    try {
+      const dispatch = await this.mailService.send(`Order Confirmation - Order #${data.id}`,data.email,template,['chibuchisomto1@gmail.com']);
+    } catch (error) {
+      console.log(error)
+    }
     return cb(data);
   }
   /**

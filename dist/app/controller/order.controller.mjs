@@ -185,11 +185,14 @@ export class OrderController {
   }
   async _validateCreate(body){
     let errors = [];
-    if (!body.token) {
-      errors.unshift("Token is not found");
+    if (!body.email) {
+      errors.unshift("Email is not found");
     }
-    if (!body.name) {
-      errors.unshift("Name is not found");
+    if (!body.delivery) {
+      errors.unshift("Delivery is not found");
+    }
+    if (!body.cart) {
+      errors.unshift("Cart is not found");
     }
     if (!body.description) {
       errors.unshift("short description is not found");
@@ -197,8 +200,8 @@ export class OrderController {
     if (!body.image) {
       errors.unshift("Image is not found");
     }
-    if (!body.price) {
-      errors.unshift("Price is not found");
+    if (!body.total) {
+      errors.unshift("Total is not found");
     }
     return errors;
   }

@@ -8,7 +8,8 @@ import { ScriptsService } from 'src/app/shared/services/client/scripts.service';
   styleUrls: ['./index.component.scss']
 })
 export class IndexComponent implements OnInit {
-
+  searchResult:any = null;
+  key:any = '';
   constructor(private ds: DeviceService, private scriptService: ScriptsService) { }
 
   ngOnInit(): void {
@@ -20,5 +21,12 @@ export class IndexComponent implements OnInit {
 
   navigateTo(url:string){
     this.scriptService.changePage(url);
+  }
+  handleClicked($event){
+    this.searchResult = $event;
+
+  }
+  keyChanged($event){
+    this.key = $event;
   }
 }

@@ -29,7 +29,7 @@ const port = JSON.stringify(parseInt(PORT));
 const tg = new TgService();
 const ingredentController = new IngredentController();
 const mealController = new MealController();
-const orderController = new OrderControllerController();
+const orderController = new OrderController();
 app.set("port", port);
 const server = http.createServer(app);
 

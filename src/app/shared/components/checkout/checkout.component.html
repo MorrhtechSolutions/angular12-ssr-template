@@ -1,40 +1,70 @@
-<button class="btn btn-white shadow-warning text-warning" id="{{btnid}}" [ngClass]="{'d-none': hide}" (click)="show()"> <i class="me-1 bi bi-cart"></i><sup>{{items.length}}</sup> </button>
+<button
+  class="btn btn-white shadow-warning text-warning"
+  id="{{ btnid }}"
+  [ngClass]="{ 'd-none': hide }"
+  (click)="show()"
+>
+  <i class="me-1 bi bi-cart"></i><sup>{{ items.length }}</sup>
+</button>
 
 <!-- Modal -->
-<div class="modal fade" data-backdrop="static" data-keyboard="false" id="{{id}}" tabindex="-1" role="dialog"  aria-hidden="true">
+<div
+  class="modal fade"
+  data-backdrop="static"
+  data-keyboard="false"
+  id="{{ id }}"
+  tabindex="-1"
+  role="dialog"
+  aria-hidden="true"
+>
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="{{id}}Label">Checkout</h5>
+        <h5 class="modal-title" id="{{ id }}Label">Checkout</h5>
       </div>
       <div class="modal-body">
         <div class="container">
-          <div class="row">
+          <div class="row" *ngIf="!successorder">
             <div class="col-md-12">
-              <h4>Step 1: Delivery Address </h4>
-              <app-delivery [type]="'modal'" (clicked)="handleClicked($event)"></app-delivery>
-              <hr>
+              <h4>Step 1: Delivery Address</h4>
+              <app-delivery
+                [type]="'modal'"
+                (clicked)="handleClicked($event)"
+              ></app-delivery>
+              <hr />
             </div>
             <div class="col-md-12" *ngIf="deliveryopt">
               <h4>Step 2: Payment Information</h4>
-              <p>Now you have selected a delivery option of {{deliveryopt.type}} to the address: {{deliveryopt.address}}.</p>
+              <p>
+                Now you have selected a delivery option of
+                {{ deliveryopt.type }} to the address:
+                {{ deliveryopt.address }}.
+              </p>
               <p>Below is the payment information:</p>
               <p>Bank: <strong>Revolut</strong></p>
               <p>Account No: <strong>034433444</strong></p>
               <p>Sort-Code: <strong>04-04-29</strong></p>
               <p>Bank Address: <strong>04-04-29</strong></p>
-              <p>Amount: <strong>{{total | currency}}</strong></p>
-              <hr>
+              <p>
+                Amount: <strong>{{ total | currency }}</strong>
+              </p>
+              <hr />
             </div>
             <div class="col-md-12" *ngIf="deliveryopt">
               <h4>Step 3: Upload Receipt</h4>
               <div class="form-group row">
-                <label class="col-sm-12 col-md-12 col-lg-12 col-form-label"
-                  > {{ !image ? "Upload Image " : "Uploaded " }}
+                <label class="col-sm-12 col-md-12 col-lg-12 col-form-label">
+                  {{ !image ? "Upload Image " : "Uploaded " }}
                   <span class="text-danger" *ngIf="!image">*</span>
-                  <a href="{{image}}" target="_blank" rel="noopener noreferrer" *ngIf="image"><i
-                    class="icon-copy bi bi-file-earmark-check-fill text-success"></i></a>
-
+                  <a
+                    href="{{ image }}"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    *ngIf="image"
+                    ><i
+                      class="icon-copy bi bi-file-earmark-check-fill text-success"
+                    ></i
+                  ></a>
                 </label>
                 <div class="col-sm-12 col-md-12 col-lg-12">
                   <div class="custom-file">
@@ -44,20 +74,98 @@
                       name="image"
                       (change)="handleFileInput($event)"
                       placeholder="Upload Meal Image"
-
                     />
-                    <label class="custom-file-label">Select Image ({{!fileToUpload ? '0 uploaded' : '1 Uploaded'}})</label>
+                    <label class="custom-file-label"
+                      >Select Image ({{
+                        !fileToUpload ? "0 uploaded" : "1 Uploaded"
+                      }})</label
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label for="price"
+                      >Email <span class="text-danger">*</span></label
+                    >
+                    <input
+                      class="form-control"
+                      type="text"
+                      name="email"
+                      [(ngModel)]="order.email"
+                      required
+                    />
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label for="price">Phone</label>
+                    <input
+                      class="form-control"
+                      type="text"
+                      name="phone"
+                      [(ngModel)]="order.phone"
+                      required
+                    />
+                  </div>
+                </div>
+                <div class="col-sm-12">
+                  <div class="form-group">
+                    <label for="description">Addidional Information</label>
+                    <textarea
+                      class="form-control"
+                      name="description"
+                      [(ngModel)]="order.description"
+                      rows="4"
+                    ></textarea>
                   </div>
                 </div>
               </div>
             </div>
+          </div>
+          <div class="row" *ngIf="successorder">
+            <div class="col-md-12">
+              <h4>Order Confirmation - Order #{{successorder.id}}</h4>
+            </div>
+            <div class="col-md-12">
+              <p>Dear Valued Customer,</p>
+              <p>Thank you for choosing Casserole Wang!</p>
+              <p>We're delighted to confirm that your order has been successfully received. Your Order ID is <strong>{{successorder.id}}</strong>.</p>
+              <p>Please retain this Order ID for your records. Should you have any inquiries or require assistance, feel free to reach out to our customer support team .</p>
+              <p>We appreciate your business and look forward to serving you again soon.</p>
+              <p>Warm regards,</p>
+              <p>Casserole Wang Team</p>
 
+            </div>
           </div>
         </div>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="closemodal()">Cancel</button>
-        <button type="button" class="btn btn-primary" *ngIf="image">Confrim Order</button>
+      <div class="modal-footer" *ngIf="!successorder">
+        <button
+          type="button"
+          class="btn btn-secondary"
+          data-dismiss="modal"
+          (click)="closemodal()"
+        >
+          Cancel
+        </button>
+        <button type="button" (click)="confirmorder()" class="btn btn-primary" *ngIf="image">
+          Confrim Order
+        </button>
+      </div>
+      <div class="modal-footer" *ngIf="successorder">
+        <button
+          type="button"
+          class="btn btn-secondary"
+          data-dismiss="modal"
+          (click)="closemodal()"
+        >
+          Close
+        </button>
+        <button type="button" (click)="onPrint()" class="btn btn-primary" *ngIf="image">
+          Print Copy
+        </button>
       </div>
     </div>
   </div>

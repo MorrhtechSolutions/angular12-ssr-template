@@ -16,6 +16,7 @@ import { TgService } from "./app/service/tg.service.mjs";
 import { SocketController } from "./app/controller/socket.controller.mjs";
 import { IngredentController } from "./app/controller/ingredent.controller.mjs";
 import { MealController } from "./app/controller/meal.controller.mjs";
+import { OrderController } from "./app/controller/order.controller.mjs";
 dotenv.config();
 const PORT = process.env.PORT || process.env.NODE_ENV;
 const { __dirname } = fileDirName(import.meta);
@@ -28,6 +29,7 @@ const port = JSON.stringify(parseInt(PORT));
 const tg = new TgService();
 const ingredentController = new IngredentController();
 const mealController = new MealController();
+const orderController = new OrderControllerController();
 app.set("port", port);
 const server = http.createServer(app);
 
@@ -53,6 +55,12 @@ app.post("/meal/create", (req, res) => mealController.create(req, res));
 app.get('/meal/read', (req, res)=>mealController.read(req, res));
 app.patch('/meal/update', (req, res)=>mealController.update(req, res));
 app.delete('/meal/delete', (req, res)=>mealController.delete(req, res));
+
+app.get("/order/all", (req, res) => orderController.all(req, res));
+app.post("/order/create", (req, res) => orderController.create(req, res));
+app.get('/order/read', (req, res)=>orderController.read(req, res));
+app.patch('/order/update', (req, res)=>orderController.update(req, res));
+app.delete('/order/delete', (req, res)=>orderController.delete(req, res));
 
 /* end of backend routes */
 app.use(function (req, res, next) {

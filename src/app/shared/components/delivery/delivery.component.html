@@ -1,0 +1,101 @@
+<div class="card w-xxl-75">
+  <div class="card-body">
+    <nav>
+      <div class="nav nav-tabs" id="nav-tab" role="tablist">
+        <button
+          class="nav-link mb-3"
+          [ngClass]="{'active': state == 0}"
+          id="nav-home-tab-{{randomid}}"
+          data-bs-toggle="tab"
+          [attr.data-bs-target]="'#nav-home-'+randomid"
+          type="button"
+          role="tab"
+          aria-controls="nav-home"
+          aria-selected="true"
+          (click)="change(0)"
+        >
+          <i class="fas fa-motorcycle me-2"></i>Delivery
+        </button>
+        <button
+          class="nav-link mb-3"
+          [ngClass]="{'active': state == 1}"
+          id="nav-profile-tab-{{randomid}}"
+          data-bs-toggle="tab"
+          [attr.data-bs-target]="'#nav-profile-'+randomid"
+          type="button"
+          role="tab"
+          aria-controls="nav-profile"
+          aria-selected="false"
+          (click)="change(1)"
+        >
+          <i class="fas fa-shopping-bag me-2"></i>Pickup
+        </button>
+      </div>
+    </nav>
+    <div class="tab-content mt-3" id="nav-tabContent">
+      <div
+        class="tab-pane fade"
+        [ngClass]="{'active': state == 0, 'show': state == 0}"
+        id="nav-home-{{randomid}}"
+        role="tabpanel"
+        aria-labelledby="nav-home-tab"
+      >
+        <form class="row gx-2 gy-2 align-items-center">
+          <div class="col">
+            <div class="input-group-icon">
+              <i
+                class="fas fa-map-marker-alt text-danger input-box-icon"
+              ></i>
+              <label class="visually-hidden" for="inputDelivery{{randomid}}"
+                >Address</label
+              >
+              <input
+                class="form-control input-box form-foodwagon-control"
+                id="inputDelivery{{randomid}}"
+                type="text"
+                [(ngModel)]="address"
+                name="address"
+                placeholder="Enter Your Address"
+              />
+            </div>
+          </div>
+          <div class="d-grid gap-3 col-sm-auto">
+            <button class="btn btn-danger" type="button" (click)="submit()">
+              {{type == 'modal' ? 'Proceed' : 'Select'}}
+            </button>
+          </div>
+        </form>
+      </div>
+      <div
+        class="tab-pane fade"
+        [ngClass]="{'active': state == 1, 'show': state == 1}"
+        id="nav-profile-{{randomid}}"
+        role="tabpanel"
+        aria-labelledby="nav-profile-tab"
+      >
+        <form class="row gx-4 gy-2 align-items-center">
+          <div class="col">
+            <div class="input-group-icon">
+              <i
+                class="fas fa-map-marker-alt text-danger input-box-icon"
+              ></i>
+              <label class="visually-hidden" for="inputPickup{{randomid}}"
+                >Address</label
+              >
+              <select class="form-control input-box form-foodwagon-control"
+              id="inputPickup{{randomid}}" [(ngModel)]="address" name="address">
+                <option selected value="South Bridge Resturant">First Floor, 44 Candlemaker Row, Edinburgh EH1 2QE</option>
+                <option value="Princes St Resturant">28 West Maitland Street</option>
+              </select>
+            </div>
+          </div>
+          <div class="d-grid gap-3 col-sm-auto">
+            <button class="btn btn-danger" type="button" (click)="submit()">
+              {{type == 'modal' ? 'Proceed' : 'Select'}}
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

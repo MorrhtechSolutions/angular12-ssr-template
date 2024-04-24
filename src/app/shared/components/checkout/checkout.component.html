@@ -1,1 +1,64 @@
-<p>checkout works!</p>
+<button class="btn btn-white shadow-warning text-warning" id="{{btnid}}" [ngClass]="{'d-none': hide}" (click)="show()"> <i class="me-1 bi bi-cart"></i><sup>{{items.length}}</sup> </button>
+
+<!-- Modal -->
+<div class="modal fade" data-backdrop="static" data-keyboard="false" id="{{id}}" tabindex="-1" role="dialog"  aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="{{id}}Label">Checkout</h5>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <h4>Step 1: Delivery Address </h4>
+              <app-delivery [type]="'modal'" (clicked)="handleClicked($event)"></app-delivery>
+              <hr>
+            </div>
+            <div class="col-md-12" *ngIf="deliveryopt">
+              <h4>Step 2: Payment Information</h4>
+              <p>Now you have selected a delivery option of {{deliveryopt.type}} to the address: {{deliveryopt.address}}.</p>
+              <p>Below is the payment information:</p>
+              <p>Bank: <strong>Revolut</strong></p>
+              <p>Account No: <strong>034433444</strong></p>
+              <p>Sort-Code: <strong>04-04-29</strong></p>
+              <p>Bank Address: <strong>04-04-29</strong></p>
+              <p>Amount: <strong>{{total | currency}}</strong></p>
+              <hr>
+            </div>
+            <div class="col-md-12" *ngIf="deliveryopt">
+              <h4>Step 3: Upload Receipt</h4>
+              <div class="form-group row">
+                <label class="col-sm-12 col-md-12 col-lg-12 col-form-label"
+                  > {{ !image ? "Upload Image " : "Uploaded " }}
+                  <span class="text-danger" *ngIf="!image">*</span>
+                  <a href="{{image}}" target="_blank" rel="noopener noreferrer" *ngIf="image"><i
+                    class="icon-copy bi bi-file-earmark-check-fill text-success"></i></a>
+
+                </label>
+                <div class="col-sm-12 col-md-12 col-lg-12">
+                  <div class="custom-file">
+                    <input
+                      type="file"
+                      class="custom-file-input"
+                      name="image"
+                      (change)="handleFileInput($event)"
+                      placeholder="Upload Meal Image"
+
+                    />
+                    <label class="custom-file-label">Select Image ({{!fileToUpload ? '0 uploaded' : '1 Uploaded'}})</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="closemodal()">Cancel</button>
+        <button type="button" class="btn btn-primary" *ngIf="image">Confrim Order</button>
+      </div>
+    </div>
+  </div>
+</div>

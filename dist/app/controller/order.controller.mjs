@@ -1,6 +1,6 @@
-import { MealService } from '../service/meal.service.mjs'
-export class MealController {
-  mealService = new MealService()
+import { OrderService } from '../service/order.service.mjs'
+export class OrderController {
+  orderService = new OrderService()
   constructor() {}
   async create(req, res) {
     try {
@@ -18,11 +18,11 @@ export class MealController {
           errors: validation,
         });
       }
-      await this.mealService.save(body, (meal) => {
+      await this.orderService.save(body, (order) => {
         // return a success response in json format
         return res.status(200).json({
-          message: "Meal created",
-          data: meal,
+          message: "Order created",
+          data: order,
         });
       });
     } catch (error) {
@@ -47,10 +47,10 @@ export class MealController {
           errors: validation,
         });
       }
-      await this.mealService.getBy("id", parameter.id, (meal) => {
+      await this.orderService.getBy("id", parameter.id, (order) => {
         return res.status(200).json({
           message: "Result Completed",
-          data: meal.pop(),
+          data: order.pop(),
         });
       });
     } catch (error) {
@@ -90,7 +90,7 @@ export class MealController {
           errors: validation,
         });
       }
-      await this.mealService.getByIndex(
+      await this.orderService.getByIndex(
         "code",
         parameter.code,
         async (doesExist) => {
@@ -100,7 +100,7 @@ export class MealController {
               errors: ["Code Invalid"],
             });
           } else {
-            await this.mealService.update(
+            await this.orderService.update(
               parameter.code,
               body,
               doesExist,
@@ -135,14 +135,14 @@ export class MealController {
           errors: validation,
         });
       }
-      await this.mealService.getByIndex("code", parameter.code, async (index) => {
+      await this.orderService.getByIndex("code", parameter.code, async (index) => {
         if (index < 0) {
           return res.status(500).json({
             message: "Unknown Code",
             errors: ["Code Invalid"],
           });
         }
-        await this.mealService.delete(index, () => {
+        await this.orderService.delete(index, () => {
           return res.status(200).json({
             message: "Query completed",
           });
@@ -169,7 +169,7 @@ export class MealController {
           errors: validation,
         });
       }
-      await this.mealService.all((result)=>{
+      await this.orderService.all((result)=>{
         return res.status(200).json({
           message: "Result Completed",
           data: result,

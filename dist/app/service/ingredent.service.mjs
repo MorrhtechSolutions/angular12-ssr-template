@@ -110,6 +110,6 @@ export class IngredentService {
       //     return {...ing, image}
       //   }
       // )
-      return cb(ingredents);
+      return cb(ingredents.reverse());
     }
 }

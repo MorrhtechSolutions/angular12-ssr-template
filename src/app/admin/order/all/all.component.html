@@ -8,7 +8,7 @@
               <i class="fx40 bi bi-plus primary font-large-2 float-left pointer"></i>
             </div>
             <div class="media-body text-right">
-              <h3>278</h3>
+              <h3>{{shuffles.length}}</h3>
               <span>New Order</span>
             </div>
           </div>
@@ -53,8 +53,55 @@
 </div>
 
 
-<div class="row">
-  <div class="col-12">
-    <p>Render Table here</p>
+
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <div class="table-responsive">
+        <table class="table table-borderless">
+          <thead>
+            <tr class="bg-light">
+              <!-- <th scope="col" width="5%">
+                <span><input class="form-check-input" type="checkbox" /></span>
+              </th> -->
+              <th scope="col" width="5%">#</th>
+              <th scope="col" width="20%">Date</th>
+              <th scope="col" width="10%">Total</th>
+              <th scope="col" width="20%">Items</th>
+              <th scope="col" width="20%">Status</th>
+              <th scope="col" class="text-end" width="20%">
+                <span>Action</span>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of shuffles| paginate: { itemsPerPage: 5, currentPage: currentPage }">
+              <!-- <th scope="row">
+                <input class="form-check-input" type="checkbox" />
+              </th> -->
+              <td>{{item.id}}</td>
+              <td>{{item.created_at |date:'medium'}}</td>
+              <td>
+                <span class="ms-1">{{item.total | currency}}</span>
+              </td>
+              <td>
+                 {{item.cart.length}} Items
+              </td>
+              <td>{{item.status}}</td>
+              <td class="text-end">
+                <span class="fw-bolder"
+                  ><i class="fa fa-dot-circle-o text-danger"></i
+                > Update</span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="col-md-12">
+      <p class="text-center">
+        <pagination-controls (pageChange)="currentPage = $event"></pagination-controls>
+      </p>
+    </div>
   </div>
 </div>

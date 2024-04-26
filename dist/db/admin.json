@@ -9,19 +9,19 @@
             "browser_version": "123.0.0.0",
             "deviceType": "desktop",
             "orientation": "landscape",
-            "id": "R0LtPZIgdNGQr5omAAAD",
+            "id": "aMih3EDSkNMfGoPrAABD",
             "status": "connected",
             "email": "info@morrhtechsolutions.com",
             "emailStatus": false,
             "tokenStatus": false,
-            "token": "{\"iv\":\"6J/lKcYWZa4UEY4tiodc3g==\",\"v\":1,\"iter\":10000,\"ks\":128,\"ts\":64,\"mode\":\"ccm\",\"adata\":\"\",\"cipher\":\"aes\",\"salt\":\"4zpP9U2JkfU=\",\"ct\":\"yT2++FrNemXe2E+zjFL8A7xmrbJKMcNEqh5FXHWO5E9H4Rv3lRM+GQD9yJucFR+ugyT/gvw455133KvswqC8y0bve1J6\"}",
-            "socket": "R0LtPZIgdNGQr5omAAAD",
+            "token": "{\"iv\":\"faD50/3VjbAJhGLkapyBXw==\",\"v\":1,\"iter\":10000,\"ks\":128,\"ts\":64,\"mode\":\"ccm\",\"adata\":\"\",\"cipher\":\"aes\",\"salt\":\"x/hZF6ezJYw=\",\"ct\":\"m3e24jw23ej9ZC2Z8cfJ9OKuUa9u7BTbN44RTsdrKxMmV6XaH6QiZu9/9/zQzAEkW5XADr3Yzm7iKDnQNjXr8TuUAQ==\"}",
+            "socket": "aMih3EDSkNMfGoPrAABD",
             "message": "Requesting Authentication",
-            "codeToken": "{\"iv\":\"DnbWURTjWAmMOVcSL/k55g==\",\"v\":1,\"iter\":10000,\"ks\":128,\"ts\":64,\"mode\":\"ccm\",\"adata\":\"\",\"cipher\":\"aes\",\"salt\":\"4zpP9U2JkfU=\",\"ct\":\"uZoKOmc7NXAAhIDw7CceOtR8yj+94jtfLn25fsWntkJ4UGjk1GBQJKqbQp1+9TrbFjcmwjgR6n5qQpgTZZJHPljh28gVHwNM9k7N1TNaXAka6tjZtda55zRvkw==\"}",
-            "codehash": "21280c53133fea6ea1714c2001864a97b52ab6a3e316133d9eecbaf4ae8b60d6",
-            "codeString": "{\"email\":\"info@morrhtechsolutions.com\",\"timestamp\":1713824123908,\"expires\":3600000}",
-            "codeToMail": 3317281011,
-            "updated_at": "2024-04-22T22:15:45.780Z"
+            "codeToken": "{\"iv\":\"tF+iqcu5kK4E0cO6wwH3LA==\",\"v\":1,\"iter\":10000,\"ks\":128,\"ts\":64,\"mode\":\"ccm\",\"adata\":\"\",\"cipher\":\"aes\",\"salt\":\"x/hZF6ezJYw=\",\"ct\":\"MzKj4Wdeo0nYBvzKXtyKDBdli+tsA4nFrm5ALffcqgI/a+Cl4HtE8zWzRhyyZoZ/CWT5cCBjSArtU88fY6J1/DJF67K8zd4X71oB+omtcRB4epVuHAWdX20EWw==\"}",
+            "codehash": "e17792d7aed2ad3d918f393b9a9f6d02cf2abca53fbcd23d2ae0d649dde97357",
+            "codeString": "{\"email\":\"info@morrhtechsolutions.com\",\"timestamp\":1713971414708,\"expires\":3600000}",
+            "codeToMail": 293110898,
+            "updated_at": "2024-04-24T15:10:31.438Z"
         }
     ]
 }

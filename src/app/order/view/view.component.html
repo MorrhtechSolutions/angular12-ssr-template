@@ -4,46 +4,81 @@
   <div class="container p4-4 h-100">
     <div class="row d-flex justify-content-center align-items-center h-100">
       <div class="col-md-10 col-lg-8 col-xl-6">
-        <div class="card card-stepper" style="border-radius: 16px;">
+        <div class="card card-stepper" style="border-radius: 16px;" *ngIf="order|async as o">
           <div class="card-header p-4">
             <div class="d-flex justify-content-between align-items-center">
               <div>
-                <p class="text-muted mb-2"> Order ID <span class="fw-bold text-body">1222528743</span></p>
-                <p class="text-muted mb-0"> Place On <span class="fw-bold text-body">12,April 2024</span> </p>
+                <p class="text-muted mb-2"> Order ID <span class="fw-bold text-body">{{o.id}}</span></p>
+                <p class="text-muted mb-0"> Place On <span class="fw-bold text-body">{{o.created_at |date:'medium'}}</span> </p>
               </div>
               <div>
-                <h6 class="mb-0"> <a>Print Order</a> </h6>
+                <h6 class="mb-0"> <a href="{{o.image}}" target="_blank" rel="noopener noreferrer">View Payment</a> </h6>
               </div>
             </div>
           </div>
           <div class="card-body p-4">
             <div class="d-flex flex-row mb-4 pb-2">
               <div class="flex-fill">
-                <h5 class="bold">Donuts Hut</h5>
-                <p class="text-muted"> Qt: 1 item</p>
-                <h4 class="mb-3"> $ 49 <span class="small text-muted"> via (COD) </span></h4>
-                <p class="text-muted">Tracking Status on: <span class="text-body">11:30pm, Today</span></p>
+                <h5 class="bold"> {{o.delivery.address}} </h5>
+                <p class="text-muted"> Email: {{hashemail(o.email)}}</p>
+                <h4 class="mb-3"> {{o.total|currency}} <span class="small text-muted"> via {{o.delivery.type}}  </span></h4>
+                <p class="text-muted">Tracking Status on: <span class="text-body">{{now |date}}, Today</span></p>
+                <p class="text-muted">Current Status: <span class="text-body">{{o.status}}</span></p>
               </div>
               <div>
                 <img class="align-self-center img-fluid"
-                  src="assets/img/gallery/donuts-hut.png" width="250">
+                  [src]="o.image" width="250">
               </div>
             </div>
             <ul id="progressbar-1" class="mx-0 mt-0 mb-5 px-0 pt-0 pb-4">
               <li class="step0 active" id="step1"><span
                   style="margin-left: 22px; margin-top: 12px;">PLACED</span></li>
-              <li class="step0 active text-center" id="step2"><span>SHIPPED</span></li>
+              <li class="step0 active text-center" id="step2"><span>CONFIRMED</span></li>
               <li class="step0 text-muted text-end" id="step3"><span
                   style="margin-right: 22px;">DELIVERED</span></li>
             </ul>
+
+            <div class="table-responsive">
+              <table class="table table-borderless">
+                <thead>
+                  <tr class="bg-light">
+                    <th scope="col" width="10%">Price</th>
+                    <th scope="col" width="50%">Name</th>
+                    <th scope="col" width="20%">Quantity</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let item of o.cart">
+                    <td>
+                      <span class="ms-1">{{item.price | currency}}</span>
+                    </td>
+                    <td>
+                      <img [src]="item.image" width="25" height="25" /> {{item.name}}
+                    </td>
+                    <td>
+                       {{item.quantity}}
+                    </td>
+                  </tr>
+                </tbody>
+                <tfoot>
+                  <tr>
+                      <th scope="row">Total</th>
+                      <td><strong>All Items</strong></td>
+                      <td><strong>{{o.cart.length}}</strong></td>
+                      <td class="text-right"><strong>{{o.total |currency}}</strong></td>
+                  </tr>
+              </tfoot>
+              </table>
+            </div>
+            <p class="text-muted"> Additiona Info: {{o.description}}</p>
           </div>
           <div class="card-footer p-4">
             <div class="d-flex justify-content-between">
-              <h5 class="fw-normal mb-0"><a (click)="navigateToOrder()" class="pointer">Back</a></h5>
+              <h5 class="fw-normal mb-0"><a (click)="changePage()" class="pointer">Back</a></h5>
               <div class="border-start h-100"></div>
 
               <div class="border-start h-100"></div>
-              <h5 class="fw-normal mb-0"><a (click)="navigateToOrder()" class="pointer">Order Again</a></h5>
+              <h5 class="fw-normal mb-0"><a (click)="print()" class="pointer">Print Order</a></h5>
               <div class="border-start h-100"></div>
               <h5 class="fw-normal mb-0"><a class="text-muted"><i class="fas fa-ellipsis-v"></i></a>
               </h5>

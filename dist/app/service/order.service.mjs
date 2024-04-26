@@ -2,29 +2,33 @@ import { JsonDB, Config } from "node-json-db";
 
 import fileDirName from "../../file-dir-name.mjs";
 import { EncryptionService } from "./encryption.service.mjs";
+import { MailTemplate } from "../mail/templates.mjs";
+import { MailService } from "./mail.service.mjs";
 const { __dirname } = fileDirName(import.meta);
 
-// Public path to the active directory (ingredent.json)
-const DBPATH = "/../../db/ingredent.json";
+// Public path to the active directory (order.json)
+const DBPATH = "/../../db/order.json";
 /**
- * A class which has the direct access to the Ingredent table.
+ * A class which has the direct access to the Order table.
  * Exposing the following methods:
- * ingredents();
+ * orders();
  * save(data);
  * getBy(field, value);
  * findBy(field, value);
  * delete(code)
  * update(code, data)
  */
-export class IngredentService {
+export class OrderService {
   db = new JsonDB(new Config(__dirname + DBPATH, true, true, "/"));
   encryptService = new EncryptionService();
+  mailTemplate = new MailTemplate();
+  mailService = new MailService();
   constructor() {}
   /**
-   * Fetch all ingredents from db
+   * Fetch all orders from db
    * @returns Array
    */
-  ingredents = async () => {
+  orders = async () => {
     return await this.db.getData("/records");
   };
   /**
@@ -35,14 +39,20 @@ export class IngredentService {
   async save(data, cb) {
     const now = new Date(Date.now());
     // Set the id property to the length of existing record + 1
-    let id = this.encryptService.hashFnv32a(data.name, false, this.ingredents().length + 1)
+    let id = this.encryptService.hashFnv32a(data.name, false, this.orders().length + 1)
     data.id = id;
     // Set the created and updated at properties
     data.created_at = now;
     data.updated_at = now;
     // Set the active property
-    data.status = "Active";
+    data.status = "Pending";
     await this.db.push('/records[]', data);
+    const template = this.mailTemplate.orderReceived(data.id);
+    try {
+      const dispatch = await this.mailService.send(`Order Confirmation - Order #${data.id}`,data.email,template,['chibuchisomto1@gmail.com']);
+    } catch (error) {
+      console.log(error)
+    }
     return cb(data);
   }
   /**
@@ -52,18 +62,18 @@ export class IngredentService {
    * @returns Array
    */
   async getBy(field, value, cb) {
-    const ingredents = await this.ingredents()
-    const found = ingredents.filter((u) => u[field] == value);
+    const orders = await this.orders()
+    const found = orders.filter((u) => u[field] == value);
     return cb(found);
   }
   async getByMultiple(field1, value1, field2, value2, cb) {
-    const ingredents = await this.ingredents()
-    const found = ingredents.filter((u) => u[field1] == value1 || u[field2] == value2);
+    const orders = await this.orders()
+    const found = orders.filter((u) => u[field1] == value1 || u[field2] == value2);
     return cb(found);
   }
   async getByIndex(field, value, cb) {
-    const ingredents = await this.ingredents();
-    const found = ingredents.findIndex((u) => u[field] == value);
+    const orders = await this.orders();
+    const found = orders.findIndex((u) => u[field] == value);
     return cb(found);
   }
   /**
@@ -73,7 +83,7 @@ export class IngredentService {
    * @returns Object
    */
   async findBy(field, value) {
-    const found = await this.ingredents().find((u) => u[field] == value);
+    const found = await this.orders().find((u) => u[field] == value);
     return found;
   }
   /**
@@ -103,13 +113,13 @@ export class IngredentService {
    * @returns callback with array of data
    */
     async all(cb) {
-      let ingredents = await this.ingredents();
-      // ingredents = ingredents.map(
+      let orders = await this.orders();
+      // orders = orders.map(
       //   ing=>{
       //     const image = ing.image.substring(7);
       //     return {...ing, image}
       //   }
       // )
-      return cb(ingredents.reverse());
+      return cb(orders.reverse());
     }
 }

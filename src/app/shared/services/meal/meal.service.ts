@@ -44,10 +44,10 @@ export class MealService {
    * @param code The code of meal in search of.
    * @return A response of object <Observable> {message:string, data: Meal}.
    */
-   read(code: any): Observable<any> {
+   read(id: any): Observable<any> {
     return this.ipAddress$.pipe(
       switchMap(ip => this.http.get(`${this._apiUrl}/meal/read`, {
-        params: new HttpParams().set('_who', ip).set('code', code),
+        params: new HttpParams().set('_who', ip).set('id', id),
       }).pipe(
         map((r: any) => r.data),
         catchError(e => this._handleError(e))

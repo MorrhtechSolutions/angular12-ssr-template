@@ -30,6 +30,8 @@ import {RouterModule} from '@angular/router';
 import { PaymentComponent } from './components/payment/payment.component';
 import { CartComponent } from './components/cart/cart.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
+import { AddToCartComponent } from './components/add-to-cart/add-to-cart.component';
+import { DeliveryComponent } from './components/delivery/delivery.component';
 
 
 @NgModule({
@@ -51,7 +53,9 @@ import { CheckoutComponent } from './components/checkout/checkout.component';
     FooterComponent,
     HeaderComponent,
     CartComponent,
-    CheckoutComponent
+    CheckoutComponent,
+    AddToCartComponent,
+    DeliveryComponent
   ],
   imports: [
     CommonModule,
@@ -96,7 +100,9 @@ import { CheckoutComponent } from './components/checkout/checkout.component';
     NgxAudioPlayerModule,
     FundWalletComponent,
     PaymentComponent,
-    ChatboxComponent
+    ChatboxComponent,
+    AddToCartComponent,
+    DeliveryComponent
   ],
   entryComponents: [ModalComponent]
 })

@@ -110,6 +110,6 @@ export class MealService {
       //     return {...ing, image}
       //   }
       // )
-      return cb(meals);
+      return cb(meals.reverse());
     }
 }

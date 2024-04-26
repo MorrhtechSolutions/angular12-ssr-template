@@ -1,8 +1,8 @@
-<form (ngSubmit)="search()" class="row" #searchForm="ngForm" required>
+<form class="row" required>
   <div class="form-group col-9">
-    <input type="text" class="form-control" name="searchTerm" ngModel placeholder="Enter your search term" required>
+    <input type="text" class="form-control" name="searchTerm" [(ngModel)]="key" (ngModelChange)="onNgModelChange($event)" placeholder="Enter your search term" required>
   </div>
-  <button type="submit" class="btn btn-primary mb-5 col-3">Search</button>
+  <button type="button" class="btn btn-primary mb-5 col-3" (click)="search()">Search</button>
 </form>
 
 

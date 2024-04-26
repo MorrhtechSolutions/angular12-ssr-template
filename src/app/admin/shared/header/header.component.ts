@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/shared/services/auth/auth.service';
 import { ScriptsService } from 'src/app/shared/services/client/scripts.service';
 
 @Component({
@@ -8,7 +9,7 @@ import { ScriptsService } from 'src/app/shared/services/client/scripts.service';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private scriptSevice: ScriptsService) { }
+  constructor(private scriptSevice: ScriptsService, private authService:AuthService) { }
 
   ngOnInit(): void {
   }
@@ -25,6 +26,10 @@ export class HeaderComponent implements OnInit {
     this.scriptSevice.changePage('admin/ingredent');
   }
   navigateToHome(){
+    this.scriptSevice.changePage('/');
+  }
+  logout(){
+    this.authService.clear();
     this.scriptSevice.changePage('/');
   }
 

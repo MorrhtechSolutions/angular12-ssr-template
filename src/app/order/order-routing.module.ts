@@ -14,7 +14,7 @@ const routes: Routes = [
     component: SearchComponent
   },
   {
-    path: 'view/:id',
+    path: 'view/:query',
     component: ViewComponent
   }
 ];

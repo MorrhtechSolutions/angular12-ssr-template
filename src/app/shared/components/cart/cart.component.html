@@ -1,5 +1,5 @@
-<button class="btn btn-white shadow-warning text-warning" (click)="show()"> <i class="me-1 bi bi-cart"></i> Cart</button>
-
+<button class="btn btn-white shadow-warning text-warning" (click)="show()"> <i class="me-1 bi bi-cart"></i><sup>{{items.length}}</sup> </button>
+<app-checkout></app-checkout>
 <!-- Modal -->
 <div class="modal fade" id="{{id}}" tabindex="-1" role="dialog"  aria-hidden="true">
   <div class="modal-dialog modal-lg" role="document">
@@ -11,11 +11,58 @@
         </button>
       </div>
       <div class="modal-body">
-        ...
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12" *ngIf="items.length > 0">
+              <div class="table-responsive">
+                <table class="table table-borderless">
+                  <thead>
+                    <tr class="bg-light">
+                      <th scope="col" width="10%">Price</th>
+                      <th scope="col" width="50%">Name</th>
+                      <th scope="col" width="20%">Quantity</th>
+                      <th scope="col" class="text-end" width="20%">
+                        <span>Action</span>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let item of items">
+                      <td>
+                        <span class="ms-1">{{item.price | currency}}</span>
+                      </td>
+                      <td>
+                        <img [src]="item.image" width="25" height="25" /> {{item.name}}
+                      </td>
+                      <td>
+                         {{item.quantity}}
+                      </td>
+                      <td class="text-end">
+                        <span class="fw-bolder pointer" (click)="remove(item.id)"
+                          ><span aria-hidden="true">&times;</span>Remove</span>
+                      </td>
+                    </tr>
+                  </tbody>
+                  <tfoot>
+                    <tr>
+                        <th scope="row">Total</th>
+                        <td><strong>All Items</strong></td>
+                        <td><strong>{{items.length}}</strong></td>
+                        <td class="text-right"><strong>{{total |currency}}</strong></td>
+                    </tr>
+                </tfoot>
+                </table>
+              </div>
+            </div>
+            <div class="col-md-12" *ngIf="items.length < 1">
+              <p class="text-center">Basket Empty</p>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="modal-footer">
+      <div class="modal-footer" *ngIf="items.length > 0">
         <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="closemodal()">Clear</button>
-        <button type="button" class="btn btn-primary">Checkout</button>
+        <button type="button" class="btn btn-primary" (click)="checkoutmodal()">Checkout</button>
       </div>
     </div>
   </div>
